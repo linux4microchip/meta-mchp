@@ -2,6 +2,8 @@ DESCRIPTION = "Extra udev rules for Microchip boards"
 LICENSE = "GPL-2.0-or-later"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0-or-later;md5=fed54355545ffd980b814dab4a3b312c"
 
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+
 SRC_URI = " file://keyboard.rules"
 SRC_URI:sam9x75 = " file://sam9x75/keyboard.rules"
 SRC_URI:sama7d65 = " file://sama7d65/keyboard.rules"
