@@ -1,7 +1,3 @@
-PACKAGES += " \
-    packagegroup-mchp-apps-amp \
-"
-
 RDEPENDS:packagegroup-mchp-apps:append:mpfs-icicle-kit = "\
     polarfire-soc-linux-examples-can \
     polarfire-soc-linux-examples-dma \
@@ -12,7 +8,7 @@ RDEPENDS:packagegroup-mchp-apps:append:mpfs-icicle-kit = "\
     polarfire-soc-linux-examples-system-services \
 "
 
-RDEPENDS:packagegroup-mchp-apps-amp:append:mpfs-icicle-kit-amp = "\
+RDEPENDS:packagegroup-mchp-apps:append:mpfs-icicle-kit-amp = "\
     kernel-module-rpmsg-char \
     kernel-module-rpmsg-client-sample \
     kernel-module-rpmsg-ctrl \
