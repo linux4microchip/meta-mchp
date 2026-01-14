@@ -49,3 +49,9 @@ WKS_FILE_DEPENDS ?= " \
     bmaptool-native \
     u-boot-mchp \
 "
+
+# PolarFire SoC has OpenSBI built into the HSS. Mask the OpenSBI
+# recipe as it is not used and causes machine signature issues
+# when running yocto-check-layer if RISCV_SBI_PAYLOAD and other
+# related variables are not defined.
+BBMASK += "opensbi"
