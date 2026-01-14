@@ -28,7 +28,6 @@ WIFI_FIRMWARE_PACKAGES = "\
 RDEPENDS:packagegroup-mchp-networking = "\
     iproute2 \
     iptables \
-    linuxptp \
     rsync \
     openssh-sftp \
     openssh-sftp-server \
