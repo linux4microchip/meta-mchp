@@ -1,6 +1,6 @@
 SUMMARY = "Package group for security software."
 
-PACKAGE_ARCH = "${TUNE_PKGARCH}"
+PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit packagegroup
 

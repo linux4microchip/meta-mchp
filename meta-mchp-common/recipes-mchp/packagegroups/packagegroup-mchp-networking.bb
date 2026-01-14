@@ -1,5 +1,7 @@
 SUMMARY = "Networking package group including basic network utilities."
 
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+
 inherit packagegroup
 
 PROVIDES = "${PACKAGES}"
