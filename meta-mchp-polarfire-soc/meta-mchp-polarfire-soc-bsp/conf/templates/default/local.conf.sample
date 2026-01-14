@@ -271,7 +271,12 @@ INHERIT += "create-spdx"
 SPDX_PRETTY = "1"
 
 # Set systemd as default init manager
-INIT_MANAGER = "systemd"
+INIT_MANAGER ?= "systemd"
+
+# The 32MB PMOD SF3 NOR Flash is too small for latest systemd versions
+# use sysvinit for this machine only. This can be commented for
+# other NOR flashes with larger capacity.
+INIT_MANAGER:mpfs-icicle-kit-nor ?= "sysvinit"
 
 # Remove the default syslog mechanism and use systemd-journald
 VIRTUAL-RUNTIME_syslog = ""
