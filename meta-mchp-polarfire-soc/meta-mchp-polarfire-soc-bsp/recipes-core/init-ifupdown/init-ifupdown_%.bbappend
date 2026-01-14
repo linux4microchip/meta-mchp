@@ -1,10 +1,3 @@
-FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
+FILESEXTRAPATHS:prepend:mpfs := "${THISDIR}/${PN}:"
 
-SRC_URI:append = " file://interfaces"
-
-FILES:${PN} += " ${sysconfdir}/repart.d/* \
-                "
-
-do_install:append(){
-    install -m 0644 ${WORKDIR}/interfaces ${D}${sysconfdir}/network/interfaces
-}
+SRC_URI:append:mpfs = " file://interfaces"
