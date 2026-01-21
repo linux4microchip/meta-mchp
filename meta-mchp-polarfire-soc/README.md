@@ -85,7 +85,7 @@ Please see the meta-mchp-common [README](https://github.com/linux4microchip/meta
 4. **Flash the Image:**
 
      ```sh
-     sudo bmaptool copy tmp-glibc/deploy/images/icicle-kit-es/mchp-base-image-mpfs-icicle-kit.rootfs.wic /dev/sdX
+     sudo bmaptool copy tmp-glibc/deploy/images/mpfs-icicle-kit/mchp-base-image-mpfs-icicle-kit.rootfs.wic /dev/sdX
      ```
 
    - **Important:**
@@ -109,10 +109,10 @@ Please see the meta-mchp-common [README](https://github.com/linux4microchip/meta
      ```
 
    - For Winbond NAND:
-     `<IMAGE_PATH>` = `tmp-glibc/deploy/images/icicle-kit-es-nand/core-image-minimal-mtdutils-mpfs-icicle-kit-nand.nand.mtdimg`
+     `<IMAGE_PATH>` = `tmp-glibc/deploy/images/mpfs-icicle-kit-nand/core-image-minimal-mtdutils-mpfs-icicle-kit-nand.nand.mtdimg`
 
    - For Micron NOR:
-     `<IMAGE_PATH>` = `tmp-glibc/deploy/images/icicle-kit-es-nor/core-image-minimal-mtdutils-mpfs-icicle-kit-nor.nor.mtdimg`
+     `<IMAGE_PATH>` = `tmp-glibc/deploy/images/mpfs-icicle-kit-nor/core-image-minimal-mtdutils-mpfs-icicle-kit-nor.nor.mtdimg`
 
    - **Important:**
      Double-check the device name (`/dev/sdX`) using `dmesg`, `lsblk`, or GNOME Disks to avoid overwriting your system disk.
