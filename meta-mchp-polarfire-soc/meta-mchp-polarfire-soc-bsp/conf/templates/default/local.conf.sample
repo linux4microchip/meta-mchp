@@ -232,6 +232,13 @@ PACKAGECONFIG:append:pn-qemu-system-native = " sdl"
 #BB_HASHSERVE = "auto"
 #BB_SIGNATURE_HANDLER = "OEEquivHash"
 
+# Set additional user configuration
+IMAGE_CLASSES += "extrausers"
+# Set the root password to expire on first login
+EXTRA_USERS_PARAMS = "\
+    passwd-expire root; \
+    "
+
 #
 # Memory Resident Bitbake
 #
