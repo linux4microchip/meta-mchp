@@ -10,7 +10,7 @@ LIC_FILES_CHKSUM = "file://${WORKDIR}/git/LICENSE;md5=06ec214e9fafe6d4515883d776
 DEPENDS = "openssl"
 
 PV = "1.0+git${SRCPV}"
-SRCREV = "v2025.07"
+SRCREV = "b2dc371a35b0af98c3dbb54de467f950ddda6f85"
 SRC_URI = "git://github.com/polarfire-soc/polarfire-soc-linux-examples.git;protocol=https;nobranch=1"
 
 S = "${WORKDIR}/git"
