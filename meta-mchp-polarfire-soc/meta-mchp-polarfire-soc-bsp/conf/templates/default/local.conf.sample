@@ -288,6 +288,5 @@ DISTRO_FEATURES:remove ?= "x11 3g nfc pulseaudio"
 MCHP_RELEASE_VERSION="v2025.10"
 MCHP_RELEASE_URL="https://github.com/polarfire-soc/"
 
-PACKAGECONFIG:append:pn-openssl = " cryptodev-linux"
 PACKAGECONFIG:remove:pn-rng-tools = " libjitterentropy"
-PACKAGECONFIG:append:pn-libkcapi = " testapp"
+PACKAGECONFIG:append:pn-libkcapi = " testapp apps"
