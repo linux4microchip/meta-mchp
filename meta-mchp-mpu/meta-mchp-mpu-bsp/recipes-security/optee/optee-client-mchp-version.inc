@@ -1,2 +1,2 @@
-PV = "4.7.0+git${SRCPV}"
-SRCREV = "23c112a6f05cc5e39bd4aaf52ad515cad532237d"
+PV = "4.9.0+git${SRCPV}"
+SRCREV = "9f5e90918093c1d1cd264d8149081b64ab7ba672"

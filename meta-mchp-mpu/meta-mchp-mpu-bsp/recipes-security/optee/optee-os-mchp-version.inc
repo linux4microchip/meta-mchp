@@ -1,4 +1,4 @@
-PV = "4.7.0+git${SRCPV}"
-SRCREV = "86846f4fdf14f25b50fd64a87888ca9fe85a9e2b"
+PV = "4.9.0+git${SRCPV}"
+SRCREV = "c2b0684fcd89929976a8726e6e3af922b48dd2c7"
 
 SRC_URI:remove = "file://0003-optee-enable-clang-support.patch"
