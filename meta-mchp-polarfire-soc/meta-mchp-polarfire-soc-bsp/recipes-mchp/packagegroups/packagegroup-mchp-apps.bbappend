@@ -6,6 +6,7 @@ RDEPENDS:packagegroup-mchp-apps:append:mpfs-icicle-kit-all = "\
     polarfire-soc-linux-examples-lsram \
     polarfire-soc-linux-examples-pdma \
     polarfire-soc-linux-examples-system-services \
+    kernel-module-udmabuf \
 "
 
 RDEPENDS:packagegroup-mchp-apps:append:mpfs-icicle-kit-amp = "\
@@ -27,4 +28,5 @@ RDEPENDS:packagegroup-mchp-apps:append:mpfs-disco-kit = "\
     polarfire-soc-linux-examples-lsram \
     polarfire-soc-linux-examples-pdma \
     polarfire-soc-linux-examples-system-services \
+    kernel-module-udmabuf \
 "
