@@ -11,3 +11,5 @@ PV = "${LINUX_VERSION}+git${SRCPV}"
 KERNEL_VERSION_SANITY_SKIP="1"
 
 S = "${WORKDIR}/git"
+
+SRC_URI = "git://github.com/linux4microchip/linux.git;protocol=https;branch=${KBRANCH}"
