@@ -9,7 +9,6 @@ IMAGE_INSTALL = "\
     kernel-modules \
     packagegroup-base \
     packagegroup-core-boot \
-    packagegroup-mchp-apps \
     packagegroup-mchp-hw-utils \
     packagegroup-mchp-networking \
     packagegroup-mchp-security \
@@ -24,6 +23,6 @@ IMAGE_NAME_SUFFIX ?= ""
 IMAGE_LINGUAS = ""
 
 IMAGE_FSTYPES = "${INITRAMFS_FSTYPES}"
-INITRAMFS_MAXSIZE = "262144"
+INITRAMFS_MAXSIZE = "175000"
 
 inherit core-image
