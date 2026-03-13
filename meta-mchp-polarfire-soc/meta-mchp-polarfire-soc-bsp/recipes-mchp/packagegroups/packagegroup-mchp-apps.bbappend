@@ -14,7 +14,8 @@ RDEPENDS:packagegroup-mchp-apps:append:mpfs-icicle-kit-amp = "\
     kernel-module-rpmsg-client-sample \
     kernel-module-rpmsg-ctrl \
     kernel-module-rpmsg-tty \
-    polarfire-soc-amp-examples \
+    polarfire-soc-freertos-amp-demo \
+    polarfire-soc-bm-amp-demo \
     polarfire-soc-linux-examples-amp \
 "
 

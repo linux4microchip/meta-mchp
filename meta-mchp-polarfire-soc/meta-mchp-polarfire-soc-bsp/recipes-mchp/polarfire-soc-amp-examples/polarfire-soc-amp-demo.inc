@@ -1,7 +1,3 @@
-SUMMARY = "Polarfire SoC AMP example applications"
-DESCRIPTION = "Example FreeRTOS application to run in AMP build \
-along with a Linux context"
-
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 LICENSE = "MIT"
@@ -24,20 +20,8 @@ EXT_CFLAGS += "-fdebug-prefix-map=${TMPDIR}=${TARGET_DBGSRC_DIR}"
 PARALLEL_MAKE = ""
 EXTRA_OEMAKE = "REMOTE=1 REMOTEPROC=1 CROSS_COMPILE=${TARGET_PREFIX} EXT_CFLAGS='${EXT_CFLAGS}'"
 
-do_install() {
-    install -Dm 0644 ${S}/mpfs-rpmsg-${AMP_DEMO}/Remote-Default/mpfs-rpmsg-remote.elf ${D}/usr/lib/firmware/rproc-remote-context-fw
-}
-
-do_compile() {
-   oe_runmake -C ${S}/mpfs-rpmsg-${AMP_DEMO}
-}
-
-do_deploy() {
-    install -m 755 ${S}/mpfs-rpmsg-${AMP_DEMO}/Remote-Default/mpfs-rpmsg-remote.elf ${DEPLOYDIR}/amp-application.elf
-}
-
 addtask deploy after do_install
 
 COMPATIBLE_MACHINE = "(mpfs-icicle-kit-amp)"
 
-FILES:${PN} += "/usr/lib/firmware/rproc-remote-context-fw"
+FILES:${PN} += "/usr/lib/firmware/${PN}.elf"

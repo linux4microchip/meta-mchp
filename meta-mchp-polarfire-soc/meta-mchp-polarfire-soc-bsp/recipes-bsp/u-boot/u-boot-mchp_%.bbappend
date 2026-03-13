@@ -2,7 +2,7 @@ FILESEXTRAPATHS:prepend:mpfs := "${THISDIR}/files:"
 
 DEPENDS:append:mpfs = " python3-setuptools-native"
 DEPENDS:append:mpfs = " u-boot-tools-native hss-payload-generator-native"
-DEPENDS:append:mpfs-icicle-kit-amp = " polarfire-soc-amp-examples"
+DEPENDS:append:mpfs-icicle-kit-amp = " polarfire-soc-freertos-amp-demo polarfire-soc-bm-amp-demo"
 
 UBOOT_FILES:mpfs = " file://${UBOOT_ENV}.cmd \
                 file://${MACHINE}.cfg \
