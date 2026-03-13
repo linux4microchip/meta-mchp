@@ -12,20 +12,21 @@ SRC_URI:append = " ${SRC_URI_APP};name=pic64-zephyr-examples;nobranch=1;destsuff
 
 ZEPHYR_SRC_DIR = "${WORKDIR}/git/pic64gx-soc/apps/amp_example_openamp"
 
-EXTRA_OECMAKE += "-DCMAKE_CXX_FLAGS=-fdebug-prefix-map=${TMPDIR}=${TARGET_DBGSRC_DIR}"
+EXTRA_OECMAKE += " \
+    -DCONFIG_PIC64GX_RELOCATE_RESOURCE_TABLE=y \
+    -DCMAKE_CXX_FLAGS=-fdebug-prefix-map=${TMPDIR}=${TARGET_DBGSRC_DIR} \
+    "
 
 do_install() {
-    if [ "${AMP_DEMO}" = "zephyr" ]; then
-        install -Dm 0644 ${B}/zephyr/${ZEPHYR_MAKE_OUTPUT} ${D}/usr/lib/firmware/rproc-remote-context-fw
-    else
-        bbnote "${PN} do_install() have been skipped, because ${AMP_DEMO} is not covered by this recipe"
-    fi
+    install -Dm 0644 ${B}/zephyr/${ZEPHYR_MAKE_OUTPUT} ${D}/usr/lib/firmware/rproc-remote-context-fw
 }
 
-FILES:${PN} += "/usr/lib/firmware/rproc-remote-context-fw"
+do_deploy() {
+    cp ${B}/zephyr/${ZEPHYR_MAKE_OUTPUT} ${DEPLOYDIR}/zephyr-amp-application.elf
+}
+
+FILES:${PN} += "/usr/lib/firmware/${PN}.elf"
 SYSROOT_DIRS += "/usr/lib/firmware"
 INSANE_SKIP += "ldflags buildpaths"
-
-do_deploy[noexec] = "1"
 
 COMPATIBLE_MACHINE:append:pic64gx-curiosity-kit = "|pic64gx-curiosity-kit"
