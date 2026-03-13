@@ -18,11 +18,11 @@ EXTRA_OECMAKE += " \
     "
 
 do_install() {
-    install -Dm 0644 ${B}/zephyr/${ZEPHYR_MAKE_OUTPUT} ${D}/usr/lib/firmware/rproc-remote-context-fw
+    install -Dm 0644 ${B}/zephyr/${ZEPHYR_MAKE_OUTPUT} ${D}/usr/lib/firmware/${PN}.elf
 }
 
 do_deploy() {
-    cp ${B}/zephyr/${ZEPHYR_MAKE_OUTPUT} ${DEPLOYDIR}/zephyr-amp-application.elf
+    cp ${B}/zephyr/${ZEPHYR_MAKE_OUTPUT} ${DEPLOYDIR}/${PN}.elf
 }
 
 FILES:${PN} += "/usr/lib/firmware/${PN}.elf"
