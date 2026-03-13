@@ -10,7 +10,7 @@ inherit native
 DEPENDS = "elfutils-native libyaml-native"
 
 PV = "1.0+git${SRCPV}"
-SRCREV = "0e5528f18c9eaf4bed48878c5e4e6d8423e8576a"
+SRCREV = "5bfb22839385a1e3782632e5af4117ee4bdf8952"
 SRC_URI = "git://github.com/pic64gx/pic64gx-hart-software-services.git;protocol=https;nobranch=1"
 
 S = "${WORKDIR}/git"
