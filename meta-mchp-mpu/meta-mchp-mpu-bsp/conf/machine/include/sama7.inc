@@ -10,6 +10,7 @@ KBUILD_DEFCONFIG = "sama7_defconfig"
 PREFERRED_PROVIDER_virtual/kernel:sama7 ?= "linux-mchp"
 PREFERRED_PROVIDER_virtual/bootloader:sama7 ?= "u-boot-mchp"
 PREFERRED_PROVIDER_u-boot:sama7 ?= "u-boot-mchp"
+PREFERRED_VERSION_linux-mchp = "6.18%"
 
 PREFERRED_PROVIDER_jpeg ?= "jpeg"
 PREFERRED_PROVIDER_jpeg-native ?= "jpeg-native"
