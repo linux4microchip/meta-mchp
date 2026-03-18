@@ -24,6 +24,8 @@ WIFI_FIRMWARE_PACKAGES = "\
     linux-firmware-sd8801 \
     linux-firmware-sd8887 \
     linux-firmware-sd8897 \
+    linux-firmware-sd8997 \
+    linux-firmware-mediatek \
     mchp-wireless-firmware \
 "
 
