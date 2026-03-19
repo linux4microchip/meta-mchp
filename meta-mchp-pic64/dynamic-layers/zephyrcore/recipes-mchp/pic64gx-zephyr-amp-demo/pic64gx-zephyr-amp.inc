@@ -1,6 +1,6 @@
 # Zephyr AMP Common requirements
 
-require recipes-kernel/zephyr-kernel/zephyr-sample.inc
+inherit zephyr-sample
 
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
@@ -23,3 +23,5 @@ SRC_URI:append = " ${SRC_URI_ZEPHYR_LIBMETAL};name=libmetal;nobranch=1;destsuffi
 
 ZEPHYR_MODULES:append = "${S}/modules/modules/lib/open-amp\;"
 ZEPHYR_MODULES:append = "${S}/modules/hal/libmetal\;"
+
+BOARD_DIR = "${S}/zephyr/boards/${ARCH}/${ZEPHYR_BOARD}"
