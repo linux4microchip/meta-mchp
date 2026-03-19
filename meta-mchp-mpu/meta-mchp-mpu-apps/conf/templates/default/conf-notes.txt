@@ -24,6 +24,7 @@ Microchip supported machines are:
 | **SAM9X60**  | sam9x60-curiosity-sd      | sam9x60-curiosity        | N/A                   |
 |              | sam9x60ek-sd              | sam9x60ek                | N/A                   |
 | **SAM9X75**  | sam9x75-curiosity-sd      | sam9x75-curiosity        | N/A                   |
+|              | sam9x75-curiosity-pro-sd  | sam9x75-curiosity-pro    | N/A                   |
 |              | sam9x75eb-sd              | sam9x75eb                | N/A                   |
 -----------------------------------------------------------------------------------------------
 

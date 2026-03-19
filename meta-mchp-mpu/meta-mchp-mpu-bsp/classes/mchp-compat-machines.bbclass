@@ -15,5 +15,6 @@ sama7g5ek|\
 sam9x60-curiosity|\
 sam9x60ek|\
 sam9x75-curiosity\
+sam9x75-curiosity-pro|\
 sam9x75eb|\
 "
