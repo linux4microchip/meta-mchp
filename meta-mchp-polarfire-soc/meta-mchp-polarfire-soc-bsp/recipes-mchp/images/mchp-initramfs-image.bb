@@ -13,6 +13,7 @@ IMAGE_INSTALL = "\
     packagegroup-mchp-networking \
     packagegroup-mchp-security \
     util-linux \
+    python3-core \
     "
 
 # Do not pollute the initrd image with rootfs features
