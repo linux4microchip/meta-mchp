@@ -14,3 +14,9 @@ RDEPENDS:packagegroup-mchp-security:append:sama5d27-som1-ek-optee-sd = "\
     optee-os \
     optee-test \
 "
+
+RDEPENDS:packagegroup-mchp-security:append:sama5d2-xplained-optee-sd = "\
+    optee-examples \
+    optee-os \
+    optee-test \
+"

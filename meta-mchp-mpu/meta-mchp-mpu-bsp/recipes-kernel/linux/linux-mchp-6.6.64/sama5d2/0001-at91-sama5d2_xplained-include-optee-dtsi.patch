@@ -1,0 +1,26 @@
+From 24d5c07a1108bec6d10f193b51b1393f77eb8ef1 Mon Sep 17 00:00:00 2001
+From: Mathieu Dubois-Briand <mathieu.dubois-briand@bootlin.com>
+Date: Tue, 24 Mar 2026 10:13:45 +0100
+Subject: [PATCH] at91-sama5d2_xplained: include optee dtsi
+
+Upstream-Status: Inappropriate [only specific to optee configuration]
+Signed-off-by: Mathieu Dubois-Briand <mathieu.dubois-briand@bootlin.com>
+---
+ arch/arm/boot/dts/microchip/at91-sama5d2_xplained.dts | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/arch/arm/boot/dts/microchip/at91-sama5d2_xplained.dts b/arch/arm/boot/dts/microchip/at91-sama5d2_xplained.dts
+index a651be749291..1ab76ce98e8b 100644
+--- a/arch/arm/boot/dts/microchip/at91-sama5d2_xplained.dts
++++ b/arch/arm/boot/dts/microchip/at91-sama5d2_xplained.dts
+@@ -8,6 +8,7 @@
+ /dts-v1/;
+ #include "sama5d2.dtsi"
+ #include "sama5d2-pinfunc.h"
++#include "sama5d2-optee.dtsi"
+ #include <dt-bindings/mfd/atmel-flexcom.h>
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+-- 
+2.47.3
+

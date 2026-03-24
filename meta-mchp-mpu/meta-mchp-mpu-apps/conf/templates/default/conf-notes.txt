@@ -11,6 +11,7 @@ Microchip supported machines are:
 | **SAMA5D2**  | sama5d2-icp-sd            | N/A                      | N/A                   |
 |              | sama5d2-ptc-ek-sd         | sama5d2-ptc-ek           | N/A                   |
 |              | sama5d2-xplained-sd       | sama5d2-xplained         | sama5d2-xplained-emmc |
+|              | sama5d2-xplained-optee-sd | N/A                      | N/A                   |
 | **SAMA5D27** | sama5d27-som1-ek-sd       | N/A                      | N/A                   |
 |              | sama5d27-som1-ek-optee-sd | N/A                      | N/A                   |
 |              | sama5d27-wlsom1-ek-sd     | N/A                      | N/A                   |

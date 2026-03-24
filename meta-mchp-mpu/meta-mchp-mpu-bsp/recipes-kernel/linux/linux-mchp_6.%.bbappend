@@ -12,6 +12,10 @@ SRC_URI:append:\
 sama5d27-som1-ek-optee-sd = " file://sama5-linux-optee.cfg \
                               file://sama5d2/0001-dts-include-optee-dtsi.patch \
                               "
+SRC_URI:append:\
+sama5d2-xplained-optee-sd = " file://sama5-linux-optee.cfg \
+                              file://0001-at91-sama5d2_xplained-include-optee-dtsi.patch \
+                              "
 SRC_URI:append:sam9x60    = " file://at91_dt.cfg"
 SRC_URI:append:\
 sama7g5ek-optee-sd        = " file://sama7g5ek-linux-optee.cfg \

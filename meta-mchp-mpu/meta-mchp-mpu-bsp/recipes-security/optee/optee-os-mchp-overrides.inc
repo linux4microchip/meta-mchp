@@ -7,6 +7,7 @@ OPTEE_SYMLINK ?= "tee-${MACHINE}.${OPTEE_SUFFIX}"
 
 OPTEE_PLATFORM_FLAVOR:sama5d27-som1-ek-optee-sd ??="sama5d27_som1_ek"
 OPTEE_PLATFORM_FLAVOR:sama7g5ek-optee-sd ??="sama7g54_ek"
+OPTEE_PLATFORM_FLAVOR:sama5d2-xplained-optee-sd ??="sama5d2_xplained"
 
 EXTRA_OEMAKE += " PLATFORM_FLAVOR=${OPTEE_PLATFORM_FLAVOR} \
                   CFG_NVMEM_HUK=n \
