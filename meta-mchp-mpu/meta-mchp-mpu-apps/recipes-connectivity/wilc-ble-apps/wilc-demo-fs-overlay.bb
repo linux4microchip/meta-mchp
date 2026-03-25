@@ -12,6 +12,6 @@ do_install () {
     install -D -m 0755 --target-directory=${D}${ROOT_HOME} ${WORKDIR}/Start_*
 }
 
-RDEPENDS:append = "kea"
+RDEPENDS:${PN}:append = " kea"
 
 FILES:${PN} += "${ROOT_HOME}"
