@@ -21,7 +21,7 @@ SRCREV_libmetal = "243eed541b9c211a2ce8841c788e62ddce84425e"
 SRC_URI_ZEPHYR_LIBMETAL = "git://github.com/zephyrproject-rtos/libmetal.git;protocol=https"
 SRC_URI:append = " ${SRC_URI_ZEPHYR_LIBMETAL};name=libmetal;nobranch=1;destsuffix=git/modules/hal/libmetal "
 
-ZEPHYR_MODULES:append = "${S}/modules/modules/lib/open-amp\;"
+ZEPHYR_MODULES:append = "${S}/modules/lib/open-amp\;"
 ZEPHYR_MODULES:append = "${S}/modules/hal/libmetal\;"
 
 BOARD_DIR = "${S}/zephyr/boards/${ARCH}/${ZEPHYR_BOARD}"
