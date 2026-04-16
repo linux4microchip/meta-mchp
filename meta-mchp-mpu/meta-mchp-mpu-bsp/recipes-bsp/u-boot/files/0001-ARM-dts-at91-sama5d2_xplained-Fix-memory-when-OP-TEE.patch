@@ -1,0 +1,36 @@
+From 2a2ffef78fd7c0f13819d3f6e50c26688cc4a1d3 Mon Sep 17 00:00:00 2001
+From: Mathieu Dubois-Briand <mathieu.dubois-briand@bootlin.com>
+Date: Wed, 8 Apr 2026 16:12:33 +0200
+Subject: [PATCH] ARM: dts: at91: sama5d2_xplained: Fix memory when OP-TEE is
+ used
+
+The RAM mapping is overridden by sama5d2-optee.dtsi, as the first 32MB
+are reserved for OP-TEE. But the RAM size specified in the dtsi is
+incorrect for sama5d2_xplained, so we have to set it back to correct
+values.
+
+Upstream-Status: [Submitted https://github.com/linux4microchip/u-boot-mchp/pull/3]
+Signed-off-by: Mathieu Dubois-Briand <mathieu.dubois-briand@bootlin.com>
+---
+ arch/arm/dts/at91-sama5d2_xplained.dts | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/arch/arm/dts/at91-sama5d2_xplained.dts b/arch/arm/dts/at91-sama5d2_xplained.dts
+index 265d2d87afce..9bc0a3c7428b 100644
+--- a/arch/arm/dts/at91-sama5d2_xplained.dts
++++ b/arch/arm/dts/at91-sama5d2_xplained.dts
+@@ -16,7 +16,11 @@
+ 	};
+ 
+ 	memory {
++#ifdef CONFIG_CLK_SCMI
++		reg = <0x22000000 0x1E000000>;
++#else
+ 		reg = <0x20000000 0x20000000>;
++#endif
+ 	};
+ 
+ 	clocks {
+-- 
+2.47.3
+
