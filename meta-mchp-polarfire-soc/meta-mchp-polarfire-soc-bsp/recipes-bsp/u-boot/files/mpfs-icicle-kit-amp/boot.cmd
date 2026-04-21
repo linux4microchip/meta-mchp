@@ -1,6 +1,3 @@
-setenv fdt_high 0xbfffffff
-setenv initrd_high 0xbfffffff
-
 fdt addr ${fdtcontroladdr}
 fdt get value board_compatible / compatible 1
 setenv fitconf conf-${board_compatible}.dtb

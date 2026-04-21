@@ -1,6 +1,3 @@
-setenv fdt_high 0xbfffffff
-setenv initrd_high 0xbfffffff
-
 load mmc 0:${distro_bootpart} ${scriptaddr} fitImage
 bootm start ${scriptaddr}#conf-mpfs-video-kit.dtb;
 bootm loados ${scriptaddr};
