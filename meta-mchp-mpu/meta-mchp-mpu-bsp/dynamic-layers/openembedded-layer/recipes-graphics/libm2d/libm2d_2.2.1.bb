@@ -7,7 +7,7 @@ DEPENDS:append:sama7d65 = " nano2d"
 
 SRC_URI = "git://github.com/linux4sam/libm2d.git;protocol=https;branch=master"
 
-SRCREV = "1fb6d7cde2808c039abd1cf9fd43a6936aa43c5e"
+SRCREV = "807cfebf738a4abea841e9b30b61aa3ea7a18705"
 
 S = "${WORKDIR}/git"
 
