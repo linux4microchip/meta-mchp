@@ -6,7 +6,7 @@ SRC_URI = "git://github.com/linux4sam/video-capture-at91.git;protocol=https;bran
 COMPATIBLE_MACHINE = "sama5d2|sama7g5ek|sam9x75"
 
 PV = "1.0+git${SRCPV}"
-SRCREV = "6f17dcfbf8736287ae15d064a32f26515366b82d"
+SRCREV = "b7d163f0e8a5a61fce521e6fb7433e209222bfe9"
 
 S = "${WORKDIR}/git"
 
@@ -16,6 +16,7 @@ do_install () {
         install -d ${D}${ROOT_HOME}/video-capture-at91
         cp -r ${S}/${SOC}/* ${D}${ROOT_HOME}/video-capture-at91/ || true
         cp -r ${S}/utils.sh ${D}${ROOT_HOME}/ || true
+        install -m 0755 ${S}/isc-capture/isc-capture.sh ${D}${ROOT_HOME}/video-capture-at91/
     done
 }
 
