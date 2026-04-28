@@ -9,4 +9,5 @@ RDEPENDS:packagegroup-mchp-multimedia-camera = "\
     yavta \
     fswebcam \
     libcamera-mchp \
+    libcamera-mchp-apps \
 "
