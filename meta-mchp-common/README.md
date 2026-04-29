@@ -21,7 +21,7 @@ documentation in the relevant sub-layers:
 
 Before starting, please refer to the `Required Packages for Build Host` section in the [Yocto Project Documentation](https://docs.yoctoproject.org/current/ref-manual/system-requirements.html#required-packages-for-the-build-host) to install required dependencies for the build environment:
 
-> **Note:** Make sure to install `git-lfs`  and `repo` in addition to the required packages for your Linux distribution.
+> **Note:** Make sure to install `git-lfs`, `libgl1`  and `repo` in addition to the required packages for your Linux distribution.
 
 For instance, on Ubuntu or debian, these packages need to be installed on
 your development host:
