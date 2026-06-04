@@ -1,0 +1,26 @@
+header:
+  version: 20
+  includes:
+    - repo: meta-mchp
+      file: kas/include/meta-mchp-base.yml
+    - repo: meta-mchp
+      file: kas/include/locals/mpu-local.yml
+
+repos:
+  meta-mchp:
+    layers:
+      meta-mchp-mpu/meta-mchp-mpu-bsp:
+      meta-mchp-mpu/meta-mchp-mpu-apps:
+
+  meta-openembedded:
+    layers:
+      meta-initramfs:
+      meta-multimedia:
+
+  meta-arm:
+    path: layers/meta-arm
+    url: https://git.yoctoproject.org/meta-arm.git
+    commit: 8e0f8af90fefb03f08cd2228cde7a89902a6b37c  # scarthgap
+    layers:
+      meta-arm:
+      meta-arm-toolchain:

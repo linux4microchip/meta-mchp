@@ -1,0 +1,13 @@
+header:
+  version: 20
+  includes:
+    - repo: meta-mchp
+      file: kas/include/meta-mchp-base.yml
+    - repo: meta-mchp
+      file: kas/include/locals/polarfire-local.yml
+
+repos:
+  meta-mchp:
+    layers:
+      meta-mchp-polarfire-soc/meta-mchp-polarfire-soc-bsp:
+      meta-mchp-polarfire-soc/meta-mchp-polarfire-soc-community:

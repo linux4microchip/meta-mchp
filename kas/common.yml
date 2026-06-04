@@ -1,0 +1,22 @@
+header:
+  version: 20
+  includes:
+    - repo: meta-mchp
+      file: kas/include/oe.yml
+    - repo: meta-mchp
+      file: kas/include/bitbake.yml
+
+repos:
+  openembedded-core:
+    layers:
+      meta:
+
+  meta-openembedded:
+    layers:
+      meta-oe:
+      meta-python:
+      meta-networking:
+
+  meta-mchp:
+    layers:
+      meta-mchp-common:

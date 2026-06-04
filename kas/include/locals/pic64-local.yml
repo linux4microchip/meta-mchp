@@ -1,0 +1,6 @@
+header:
+  version: 20
+
+local_conf_header:
+  pic64: |
+      include conf/templates/pic64gx/local.conf.sample.inc

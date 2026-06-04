@@ -1,0 +1,14 @@
+header:
+  version: 20
+
+repos:
+  openembedded-core:
+    path: layers/openembedded-core
+    url: https://github.com/openembedded/openembedded-core.git
+    commit: 6988157ad983978ffd6b12bcefedd4deaffdbbd1  # scarthgap
+
+  meta-openembedded:
+    path: layers/meta-openembedded
+    url: https://github.com/openembedded/meta-openembedded.git
+    commit: ec0469748be4159fb83fb0fa0148d786484c88cf  # scarthgap
+

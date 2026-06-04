@@ -1,0 +1,24 @@
+header:
+  version: 20
+  includes:
+    - repo: meta-mchp
+      file: kas/include/meta-mchp-base.yml
+    - repo: meta-mchp
+      file: kas/include/locals/pic64-local.yml
+
+repos:
+  meta-mchp:
+    layers:
+      meta-mchp-pic64:
+
+  meta-openembedded:
+    layers:
+      meta-multimedia:
+
+  meta-zephyr:
+    path: layers/meta-zephyr
+    url: https://git.yoctoproject.org/meta-zephyr.git
+    commit: 1f08e19450aa3051d626d21d892a0464a21b15ae  # scarthgap
+    layers:
+      meta-zephyr-core:
+      meta-zephyr-bsp:

@@ -1,0 +1,10 @@
+header:
+  version: 20
+
+repos:
+  bitbake:
+    path: layers/bitbake
+    url: https://github.com/openembedded/bitbake.git
+    commit: 8dcf084522b9c66a6639b5f117f554fde9b6b45a  # scarthgap
+    layers:
+      bitbake: disabled

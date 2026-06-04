@@ -1,0 +1,6 @@
+header:
+  version: 20
+
+local_conf_header:
+  mpu: |
+      include conf/templates/default/local.conf.sample.inc
