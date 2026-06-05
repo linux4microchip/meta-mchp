@@ -28,8 +28,7 @@ FILES:${PN} += " \
 "
 
 do_install() {
-    install -d ${D}/usr/share/egt/examples/video
-    cp -Rf ${S}/examples/video/* ${D}//usr/share/egt/examples/video/
+    find ${S}/examples/video -type f -exec install -Dm 0644 {} /usr/share/egt/examples/video/ \;
 }
 
 ALLOW_EMPTY:${PN} = "1"

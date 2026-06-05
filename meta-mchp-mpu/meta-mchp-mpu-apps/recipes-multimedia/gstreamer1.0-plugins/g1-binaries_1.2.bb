@@ -17,8 +17,8 @@ S = "${WORKDIR}/g1-binaries-${PV}"
 do_install() {
     install -d ${D}/usr/include
     install -d ${D}/usr/lib
-    cp ${S}/include/* ${D}/usr/include/
-    cp ${S}/lib/* ${D}/usr/lib/
+    install -m 0644 ${S}/include/* ${D}/usr/include/
+    install -m 0755 ${S}/lib/* ${D}/usr/lib/
 }
 
 ALLOW_EMPTY:${PN} = "1"
