@@ -3,14 +3,11 @@ DESCRIPTION = "${SUMMARY}"
 SECTION = "multimedia"
 LICENSE = "LGPL-2.1-only"
 HOMEPAGE = "http://www.gstreamer.net/"
-DEPENDS = "gstreamer1.0 gstreamer1.0-plugins-base g1-decoder"
+DEPENDS:append = " gstreamer1.0 gstreamer1.0-plugins-base g1-decoder gtk-doc-native libdrm"
 
 inherit autotools-brokensep pkgconfig gettext
 
 LIC_FILES_CHKSUM = "file://COPYING.LESSER;md5=4fbd65380cdd255951079008b364516c"
-
-COMPATIBLE_MACHINE = "sama5d4"
-DEPENDS += "gtk-doc-native libdrm"
 
 SRC_URI = "git://github.com/linux4sam/gst1-hantro-g1;protocol=https;branch=master \
            git://github.com/GStreamer/common.git;protocol=https;branch=master;destsuffix=git/common;name=common \
