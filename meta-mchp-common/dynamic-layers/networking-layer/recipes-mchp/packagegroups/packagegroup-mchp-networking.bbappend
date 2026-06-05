@@ -4,6 +4,6 @@ RDEPENDS:packagegroup-mchp-networking += "\
     linuxptp \
     netcat \
     nftables \
-    tcpdump \
     phytool \
+    tcpdump \
 "

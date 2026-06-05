@@ -19,9 +19,21 @@ PE = "1"
 PV = "0.7.0+mchp-${SRCPV}"
 S = "${WORKDIR}/git"
 
-DEPENDS = "python3-pyyaml-native python3-jinja2-native python3-ply-native \
-           udev gnutls chrpath-native libevent libyaml jpeg libpng"
-DEPENDS += "${@bb.utils.contains('DISTRO_FEATURES', 'qt', 'qtbase qtbase-native', '', d)}"
+DEPENDS = "\
+    chrpath-native \
+    gnutls \
+    jpeg \
+    libevent \
+    libpng \
+    libyaml \
+    python3-jinja2-native \
+    python3-ply-native \
+    python3-pyyaml-native \
+    udev \
+"
+
+DEPENDS \
++= "${@bb.utils.contains('DISTRO_FEATURES', 'qt', 'qtbase qtbase-native', '', d)}"
 
 PACKAGES =+ "${PN}-apps ${PN}-gst ${PN}-pycamera ${PN}-ipa ${PN}-pipelines"
 

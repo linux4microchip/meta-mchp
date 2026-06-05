@@ -33,9 +33,9 @@ WIFI_FIRMWARE_PACKAGES = "\
 RDEPENDS:packagegroup-mchp-networking = "\
     iproute2 \
     iptables \
-    rsync \
     openssh-sftp \
     openssh-sftp-server \
+    rsync \
     wget \
     ${@bb.utils.contains('MACHINE_FEATURES', 'wifi', WIFI_FIRMWARE_PACKAGES, '', d)} \
 "

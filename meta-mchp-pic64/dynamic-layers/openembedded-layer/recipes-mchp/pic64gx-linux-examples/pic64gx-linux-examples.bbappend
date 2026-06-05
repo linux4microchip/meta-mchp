@@ -1,11 +1,11 @@
 RDEPENDS:${PN}-multimedia += "\
-    media-ctl \
     fswebcam \
-    v4l-utils \
     gstd \
     gstreamer1.0-plugins-base-videotestsrc \
     gstreamer1.0-plugins-good \
-    "
+    media-ctl \
+    v4l-utils \
+"
 
 PACKAGES += " \
     ${PN}-multimedia \

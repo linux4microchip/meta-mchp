@@ -32,12 +32,13 @@ RDEPENDS:packagegroup-mchp-file-utils = "\
 "
 
 RDEPENDS:packagegroup-mchp-system-utils = "\
-    ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'systemd-analyze', '', d)} \
-    ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'sysstat', '', d)} \
+
     lrzsz \
     opkg \
     rng-tools \
     setserial \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'sysstat', '', d)} \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'systemd-analyze', '', d)} \
 "
 
 RDEPENDS:packagegroup-mchp-hw-utils = "\

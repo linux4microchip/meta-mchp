@@ -6,12 +6,12 @@ SECTION = "devel"
 LICENSE = "LGPL-2.0-or-later"
 LIC_FILES_CHKSUM = "file://Copyright;endline=285;md5=9222bd6b5e4e128fac952e168cffc361"
 
-DEPENDS = " libtool freetype fontconfig cairo pango "
+DEPENDS = "cairo fontconfig freetype libtool pango"
 
 RDEPENDS:${PN} = " \
     ttf-dejavu-sans \
-    ttf-dejavu-sans-mono \
     ttf-dejavu-sans-condensed \
+    ttf-dejavu-sans-mono \
     ttf-dejavu-serif \
     ttf-dejavu-serif-condensed \
 "

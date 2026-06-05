@@ -15,8 +15,8 @@ SRCREV = "7f0015615a70671814a8dd956c8318d1b922791e"
 
 S = "${WORKDIR}/git"
 
-DEPENDS = "udev openssl"
-RDEPENDS:${PN} = "libp11 (>= 0.4.10) gnutls-bin"
+DEPENDS = "openssl udev"
+RDEPENDS:${PN} = "gnutls-bin libp11 (>= 0.4.10) "
 RRECOMMENDS:${PN} = "p11-kit"
 
 inherit cmake

@@ -6,9 +6,9 @@ LIC_FILES_CHKSUM = "file://COPYING;endline=20;md5=b884a464579c410fd1dace93db8e97
 
 PACKAGES =+ "${PN}-python"
 
-DEPENDS = "libdrm cairo cjson lua swig-native python3"
+DEPENDS = "cairo cjson libdrm lua python3 swig-native"
 
-RDEPENDS:${PN} = "python3 udev-rules-mchp mpio"
+RDEPENDS:${PN} = "mpio python3 udev-rules-mchp"
 
 SRC_URI = "git://github.com/linux4sam/libplanes.git;protocol=https;branch=master"
 

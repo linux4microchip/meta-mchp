@@ -1,6 +1,7 @@
 RDEPENDS:packagegroup-mchp-system-utils += "\
-    evtest \
     cpupower \
+    evtest \
+
 "
 
 RDEPENDS:packagegroup-mchp-hw-utils += "\
@@ -14,8 +15,8 @@ RDEPENDS:packagegroup-mchp-user-utils += "\
 "
 
 RDEPENDS:packagegroup-mchp-benchmark-utils += "\
-    lmbench \
-    nbench-byte \
     bonnie++ \
     iozone3 \
+    lmbench \
+    nbench-byte \
 "
