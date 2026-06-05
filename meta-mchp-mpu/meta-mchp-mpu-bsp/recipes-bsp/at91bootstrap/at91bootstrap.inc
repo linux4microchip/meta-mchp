@@ -10,8 +10,6 @@ AUTHOR = "Microchip Technology"
 HOMEPAGE = "https://www.linux4sam.org/bin/view/Linux4SAM/AT91Bootstrap"
 BUGTRACKER = "https://github.com/linux4sam/at91bootstrap/issues"
 SECTION = "bootloaders"
-LICENSE = "MICROCHIP"
-LIC_FILES_CHKSUM = "file://main.c;endline=27;md5=42f86d2f6fd17d1221c5c651b487a07f"
 
 inherit cml1 deploy
 
@@ -75,8 +73,6 @@ AT91BOOTSTRAP_SUFFIX ?= "bin"
 AT91BOOTSTRAP_IMAGE ?= "${AT91BOOTSTRAP_MACHINE}-${AT91BOOTSTRAP_LOAD}-${PV}.${AT91BOOTSTRAP_SUFFIX}"
 AT91BOOTSTRAP_BINARY ?= "at91bootstrap.${AT91BOOTSTRAP_SUFFIX}"
 AT91BOOTSTRAP_SYMLINK ?= "at91bootstrap-${AT91BOOTSTRAP_MACHINE}.${AT91BOOTSTRAP_SUFFIX}"
-
-EXTRA_OEMAKE = 'CROSS_COMPILE=${TARGET_PREFIX} CC="${TARGET_PREFIX}gcc ${TOOLCHAIN_OPTIONS}"'
 
 do_configure() {
     # Copy board defconfig to .config if .config does not exist. This
