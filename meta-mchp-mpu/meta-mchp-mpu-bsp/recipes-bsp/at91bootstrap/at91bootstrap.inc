@@ -1,10 +1,10 @@
 SUMMARY = "Initial bootstrap for AT91 ARM MPUs"
-DESCRIPTION = " \
-        at91bootstrap is the second-level bootloader for Microchip \
-        AT91 SoCs. It provides a set of algorithms to manage the   \
-        hardware initialization and to download the main           \
-        application (or a third-level bootloader) from specified   \
-        boot media to main memory and start it.                    \
+DESCRIPTION = "\
+    at91bootstrap is the second-level bootloader for Microchip \
+    AT91 SoCs. It provides a set of algorithms to manage the   \
+    hardware initialization and to download the main           \
+    application (or a third-level bootloader) from specified   \
+    boot media to main memory and start it.                    \
 "
 AUTHOR = "Microchip Technology"
 HOMEPAGE = "https://www.linux4sam.org/bin/view/Linux4SAM/AT91Bootstrap"

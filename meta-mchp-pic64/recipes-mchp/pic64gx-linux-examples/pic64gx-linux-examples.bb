@@ -28,7 +28,7 @@ EXAMPLE_FILES = "\
     dt-overlays \
     amp/rpmsg-pingpong \
     amp/rpmsg-tty-example \
-    "
+"
 
 do_compile() {
     for i in ${EXAMPLE_FILES}; do

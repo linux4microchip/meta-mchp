@@ -5,4 +5,4 @@ IMAGE_INSTALL:append:mpuall = "\
     packagegroup-base-usbhost \
     packagegroup-base-wifi \
     packagegroup-mchp-multimedia-audio \
-    "
+"

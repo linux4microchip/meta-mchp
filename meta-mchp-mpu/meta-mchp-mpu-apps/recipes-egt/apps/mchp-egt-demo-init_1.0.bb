@@ -11,8 +11,8 @@ RDEPENDS:${PN} = "udev-rules-mchp"
 PR = "r2"
 
 do_install() {
-	install -d ${D}${systemd_unitdir}/system
-	install -m 0644 ${WORKDIR}/egtdemo.service ${D}${systemd_unitdir}/system/
+    install -d ${D}${systemd_unitdir}/system
+    install -m 0644 ${WORKDIR}/egtdemo.service ${D}${systemd_unitdir}/system/
 }
 
 inherit allarch systemd

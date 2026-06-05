@@ -22,8 +22,6 @@ do_install() {
     chmod -x ${D}${nonarch_base_libdir}/firmware/mchp/*
 }
 
-FILES:${PN} += " \
-    ${nonarch_base_libdir}/firmware/mchp/wilc*.bin \
-    "
+FILES:${PN} += "${nonarch_base_libdir}/firmware/mchp/wilc*.bin"
 
 # TODO: use ALTERNATIVE like in "linux-firmware" package

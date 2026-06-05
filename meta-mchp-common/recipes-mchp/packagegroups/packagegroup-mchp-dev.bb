@@ -4,7 +4,7 @@ DESCRIPTION = "${SUMMARY}"
 inherit packagegroup
 
 PROVIDES = "${PACKAGES}"
-PACKAGES = " \
+PACKAGES = "\
     packagegroup-mchp-dev \
     packagegroup-mchp-dev-lua \
     packagegroup-mchp-dev-python \

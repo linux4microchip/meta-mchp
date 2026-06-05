@@ -1,4 +1,4 @@
-PACKAGECONFIG:remove = " \
+PACKAGECONFIG:remove = "\
     backlight \
     binfmt \
     gshadow \

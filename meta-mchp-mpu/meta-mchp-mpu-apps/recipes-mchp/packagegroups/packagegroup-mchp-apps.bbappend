@@ -1,19 +1,19 @@
-RDEPENDS:packagegroup-mchp-apps:append:mpuall = "\
+RDEPENDS:packagegroup-mchp-apps:append:mpuall = " \
     9bit \
     mpio \
     mxt-app \
     wilc-demo-fs-overlay \
 "
 
-RDEPENDS:packagegroup-mchp-apps:append:sam9x75_curiosity = "\
+RDEPENDS:packagegroup-mchp-apps:append:sam9x75_curiosity = " \
     ble-bluez-hci-apps \
 "
 
-RDEPENDS:packagegroup-mchp-apps:append:sama5d27-wlsom1-ek-sd = "\
+RDEPENDS:packagegroup-mchp-apps:append:sama5d27-wlsom1-ek-sd = " \
     ptc-examples \
     wilc-ble-demo \
 "
 
-RDEPENDS:packagegroup-mchp-apps:append:sama5d2_ptc_ek = "\
+RDEPENDS:packagegroup-mchp-apps:append:sama5d2_ptc_ek = " \
     ptc-examples \
 "

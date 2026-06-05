@@ -9,7 +9,7 @@ PACKAGES = "\
     ${PN}-dev \
     ${PN}-dbg \
 "
-DEPENDS = " libegt"
+DEPENDS = "libegt"
 
 SRC_URI = "git://github.com/linux4sam/egt-samples-contribution.git;protocol=https;branch=master "
 
@@ -18,9 +18,7 @@ SRCREV = "0e9b868f38ca91faa31809088ad05f2617d47133"
 
 S = "${WORKDIR}/git"
 
-FILES:${PN} += " \
-    ${datadir}/egt/samples/* \
-"
+FILES:${PN} += "${datadir}/egt/samples/*"
 
 EXTRA_OECMAKE += "-DEGT_SAMPLES_CONTRIBUTION_SLIDERB=true"
 

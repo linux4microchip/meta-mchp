@@ -21,7 +21,7 @@ RRECOMMENDS:${PN} = "p11-kit"
 
 inherit cmake
 
-EXTRA_OECMAKE = " \
+EXTRA_OECMAKE = "\
     -DATCA_HAL_I2C=ON \
     -DATCA_PKCS11=ON \
     -DATCA_OPENSSL=ON \
@@ -73,12 +73,12 @@ do_install:append() {
 }
 
 FILES:${PN} += "${libdir}/* \
-       ${sysconfdir}/cryptoauthlib/cryptoauthlib.conf \
-       ${localstatedir}/lib/cryptoauthlib/slot.conf.tmpl \
-       ${datadir}/p11-kit/modules/cryptoauthlib.module \
-       ${localstatedir}/lib/cryptoauthlib/0.conf \
+                ${sysconfdir}/cryptoauthlib/cryptoauthlib.conf \
+                ${localstatedir}/lib/cryptoauthlib/slot.conf.tmpl \
+                ${datadir}/p11-kit/modules/cryptoauthlib.module \
+                ${localstatedir}/lib/cryptoauthlib/0.conf \
 "
-FILES:${PN}-dev += " \
+FILES:${PN}-dev += "\
     ${includedir}/cryptoauthlib/* \
 "
 

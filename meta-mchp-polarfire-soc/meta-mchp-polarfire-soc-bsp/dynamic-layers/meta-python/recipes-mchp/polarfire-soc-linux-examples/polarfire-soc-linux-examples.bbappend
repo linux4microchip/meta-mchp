@@ -2,7 +2,7 @@ inherit systemd
 
 RDEPENDS:${PN}-iiohttpserver += "collectd python3-flask"
 
-PACKAGES += " \
+PACKAGES += "\
     ${PN}-iiohttpserver \
 "
 

@@ -20,7 +20,7 @@ S = "${WORKDIR}/git"
 
 inherit pkgconfig cmake
 
-PACKAGECONFIG:apend:sama5d27-wlsom1-ek-sd = " sama5d27-wlsom1-ek"
+PACKAGECONFIG:apend:sama5d27-wlsom1-ek-sd = "sama5d27-wlsom1-ek"
 PACKAGECONFIG[sama5d27-wlsom1-ek] = "-DSAMA5D27_WLSOM1_EK=ON,"
 
 do_install:append () {

@@ -8,7 +8,7 @@ S = "${WORKDIR}/git"
 DT_FILES_PATH:pic64gx = "${WORKDIR}/git/pic64gx_curiosity_kit"
 
 do_compile[depends] = ""
-DEPENDS:append:pic64gx = "dtc-native"
+DEPENDS:append:pic64gx = " dtc-native"
 
 python do_compile() {
 

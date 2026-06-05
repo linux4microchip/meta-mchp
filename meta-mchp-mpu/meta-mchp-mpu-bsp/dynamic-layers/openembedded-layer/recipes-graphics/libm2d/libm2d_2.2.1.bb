@@ -13,9 +13,7 @@ SRCREV = "807cfebf738a4abea841e9b30b61aa3ea7a18705"
 
 S = "${WORKDIR}/git"
 
-EXTRA_OECMAKE += " \
-    -DENABLE_TESTS=1 \
-"
+EXTRA_OECMAKE += "-DENABLE_TESTS=1"
 
 EXTRA_OECMAKE:append:sam9x60 = " -DGPU=microchip,sam9x60-gfx2d"
 EXTRA_OECMAKE:append:sam9x75 = " -DGPU=microchip,sam9x7-gfx2d"
@@ -23,6 +21,4 @@ EXTRA_OECMAKE:append:sama7d65 = " -DGPU=vivante,gc-nano2d"
 
 inherit pkgconfig cmake
 
-FILES:${PN} += " \
-    ${datadir}/m2d/* \
-"
+FILES:${PN} += "${datadir}/m2d/*"

@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://LICENSE.md;md5=2cd3c5e5cf4de899b2ed773b471011f2"
 
 inherit native
 
-DEPENDS:append = "elfutils-native libyaml-native"
+DEPENDS:append = " elfutils-native libyaml-native"
 
 PV = "1.0+git${SRCPV}"
 SRCREV = "5bfb22839385a1e3782632e5af4117ee4bdf8952"

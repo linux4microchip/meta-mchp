@@ -45,7 +45,7 @@ PACKAGECONFIG[ipas]     = "-Dipas=microchip-isc,-Dipas=none"
 
 LIBCAMERA_PIPELINES ??= "microchip-isc"
 
-EXTRA_OEMESON = " \
+EXTRA_OEMESON = "\
     -Dpipelines=${LIBCAMERA_PIPELINES} \
     -Dv4l2=true \
     -Dcam=enabled \
@@ -94,7 +94,7 @@ do_package_recalculate_ipa_signatures() {
     ${S}/src/ipa/ipa-sign-install.sh ${B}/src/ipa-priv-key.pem "${modules}"
 }
 
-FILES:${PN} += " \
+FILES:${PN} += "\
     ${libexecdir}/libcamera/v4l2-compat.so \
     ${libexecdir}/libcamera/microchip_isc_ipa_proxy \
     ${libdir}/libcamera.so.* \

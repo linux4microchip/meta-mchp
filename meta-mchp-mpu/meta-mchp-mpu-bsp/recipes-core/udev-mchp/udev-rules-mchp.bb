@@ -6,9 +6,9 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0-or-later;md5=fed5435554
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-SRC_URI = " file://keyboard.rules"
-SRC_URI:sam9x75 = " file://sam9x75/keyboard.rules"
-SRC_URI:sama7d65 = " file://sama7d65/keyboard.rules"
+SRC_URI = "file://keyboard.rules"
+SRC_URI:sam9x75 = "file://sam9x75/keyboard.rules"
+SRC_URI:sama7d65 = "file://sama7d65/keyboard.rules"
 SRC_URI:append:sama5d2 = " file://ptc.rules"
 
 S = "${WORKDIR}"

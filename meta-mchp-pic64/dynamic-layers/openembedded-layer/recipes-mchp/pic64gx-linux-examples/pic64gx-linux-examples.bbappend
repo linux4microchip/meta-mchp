@@ -7,7 +7,7 @@ RDEPENDS:${PN}-multimedia += "\
     v4l-utils \
 "
 
-PACKAGES += " \
+PACKAGES += "\
     ${PN}-multimedia \
 "
 

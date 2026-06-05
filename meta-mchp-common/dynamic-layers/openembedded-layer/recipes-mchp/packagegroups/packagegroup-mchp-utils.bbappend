@@ -1,7 +1,6 @@
 RDEPENDS:packagegroup-mchp-system-utils += "\
     cpupower \
     evtest \
-
 "
 
 RDEPENDS:packagegroup-mchp-hw-utils += "\

@@ -1,7 +1,4 @@
-PACKAGES += " \
-    packagegroup-mchp-multimedia-camera \
-"
- 
+PACKAGES += "packagegroup-mchp-multimedia-camera"
 RDEPENDS:packagegroup-mchp-multimedia-camera = "\
     fswebcam \
     libcamera-mchp \

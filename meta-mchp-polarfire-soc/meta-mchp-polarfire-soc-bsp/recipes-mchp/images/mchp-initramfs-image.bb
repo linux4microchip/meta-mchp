@@ -1,6 +1,6 @@
 SUMMARY = "Minimal initramfs image for MPFS application demos"
 DESCRIPTION = "Minimal initramfs cpio image with a minimal \
-set of tools and packages to run MPFS application demos"
+               set of tools and packages to run MPFS application demos"
 
 LICENSE = "MIT"
 
@@ -15,7 +15,7 @@ IMAGE_INSTALL = "\
     packagegroup-mchp-security \
     util-linux \
     python3-core \
-    "
+"
 
 # Do not pollute the initrd image with rootfs features
 IMAGE_FEATURES = "debug-tweaks"

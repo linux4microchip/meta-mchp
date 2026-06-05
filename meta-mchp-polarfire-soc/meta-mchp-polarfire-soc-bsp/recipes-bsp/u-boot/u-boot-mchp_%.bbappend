@@ -5,18 +5,18 @@ require ${@bb.utils.contains('MACHINE_FEATURES', 'amp', 'amp-payload.inc', '', d
 DEPENDS:append:mpfs = " python3-setuptools-native"
 DEPENDS:append:mpfs = " u-boot-tools-native hss-payload-generator-native"
 
-UBOOT_FILES:mpfs = " file://${UBOOT_ENV}.cmd \
+UBOOT_FILES:mpfs = "file://${UBOOT_ENV}.cmd \
                     file://${MACHINE}.cfg"
 
 UBOOT_FILES:append:mpfs = "${@bb.utils.contains('MACHINE_FEATURES', 'amp', ' file://${HSS_PAYLOAD}.yaml.in', ' file://${HSS_PAYLOAD}.yaml', d)}"
 
 SRC_URI:append:mpfs = " file://envs/"
-SRC_URI:append:mpfs-icicle-kit-all = "${UBOOT_FILES}"
-SRC_URI:append:mpfs-disco-kit = "${UBOOT_FILES}"
-SRC_URI:append:mpfs-video-kit = "${UBOOT_FILES}"
+SRC_URI:append:mpfs-icicle-kit-all = " ${UBOOT_FILES}"
+SRC_URI:append:mpfs-disco-kit = " ${UBOOT_FILES}"
+SRC_URI:append:mpfs-video-kit = " ${UBOOT_FILES}"
 
 SRC_URI:append:mpfs-icicle-kit-auth = " file://${MACHINE}.env"
-SRC_URI:remove:mpfs-icicle-kit-auth = " file://${UBOOT_ENV}.cmd"
+SRC_URI:remove:mpfs-icicle-kit-auth = "file://${UBOOT_ENV}.cmd"
 
 do_configure:append:mpfs-icicle-kit-auth () {
     cp -f ${WORKDIR}/${MACHINE}.env ${S}/board/microchip/mpfs_icicle

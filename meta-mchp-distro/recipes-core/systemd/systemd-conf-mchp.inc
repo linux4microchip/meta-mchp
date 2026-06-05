@@ -6,7 +6,7 @@ SRC_URI:append = " \
     file://99-custom-system.conf \
 "
 
-FILES:${PN} += " \
+FILES:${PN} += "\
     ${sysconfdir}/systemd/network/ \
     ${sysconfdir}/systemd/system.conf.d/ \
 "

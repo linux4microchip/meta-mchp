@@ -10,8 +10,8 @@ SRCREV = "7bdb1f492554f7bd1600c0095bab2a75f02a9c71"
 
 S = "${WORKDIR}/git"
 
-RDEPENDS:${PN} = "gstreamer1.0 \
-    ${@bb.utils.contains("LICENSE_FLAGS_ACCEPTED", "commercial", "gstreamer1.0-libav", "", d)} \
+RDEPENDS:${PN} = "\
+    gstreamer1.0 \
     gstreamer1.0-plugins-base \
     gstreamer1.0-plugins-base-alsa \
     gstreamer1.0-plugins-base-audioconvert \
@@ -19,11 +19,12 @@ RDEPENDS:${PN} = "gstreamer1.0 \
     gstreamer1.0-plugins-base-playback \
     gstreamer1.0-plugins-base-videoconvertscale \
     gstreamer1.0-plugins-base-volume \
+    ${@bb.utils.contains("LICENSE_FLAGS_ACCEPTED", "commercial", "gstreamer1.0-libav", "", d)} \
 "
 
 inherit siteinfo
 
-FILES:${PN} += " \
+FILES:${PN} += "\
     ${datadir}/egt/examples/video/* \
 "
 

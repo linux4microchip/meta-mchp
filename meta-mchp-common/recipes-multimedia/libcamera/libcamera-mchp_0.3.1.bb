@@ -12,7 +12,7 @@ LIC_FILES_CHKSUM = "\
 
 inherit meson pkgconfig python3native
 
-SRC_URI = " \
+SRC_URI = "\
     git://github.com/linux4microchip/libcamera-mchp.git;protocol=https;branch=master \
     file://0001-media_device-Add-bool-return-type-to-unlock.patch \
     file://0002-options-Replace-use-of-VLAs-in-C.patch \
@@ -39,7 +39,7 @@ PACKAGECONFIG[ipas] = "-Dipas=microchip-isc,-Dipas=none"
 
 LIBCAMERA_PIPELINES ??= "auto"
 
-EXTRA_OEMESON = " \
+EXTRA_OEMESON = "\
     -Dpipelines=${LIBCAMERA_PIPELINES} \
     -Dv4l2=true \
     -Dcam=enabled \

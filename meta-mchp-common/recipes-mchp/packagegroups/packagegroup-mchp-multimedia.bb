@@ -4,7 +4,7 @@ DESCRIPTION = "${SUMMARY}"
 inherit packagegroup
 
 PROVIDES = "${PACKAGES}"
-PACKAGES = " \
+PACKAGES = "\
     packagegroup-mchp-multimedia \
     packagegroup-mchp-multimedia-audio \
     packagegroup-mchp-multimedia-gstreamer \

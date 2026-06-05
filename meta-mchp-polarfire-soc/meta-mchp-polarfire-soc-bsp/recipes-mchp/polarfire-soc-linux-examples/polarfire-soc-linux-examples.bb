@@ -1,9 +1,9 @@
 SUMMARY = "Polarfire SoC Linux example applications"
 HOMEPAGE = "https://github.com/polarfire-soc/polarfire-soc-linux-examples"
 DESCRIPTION = "Linux Example applications, includes the following: \
-    - iiohttpserver collects ADC measurements and displays them via a webserver. \
-    - LSRAM read and write example. \
-    - UIO DMA interrupt example."
+               - iiohttpserver collects ADC measurements and displays them via a webserver. \
+               - LSRAM read and write example. \
+               - UIO DMA interrupt example."
 
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${WORKDIR}/git/LICENSE;md5=06ec214e9fafe6d4515883d77674a453"

@@ -4,7 +4,7 @@ DESCRIPTION = "${SUMMARY}"
 inherit packagegroup
 
 PROVIDES = "${PACKAGES}"
-PACKAGES = " \
+PACKAGES = "\
     packagegroup-mchp-utils \
     packagegroup-mchp-benchmark-utils \
     packagegroup-mchp-file-utils \
@@ -32,7 +32,6 @@ RDEPENDS:packagegroup-mchp-file-utils = "\
 "
 
 RDEPENDS:packagegroup-mchp-system-utils = "\
-
     lrzsz \
     opkg \
     rng-tools \

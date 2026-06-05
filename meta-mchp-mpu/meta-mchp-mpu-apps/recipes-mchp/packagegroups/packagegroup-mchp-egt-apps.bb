@@ -6,11 +6,9 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 inherit packagegroup
 
 PROVIDES = "${PACKAGES}"
-PACKAGES = " \
-    packagegroup-mchp-egt-apps \
-"
+PACKAGES = "packagegroup-mchp-egt-apps"
 
-RDEPENDS:packagegroup-mchp-egt-apps:append:mpuall = "\
+RDEPENDS:packagegroup-mchp-egt-apps:append:mpuall = " \
     egt-benchmark \
     egt-launcher \
     egt-media \

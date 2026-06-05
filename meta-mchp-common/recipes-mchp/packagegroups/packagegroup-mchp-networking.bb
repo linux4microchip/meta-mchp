@@ -6,9 +6,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 inherit packagegroup
 
 PROVIDES = "${PACKAGES}"
-PACKAGES = " \
-    packagegroup-mchp-networking \
-"
+PACKAGES = "packagegroup-mchp-networking"
 
 WIFI_FIRMWARE_PACKAGES = "\
     linux-firmware-ralink \

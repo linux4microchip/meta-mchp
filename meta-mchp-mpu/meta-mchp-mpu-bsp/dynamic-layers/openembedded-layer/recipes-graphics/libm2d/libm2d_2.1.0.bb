@@ -12,12 +12,8 @@ SRCREV = "e76c9fecaccb80f88b263b3df1132df4429a0d92"
 
 S = "${WORKDIR}/git"
 
-EXTRA_OECMAKE += " \
-    -DENABLE_TESTS=1 \
-"
+EXTRA_OECMAKE += "-DENABLE_TESTS=1"
 
 inherit pkgconfig cmake
 
-FILES:${PN} += " \
-    ${datadir}/m2d/* \
-"
+FILES:${PN} += "${datadir}/m2d/*"

@@ -1,8 +1,9 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/files/:"
 
-SRC_URI:append = "file://wpa_supplicant.service \
-		  file://wpa_supplicant.conf \
-		  "
+SRC_URI:append = " \
+    file://wpa_supplicant.service \
+    file://wpa_supplicant.conf \
+"
 
 do_configure:append () {
     cat ${WORKDIR}/wpa_supplicant.conf >> ${S}/wpa_supplicant/.config

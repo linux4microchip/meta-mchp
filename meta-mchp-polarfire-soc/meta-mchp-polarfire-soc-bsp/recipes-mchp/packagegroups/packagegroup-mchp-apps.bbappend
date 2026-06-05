@@ -1,4 +1,4 @@
-RDEPENDS:packagegroup-mchp-apps:append:mpfs-icicle-kit-all = "\
+RDEPENDS:packagegroup-mchp-apps:append:mpfs-icicle-kit-all = " \
     polarfire-soc-linux-examples-can \
     polarfire-soc-linux-examples-dma \
     polarfire-soc-linux-examples-dt-overlays \
@@ -9,7 +9,7 @@ RDEPENDS:packagegroup-mchp-apps:append:mpfs-icicle-kit-all = "\
     kernel-module-udmabuf \
 "
 
-RDEPENDS:packagegroup-mchp-apps:append:mpfs-icicle-kit-amp = "\
+RDEPENDS:packagegroup-mchp-apps:append:mpfs-icicle-kit-amp = " \
     kernel-module-rpmsg-char \
     kernel-module-rpmsg-client-sample \
     kernel-module-rpmsg-ctrl \
@@ -19,11 +19,11 @@ RDEPENDS:packagegroup-mchp-apps:append:mpfs-icicle-kit-amp = "\
     polarfire-soc-linux-examples-amp \
 "
 
-RDEPENDS:packagegroup-mchp-apps:append:mpfs-video-kit = "\
+RDEPENDS:packagegroup-mchp-apps:append:mpfs-video-kit = " \
     polarfire-soc-linux-examples-dt-overlays \
 "
 
-RDEPENDS:packagegroup-mchp-apps:append:mpfs-disco-kit = "\
+RDEPENDS:packagegroup-mchp-apps:append:mpfs-disco-kit = " \
     polarfire-soc-linux-examples-dma \
     polarfire-soc-linux-examples-dt-overlays \
     polarfire-soc-linux-examples-lsram \

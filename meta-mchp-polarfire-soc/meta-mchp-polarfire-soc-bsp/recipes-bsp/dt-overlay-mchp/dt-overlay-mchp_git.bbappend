@@ -9,7 +9,7 @@ DT_FILES_PATH:mpfs-icicle-kit-all = "${WORKDIR}/git/mpfs_icicle"
 DT_FILES_PATH:mpfs-video-kit = "${WORKDIR}/git/mpfs_video"
 
 do_compile[depends] = ""
-DEPENDS:append:mpfs = "dtc-native"
+DEPENDS:append:mpfs = " dtc-native"
 
 python do_compile() {
 

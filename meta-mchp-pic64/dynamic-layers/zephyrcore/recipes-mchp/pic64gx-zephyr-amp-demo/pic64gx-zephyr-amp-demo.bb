@@ -13,10 +13,10 @@ SRC_URI:append = " ${SRC_URI_APP};name=pic64-zephyr-examples;nobranch=1;destsuff
 
 ZEPHYR_SRC_DIR = "${WORKDIR}/git/pic64gx-soc/apps/amp_example_openamp"
 
-EXTRA_OECMAKE += " \
+EXTRA_OECMAKE += "\
     -DCONFIG_PIC64GX_RELOCATE_RESOURCE_TABLE=y \
     -DCMAKE_CXX_FLAGS=-fdebug-prefix-map=${TMPDIR}=${TARGET_DBGSRC_DIR} \
-    "
+"
 
 do_install() {
     install -Dm 0644 ${B}/zephyr/${ZEPHYR_MAKE_OUTPUT} ${D}/usr/lib/firmware/${PN}.elf

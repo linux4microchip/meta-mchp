@@ -1,6 +1,6 @@
 SUMMARY = "Polarfire SoC FreeRTOS AMP demo applications"
 DESCRIPTION = "Demo FreeRTOS application to run in AMP build \
-along with a Linux context"
+               along with a Linux context"
 HOMEPAGE = "https://github.com/polarfire-soc/polarfire-soc-amp-examples"
 
 require polarfire-soc-amp-demo.inc

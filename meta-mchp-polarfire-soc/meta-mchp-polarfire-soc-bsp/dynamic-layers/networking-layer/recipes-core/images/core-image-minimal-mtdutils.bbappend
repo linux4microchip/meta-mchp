@@ -1,1 +1,1 @@
-IMAGE_INSTALL += "  netcat"
+IMAGE_INSTALL += "netcat"

@@ -47,9 +47,7 @@ PACKAGECONFIG[x11] = "-DWITH_X11=ON,-DWITH_X11=OFF,libx11"
 
 FULL_OPTIMIZATION:append = " -Ofast"
 
-FILES:${PN} += " \
-  ${datadir}/egt/* \
-"
+FILES:${PN} += "${datadir}/egt/*"
 
 do_install:append() {
     sed -e 's@[^ ]*-ffile-prefix-map=[^ "]*@@g' \

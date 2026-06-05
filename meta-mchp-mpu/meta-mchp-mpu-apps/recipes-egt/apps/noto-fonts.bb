@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/OFL-1.1;md5=fac3a519e5e9eb96316
 
 PR = "2025-01-19"
 
-SRC_URI = " \
+SRC_URI = "\
     https://github.com/notofonts/notofonts.github.io/raw/main/fonts/NotoSans/unhinted/ttf/NotoSans-Regular.ttf;name=notosans \
     https://github.com/notofonts/noto-cjk/raw/main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf;name=notosanssc \
     https://github.com/googlefonts/noto-emoji/raw/main/fonts/NotoColorEmoji.ttf;name=notoemoji \
@@ -19,9 +19,7 @@ SRC_URI[notoemoji.sha256sum] = "72a635cb3d2f3524c51620cdde406b217204e8a6a06c6a09
 
 inherit allarch fontcache
 
-FILES:${PN} += " \
-    ${datadir}/fonts/noto/* \
-"
+FILES:${PN} += "${datadir}/fonts/noto/*"
 
 do_install() {
         install -Dm 0644 ${S}/NotoSans-Regular.ttf ${D}${datadir}/fonts/noto/NotoSans-Regular.ttf

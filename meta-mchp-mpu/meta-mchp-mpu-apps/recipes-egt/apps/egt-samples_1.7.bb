@@ -9,7 +9,7 @@ PACKAGES = "\
     ${PN}-dev \
     ${PN}-dbg \
 "
-DEPENDS = " libegt"
+DEPENDS = "libegt"
 
 SRC_URI = "gitsm://github.com/linux4sam/egt-samples.git;protocol=https;branch=master "
 
@@ -20,9 +20,7 @@ S = "${WORKDIR}/git"
 
 inherit pkgconfig cmake gettext
 
-FILES:${PN} += " \
-    /usr/share/egt/* \
-"
+FILES:${PN} += "/usr/share/egt/*"
 
 python __anonymous () {
     endianness = d.getVar('SITEINFO_ENDIANNESS')

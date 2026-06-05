@@ -22,11 +22,11 @@ inherit pkgconfig cmake python3-dir python3targetconfig
 PACKAGECONFIG ??= "enable-engine"
 PACKAGECONFIG[enable-engine] = "-DENABLE_ENGINE=ON,-DENABLE_ENGINE=OFF"
 
-FILES:${PN} += " \
-  /opt/planes/planes-loop.sh \
-  /opt/planes/planes-loop.py \
-  /opt/applications/resources/* \
-  ${datadir}/planes/* \
+FILES:${PN} += "\
+    /opt/planes/planes-loop.sh \
+    /opt/planes/planes-loop.py \
+    /opt/applications/resources/* \
+    ${datadir}/planes/* \
 "
 FILES:${PN}-python += "${libdir}/python${PYTHON_BASEVERSION}/site-packages/*"
 

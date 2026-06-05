@@ -1,3 +1,1 @@
-RDEPENDS:packagegroup-mchp-security:mpfs:append = "\
-    libkcapi \
-"
+RDEPENDS:packagegroup-mchp-security:mpfs:append = " libkcapi"

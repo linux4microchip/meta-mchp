@@ -13,9 +13,7 @@ S = "${WORKDIR}/lohit-ttf-20140220"
 
 inherit allarch fontcache
 
-FILES:${PN} += " \
-    ${datadir}/fonts/truetype/* \
-"
+FILES:${PN} += "${datadir}/fonts/truetype/*"
 
 do_install() {
         install -d ${D}${datadir}/fonts/truetype/lohit-devanagari

@@ -9,7 +9,7 @@ PACKAGES = "\
     ${PN}-dev \
     ${PN}-dbg \
 "
-DEPENDS = " libegt"
+DEPENDS = "libegt"
 
 SRC_URI = "gitsm://github.com/linux4sam/egt-thermostat.git;protocol=https;branch=master"
 
@@ -19,9 +19,7 @@ S = "${WORKDIR}/git"
 
 inherit pkgconfig cmake gettext siteinfo
 
-FILES:${PN} += " \
-    ${datadir}/egt/* \
-"
+FILES:${PN} += "${datadir}/egt/*"
 
 python __anonymous () {
     endianness = d.getVar('SITEINFO_ENDIANNESS')
