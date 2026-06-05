@@ -1,4 +1,6 @@
-DESCRIPTION = "Microchip SAM-BA In-system Programmer"
+SUMMARY = "Microchip SAM-BA In-system Programmer"
+DESCRIPTION = "${SUMMARY}"
+HOMEPAGE = "https://github.com/atmelcorp/sam-ba"
 SECTION = "devel"
 LICENSE = "GPL-2.0-only"
 

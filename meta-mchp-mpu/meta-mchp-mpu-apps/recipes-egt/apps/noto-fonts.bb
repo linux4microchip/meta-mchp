@@ -1,4 +1,6 @@
-DESCRIPTION = "Google noto fonts"
+SUMMARY = "Google Noto fonts"
+DESCRIPTION = "${SUMMARY}"
+HOMEPAGE = "https://fonts.google.com/noto"
 LICENSE = "OFL-1.1"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/OFL-1.1;md5=fac3a519e5e9eb96316656e0ca4f2b90"
 

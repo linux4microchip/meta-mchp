@@ -1,4 +1,6 @@
-DESCRIPTION = "Microchip libplanes library for sama5 lcd controller"
+SUMMARY = "Microchip libplanes library for sama5 lcd controller"
+DESCRIPTION = "${SUMMARY}"
+HOMEPAGE = "https://github.com/linux4sam/libplanes"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://COPYING;endline=20;md5=b884a464579c410fd1dace93db8e97b3"
 

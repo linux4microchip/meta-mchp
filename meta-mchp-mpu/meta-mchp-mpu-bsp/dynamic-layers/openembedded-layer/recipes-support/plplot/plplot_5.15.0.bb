@@ -1,4 +1,5 @@
-DESCRIPTION = "plplot library"
+SUMMARY = "plplot library"
+DESCRIPTION = "${SUMMARY}"
 HOMEPAGE = "http://plplot.org/"
 SECTION = "devel"
 

@@ -1,3 +1,7 @@
+SUMMARY = "U-Boot for Microchip SoCs"
+DESCRIPTION = "${SUMMARY}"
+HOMEPAGE = "https://github.com/linux4microchip/u-boot-mchp"
+
 require recipes-bsp/u-boot/u-boot-common.inc
 require recipes-bsp/u-boot/u-boot.inc
 require u-boot-envs-mchp.inc

@@ -1,4 +1,5 @@
 SUMMARY = "Package group for graphics software and libraries."
+DESCRIPTION = "${SUMMARY}"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 

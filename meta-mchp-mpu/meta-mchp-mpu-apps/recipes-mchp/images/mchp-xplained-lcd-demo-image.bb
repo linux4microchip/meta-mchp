@@ -1,3 +1,4 @@
+SUMMARY = "Image for boards with screen and resistive touchscreen"
 DESCRIPTION = "An image for boards with screen and resistive touchscreen."
 LICENSE = "MIT"
 PR = "r1"

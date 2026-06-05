@@ -1,4 +1,6 @@
-DESCRIPTION = "Lohit Indic fonts"
+SUMMARY = "Lohit Indic fonts"
+DESCRIPTION = "${SUMMARY}"
+HOMEPAGE = "https://pagure.io/lohit"
 LICENSE = "OFL-1.1"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/OFL-1.1;md5=fac3a519e5e9eb96316656e0ca4f2b90"
 

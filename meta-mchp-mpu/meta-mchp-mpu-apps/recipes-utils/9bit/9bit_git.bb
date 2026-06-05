@@ -1,4 +1,6 @@
-DESCRIPTION = "Demo apps for SAMA5 9-bit / Multidrop Serial Mode"
+SUMMARY = "Demo apps for SAMA5 9-bit / Multidrop Serial Mode"
+DESCRIPTION = "${SUMMARY}"
+HOMEPAGE = "https://github.com/linux4sam/9bit"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://COPYING;md5=fbe63b61f5a0d24e651c8be602a7c3f8"
 

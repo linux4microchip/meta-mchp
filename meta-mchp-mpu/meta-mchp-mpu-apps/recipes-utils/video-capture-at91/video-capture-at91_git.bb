@@ -1,4 +1,6 @@
-DESCRIPTION = "Collection of scripts for configuring AT91 video capture pipeline"
+SUMMARY = "Collection of scripts for configuring AT91 video capture pipeline"
+DESCRIPTION = "${SUMMARY}"
+HOMEPAGE = "https://github.com/linux4sam/video-capture-at91"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSES/MIT.txt;md5=12c44f58fe16bd407f016e45950c2f3d"
 

@@ -1,4 +1,5 @@
-DESCRIPTION = "Microchip base image with software development tools"
+SUMMARY = "Microchip base image with software development tools"
+DESCRIPTION = "${SUMMARY}"
 LICENSE = "MIT"
 
 require recipes-mchp/images/mchp-base-image.inc

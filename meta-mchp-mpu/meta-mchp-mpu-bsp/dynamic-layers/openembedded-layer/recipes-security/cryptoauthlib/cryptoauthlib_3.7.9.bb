@@ -1,4 +1,6 @@
-DESCRIPTION = "Microchip CryptoAuthentication Library"
+SUMMARY = "Microchip CryptoAuthentication Library"
+DESCRIPTION = "${SUMMARY}"
+HOMEPAGE = "https://github.com/MicrochipTech/cryptoauthlib"
 
 LICENSE = "MICROCHIP_CAL"
 LIC_FILES_CHKSUM = "file://license.txt;endline=18;md5=7a38fc60c2fcad312a03b337dea8a96d"

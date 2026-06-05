@@ -1,4 +1,5 @@
-DESCRIPTION = "Command line utility for maXTouch devices"
+SUMMARY = "Command line utility for maXTouch devices"
+DESCRIPTION = "${SUMMARY}"
 SECTION = "tools"
 HOMEPAGE = "https://github.com/atmel-maxtouch/mxt-app"
 LICENSE = "MICROCHIP_LLA"

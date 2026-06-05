@@ -1,6 +1,7 @@
 SUMMARY = "Polarfire SoC Bare-metal AMP demo applications"
 DESCRIPTION = "Demo Bare-metal application to run in AMP build \
 along with a Linux context"
+HOMEPAGE = "https://github.com/polarfire-soc/polarfire-soc-amp-examples"
 
 require polarfire-soc-amp-demo.inc
 

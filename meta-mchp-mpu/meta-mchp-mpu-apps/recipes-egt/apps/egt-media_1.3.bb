@@ -1,4 +1,6 @@
-DESCRIPTION = "EGT media files from video demo"
+SUMMARY = "EGT media files from video demo"
+DESCRIPTION = "${SUMMARY}"
+HOMEPAGE = "https://github.com/linux4sam/egt-media"
 LICENSE = "CLOSED"
 
 PR = "r1"

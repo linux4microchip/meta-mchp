@@ -1,3 +1,4 @@
+SUMMARY = "Minimal initramfs image for MPFS application demos"
 DESCRIPTION = "Minimal initramfs cpio image with a minimal \
 set of tools and packages to run MPFS application demos"
 

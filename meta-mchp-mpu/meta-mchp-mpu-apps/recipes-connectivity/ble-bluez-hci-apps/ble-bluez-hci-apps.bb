@@ -1,5 +1,6 @@
 SUMMARY = "BlueZ BLE Applications"
 DESCRIPTION = "BlueZ BLE UART and DFU Applications"
+HOMEPAGE = "https://github.com/linux4microchip/ble_bluez_hci_apps"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://README;md5=5413bb09d9a7d0e0baa6b9bb69034212"
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"

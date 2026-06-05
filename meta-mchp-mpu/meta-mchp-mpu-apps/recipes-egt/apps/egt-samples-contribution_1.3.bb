@@ -1,4 +1,6 @@
-DESCRIPTION = "Microchip EGT sample applications from the community"
+SUMMARY = "Microchip EGT sample applications from the community"
+DESCRIPTION = "${SUMMARY}"
+HOMEPAGE = "https://github.com/linux4sam/egt-samples-contribution"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=9d979c7e3d1771e43c4e0ac149beb4d0"
 

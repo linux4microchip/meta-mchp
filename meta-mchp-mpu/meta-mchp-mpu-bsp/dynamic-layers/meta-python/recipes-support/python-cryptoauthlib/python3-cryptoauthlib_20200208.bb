@@ -1,4 +1,5 @@
 SUMMARY = "Python Wrapper Library for Microchip Security Products"
+DESCRIPTION = "${SUMMARY}"
 HOMEPAGE = "https://github.com/MicrochipTech/cryptoauthlib"
 
 LICENSE = "CLOSED"

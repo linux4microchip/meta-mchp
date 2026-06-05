@@ -1,4 +1,5 @@
 SUMMARY = "Hantro plugins for GStreamer"
+DESCRIPTION = "${SUMMARY}"
 SECTION = "multimedia"
 LICENSE = "LGPL-2.1-only"
 HOMEPAGE = "http://www.gstreamer.net/"

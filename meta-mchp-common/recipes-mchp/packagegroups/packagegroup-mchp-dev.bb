@@ -1,4 +1,5 @@
 SUMMARY = "Package group for general development tools and libraries."
+DESCRIPTION = "${SUMMARY}"
 
 inherit packagegroup
 

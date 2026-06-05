@@ -1,4 +1,6 @@
-DESCRIPTION = "Microchip EGT Benchmark Application"
+SUMMARY = "Microchip EGT Benchmark Application"
+DESCRIPTION = "${SUMMARY}"
+HOMEPAGE = "https://github.com/linux4sam/egt-benchmark"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://COPYING;endline=202;md5=3b83ef96387f14655fc854ddc3c6bd57"
 

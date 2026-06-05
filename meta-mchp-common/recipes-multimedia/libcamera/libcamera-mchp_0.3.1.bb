@@ -1,4 +1,6 @@
 SUMMARY = "Microchip Linux libcamera framework"
+DESCRIPTION = "${SUMMARY}"
+HOMEPAGE = "https://github.com/linux4microchip/libcamera-mchp"
 SECTION = "libs"
 
 LICENSE = "GPL-2.0-or-later & LGPL-2.1-or-later"

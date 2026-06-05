@@ -1,5 +1,6 @@
 SUMMARY = "PIC64GX zephyr example with OpenAMP"
 DESCRIPTION = "PIC64GX zephyr example with OpenAMP"
+HOMEPAGE = "https://github.com/pic64gx/pic64gx-zephyr-examples"
 
 require pic64gx-zephyr-amp.inc
 

@@ -1,4 +1,6 @@
 SUMMARY = "Microchip WILC devices firmware files for use with Linux kernel"
+DESCRIPTION = "${SUMMARY}"
+HOMEPAGE = "https://github.com/linux4wilc/firmware"
 SECTION = "kernel"
 LICENSE = "MICROCHIP_FW"
 

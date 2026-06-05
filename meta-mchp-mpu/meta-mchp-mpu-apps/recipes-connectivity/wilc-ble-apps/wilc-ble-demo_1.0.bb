@@ -1,4 +1,5 @@
 SUMMARY = "Bluetooth Connectivity Application"
+HOMEPAGE = "https://github.com/MicrochipTech/wilcbtapps-buildroot-external-microchip"
 DESCRIPTION = "The example is to demonstrate BLE provisioning and BLE 	\
 	Transparent Services.						\
 	the application is written using the BlueZ GATT service and it	\

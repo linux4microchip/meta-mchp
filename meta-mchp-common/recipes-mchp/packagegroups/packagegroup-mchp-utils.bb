@@ -1,4 +1,5 @@
 SUMMARY = "Utilities package group with generic Linux tools"
+DESCRIPTION = "${SUMMARY}"
 
 inherit packagegroup
 

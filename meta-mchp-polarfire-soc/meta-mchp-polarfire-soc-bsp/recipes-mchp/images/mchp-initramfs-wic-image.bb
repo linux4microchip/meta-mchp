@@ -1,4 +1,5 @@
-DESCRIPTION = "Bootable WIC image with kernel and initramfs"
+SUMMARY = "Bootable WIC image with kernel and initramfs"
+DESCRIPTION = "${SUMMARY}"
 
 DEPENDS += "mchp-initramfs-image"
 do_image_wic[depends] += "mchp-initramfs-image:do_image_complete"

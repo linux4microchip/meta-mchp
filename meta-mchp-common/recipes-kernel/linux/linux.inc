@@ -1,5 +1,6 @@
 DESCRIPTION = "Linux kernel for Microchip SoCs"
 SUMMARY = "Linux kernel for Microchip SoCs"
+HOMEPAGE = "https://github.com/linux4microchip/linux"
 SECTION = "kernel"
 LICENSE = "GPL-2.0-only"
 

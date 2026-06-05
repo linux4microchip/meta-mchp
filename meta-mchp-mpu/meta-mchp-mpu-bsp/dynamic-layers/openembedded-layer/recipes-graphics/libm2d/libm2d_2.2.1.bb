@@ -1,4 +1,6 @@
-DESCRIPTION = "Microchip libm2d library to abstract 2D GPUs and provide a common API"
+SUMMARY = "Microchip libm2d library to abstract 2D GPUs and provide a common API"
+DESCRIPTION = "${SUMMARY}"
+HOMEPAGE = "https://github.com/linux4sam/libm2d"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://COPYING;endline=202;md5=3b83ef96387f14655fc854ddc3c6bd57"
 

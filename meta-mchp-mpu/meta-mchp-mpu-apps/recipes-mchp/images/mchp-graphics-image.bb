@@ -1,3 +1,4 @@
+SUMMARY = "Image with EGT and demo applications"
 DESCRIPTION = "An image that includes EGT with its demo applications"
 LICENSE = "MIT"
 PR = "r0"

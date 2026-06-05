@@ -1,4 +1,6 @@
-DESCRIPTION = "Vivante nano2D user-space library"
+SUMMARY = "Vivante nano2D user-space library"
+DESCRIPTION = "${SUMMARY}"
+HOMEPAGE = "https://github.com/linux4sam/nano2d"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=d273f77f5527ec3b62511e2365d1d436"
 

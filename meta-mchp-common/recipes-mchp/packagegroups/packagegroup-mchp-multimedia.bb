@@ -1,4 +1,5 @@
 SUMMARY = "A set of tools for audio/video playback, encoding, decoding, and streaming"
+DESCRIPTION = "${SUMMARY}"
 
 inherit packagegroup
 

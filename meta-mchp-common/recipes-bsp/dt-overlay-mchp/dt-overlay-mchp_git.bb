@@ -1,5 +1,7 @@
+SUMMARY = "Microchip Device Tree Overlays and FIT image"
 DESCRIPTION = "Compile Microchip SoCs board device tree overlays and pack them in a FIT image"
 SECTION = "bsp"
+HOMEPAGE = "https://github.com/linux4microchip/dt-overlay-mchp"
 LICENSE = "GPL-2.0-or-later & MIT"
 LIC_FILES_CHKSUM = "file://COPYING;md5=775626b7bc958bdcc525161f725ece0f \
                     file://LICENSES/GPL-2.0;md5=e6a75371ba4d16749254a51215d13f97 \

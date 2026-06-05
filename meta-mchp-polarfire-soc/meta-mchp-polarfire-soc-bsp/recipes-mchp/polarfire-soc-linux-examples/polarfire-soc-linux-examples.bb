@@ -1,4 +1,5 @@
 SUMMARY = "Polarfire SoC Linux example applications"
+HOMEPAGE = "https://github.com/polarfire-soc/polarfire-soc-linux-examples"
 DESCRIPTION = "Linux Example applications, includes the following: \
     - iiohttpserver collects ADC measurements and displays them via a webserver. \
     - LSRAM read and write example. \

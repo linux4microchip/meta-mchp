@@ -1,4 +1,5 @@
-DESCRIPTION = "Webcam image grabber and manipulation application."
+SUMMARY = "Webcam image grabber and manipulation application"
+DESCRIPTION = "${SUMMARY}"
 SECTION = "graphics"
 HOMEPAGE = "http://www.sanslogic.co.uk/fswebcam/"
 LICENSE="GPL-2.0-only"

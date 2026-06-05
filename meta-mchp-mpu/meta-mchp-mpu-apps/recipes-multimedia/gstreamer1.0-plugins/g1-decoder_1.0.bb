@@ -1,4 +1,6 @@
-DESCRIPTION = "G1 Hantro decoder"
+SUMMARY = "G1 Hantro decoder"
+DESCRIPTION = "${SUMMARY}"
+HOMEPAGE = "https://github.com/linux4sam/g1_decoder"
 LICENSE = "BSD-3-Clause"
 
 LIC_FILES_CHKSUM = "file://software/source/inc/basetype.h;endline=36;md5=e3202b62900668ae783c037af34f1ff5"

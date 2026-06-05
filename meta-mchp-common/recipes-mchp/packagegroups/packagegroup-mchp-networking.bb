@@ -1,4 +1,5 @@
 SUMMARY = "Networking package group including basic network utilities."
+DESCRIPTION = "${SUMMARY}"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 

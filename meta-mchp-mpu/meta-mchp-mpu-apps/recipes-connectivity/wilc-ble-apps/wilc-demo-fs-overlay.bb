@@ -2,6 +2,7 @@ SUMMARY = "RootFs files needed for WILC connectivity recipies"
 DESCRIPTION = "Installs scripts to demonstrate WILC WiFi apps: Start_AP.sh (AP + web server) and Start_STA.sh (STA mode)."
 AUTHOR = "Microchip Technology Incorporated"
 SECTION = "net"
+HOMEPAGE = ""
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/Apache-2.0;md5=89aea4e17d99a7cacdbeed46a0096b10"
 

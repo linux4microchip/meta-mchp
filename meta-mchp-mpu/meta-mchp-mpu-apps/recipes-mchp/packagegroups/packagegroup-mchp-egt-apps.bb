@@ -1,4 +1,5 @@
 SUMMARY = "Package group for Microchip’s Ensemble Graphics Toolkit (EGT) apps"
+DESCRIPTION = "${SUMMARY}"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 

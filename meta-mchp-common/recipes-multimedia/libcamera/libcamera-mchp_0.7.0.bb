@@ -1,4 +1,6 @@
 SUMMARY = "Microchip libcamera framework — migration to upstream v0.7.0 base"
+DESCRIPTION = "${SUMMARY}"
+HOMEPAGE = "https://github.com/linux4microchip/libcamera-mchp"
 SECTION = "libs"
 LICENSE = "GPL-2.0-or-later & LGPL-2.1-or-later"
 LIC_FILES_CHKSUM = "\

@@ -1,4 +1,6 @@
-DESCRIPTION = "Hantro binaries"
+SUMMARY = "Hantro binaries"
+DESCRIPTION = "${SUMMARY}"
+HOMEPAGE = ""
 LICENSE = "MICROCHIP_LLA"
 
 LIC_FILES_CHKSUM = "file://include/basetype.h;endline=18;md5=45a908b058dc0c5d75d5501bb331fb60"
