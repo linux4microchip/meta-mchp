@@ -89,8 +89,8 @@ do_package_recalculate_ipa_signatures() {
     ${S}/src/ipa/ipa-sign-install.sh ${B}/src/ipa-priv-key.pem "${modules}"
 }
 
-FILES:${PN} += " ${libexecdir}/libcamera/v4l2-compat.so ${libdir}/libcamera/*.so* ${datadir}/libcamera ${bindir}/mchpcam-*"
-FILES:${PN}-gst = "${libdir}/gstreamer-1.0"
-FILES:${PN}-ipa = "${libdir}/libcamera/ipa_*.so* ${libdir}/libcamera/*.so.sign ${datadir}/libcamera/ipa/*"
-FILES:${PN}-pipelines = "${datadir}/libcamera/pipeline/*"
-FILES:${PN}-pycamera = "${PYTHON_SITEPACKAGES_DIR}/libcamera"
+FILES:${PN} += "${libexecdir}/libcamera/v4l2-compat.so ${libdir}/libcamera/*.so* ${datadir}/libcamera ${bindir}/mchpcam-*"
+FILES:${PN}-gst += "${libdir}/gstreamer-1.0"
+FILES:${PN}-ipa += "${libdir}/libcamera/ipa_*.so* ${libdir}/libcamera/*.so.sign ${datadir}/libcamera/ipa/*"
+FILES:${PN}-pipelines += "${datadir}/libcamera/pipeline/*"
+FILES:${PN}-pycamera += "${PYTHON_SITEPACKAGES_DIR}/libcamera"

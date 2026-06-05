@@ -24,4 +24,4 @@ do_install() {
     install -m 0755 ${B}/apps/dfu_app/dfu-bluez ${D}${bindir}/
 }
 
-FILES:${PN} = "${bindir}/*"
+FILES:${PN} += "${bindir}/*"

@@ -1,2 +1,2 @@
 PACKAGES =+ "${PN}-systemd"
-FILES:${PN}-systemd = "${sysconfdir}/cpupower-service.conf ${systemd_unitdir}"
+FILES:${PN}-systemd += "${sysconfdir}/cpupower-service.conf ${systemd_unitdir}"

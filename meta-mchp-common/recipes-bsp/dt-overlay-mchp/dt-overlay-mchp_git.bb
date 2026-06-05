@@ -69,4 +69,4 @@ do_deploy () {
     fi;
 }
 
-FILES:${PN} = "/boot/*"
+FILES:${PN} += "/boot/*"

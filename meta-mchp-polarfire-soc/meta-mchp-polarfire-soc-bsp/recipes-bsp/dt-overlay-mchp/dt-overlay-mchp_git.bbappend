@@ -30,4 +30,4 @@ do_deploy:mpfs() {
     done
 }
 
-FILES:${PN} = "/boot/*"
+FILES:${PN} += "/boot/*"

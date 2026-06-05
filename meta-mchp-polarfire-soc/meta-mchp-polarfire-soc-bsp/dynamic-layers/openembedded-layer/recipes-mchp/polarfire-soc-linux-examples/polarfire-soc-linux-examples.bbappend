@@ -11,4 +11,4 @@ EXAMPLE_FILES += "\
     gpio \
 "
 
-FILES:${PN}-gpio = "/opt/microchip/gpio/"
+FILES:${PN}-gpio += "/opt/microchip/gpio/"

@@ -72,13 +72,13 @@ do_install:append() {
     fi
 }
 
-FILES:${PN} = "${libdir}/* \
+FILES:${PN} += "${libdir}/* \
        ${sysconfdir}/cryptoauthlib/cryptoauthlib.conf \
        ${localstatedir}/lib/cryptoauthlib/slot.conf.tmpl \
        ${datadir}/p11-kit/modules/cryptoauthlib.module \
        ${localstatedir}/lib/cryptoauthlib/0.conf \
 "
-FILES:${PN}-dev = " \
+FILES:${PN}-dev += " \
     ${includedir}/cryptoauthlib/* \
 "
 

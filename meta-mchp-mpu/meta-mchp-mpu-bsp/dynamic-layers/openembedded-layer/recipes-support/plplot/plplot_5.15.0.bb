@@ -56,7 +56,7 @@ do_install:append() {
     rm -rf ${D}/usr/share/plplot${PV}/examples
 }
 
-FILES:${PN} = " \
+FILES:${PN} += "\
     ${libdir}/* \
     /usr/include/* \
     /usr/share/* \

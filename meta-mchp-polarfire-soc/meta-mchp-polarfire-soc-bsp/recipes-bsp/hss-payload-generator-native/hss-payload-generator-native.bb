@@ -24,4 +24,4 @@ do_install () {
     install -m 755 ${S}/tools/hss-payload-generator/hss-payload-generator ${D}${bindir}
 }
 
-FILES:${PN} = "${bindir}/hss-payload-generator"
+FILES:${PN} += "${bindir}/hss-payload-generator"

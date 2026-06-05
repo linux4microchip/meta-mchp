@@ -31,7 +31,7 @@ do_install() {
     done
 }
 
-FILES:${PN}-iiohttpserver = " \
+FILES:${PN}-iiohttpserver += "\
     /opt/microchip/ \
 "
 

@@ -101,11 +101,11 @@ FILES:${PN} += " \
     ${libdir}/libcamera-base.so.* \
     ${datadir}/libcamera/ipa/microchip-isc \
 "
-FILES:${PN}-apps    = "${bindir}/cam ${bindir}/libcamerify ${bindir}/mchpcam-*"
-FILES:${PN}-gst     = "${libdir}/gstreamer-1.0"
-FILES:${PN}-ipa     = "${libdir}/libcamera/ipa/ipa_*.so ${libdir}/libcamera/ipa/ipa_*.so.sign"
-FILES:${PN}-pipelines = "${datadir}/libcamera/pipeline"
-FILES:${PN}-pycamera = "${PYTHON_SITEPACKAGES_DIR}/libcamera"
+FILES:${PN}-apps    += "${bindir}/cam ${bindir}/libcamerify ${bindir}/mchpcam-*"
+FILES:${PN}-gst     += "${libdir}/gstreamer-1.0"
+FILES:${PN}-ipa     += "${libdir}/libcamera/ipa/ipa_*.so ${libdir}/libcamera/ipa/ipa_*.so.sign"
+FILES:${PN}-pipelines += "${datadir}/libcamera/pipeline"
+FILES:${PN}-pycamera += "${PYTHON_SITEPACKAGES_DIR}/libcamera"
 
 # libcamera-v4l2 explicitly sets _FILE_OFFSET_BITS=32 to get access to
 # both 32 and 64 bit file APIs.

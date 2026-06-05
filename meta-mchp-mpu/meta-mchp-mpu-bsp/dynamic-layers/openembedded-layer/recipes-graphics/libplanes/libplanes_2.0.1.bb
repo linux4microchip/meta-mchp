@@ -28,7 +28,7 @@ FILES:${PN} += " \
   /opt/applications/resources/* \
   ${datadir}/planes/* \
 "
-FILES:${PN}-python = "${libdir}/python${PYTHON_BASEVERSION}/site-packages/*"
+FILES:${PN}-python += "${libdir}/python${PYTHON_BASEVERSION}/site-packages/*"
 
 #need to delete _planes.a to avoid QA package errors
 do_install:append() {

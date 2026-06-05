@@ -17,4 +17,4 @@ EXAMPLE_FILES += "\
     multimedia \
 "
 
-FILES:${PN}-multimedia = "/opt/microchip/multimedia/"
+FILES:${PN}-multimedia += "/opt/microchip/multimedia/"
