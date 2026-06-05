@@ -11,7 +11,7 @@ inherit deploy
 
 S = "${WORKDIR}/git"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
-DEPENDS = "virtual/kernel u-boot-mkimage-native dtc-native"
+DEPENDS:append = " u-boot-mkimage-native dtc-native"
 
 SRC_URI = "git://github.com/linux4microchip/dt-overlay-mchp.git;protocol=https;branch=master"
 SRCREV  = "b656f6b963e44199c4d6401d833a9c2e54cf1061"

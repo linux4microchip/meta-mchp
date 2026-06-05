@@ -3,7 +3,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${WORKDIR}/git/LICENSE.md;md5=736a28e202059f476d2e3e1c80e5b009"
 
-DEPENDS = "makedepend-native"
+DEPENDS:append = "makedepend-native"
 
 inherit deploy
 
