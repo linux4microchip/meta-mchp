@@ -3,7 +3,7 @@ DESCRIPTION = "An image that includes EGT with its demo applications"
 LICENSE = "MIT"
 PR = "r0"
 
-require mchp-headless-image.bb
+require mchp-headless-image.inc
 
 inherit siteinfo
 
