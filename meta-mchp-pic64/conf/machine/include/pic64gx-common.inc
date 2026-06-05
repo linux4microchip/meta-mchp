@@ -6,7 +6,7 @@ require conf/machine/include/riscv/tune-riscv.inc
 
 MACHINE_FEATURES = "screen keyboard ext2 ext3 serial pci usbhost wifi"
 
-#Add a sdmc feature to identify pic64 machines with sd or emmc
+# Add a sdmmc feature to identify pic64 machines with SD or eMMC
 MACHINE_FEATURES:append = "${@' sdmmc' if '-nand' not in d.getVar('MACHINE') and '-nor' not in d.getVar('MACHINE') else ''}"
 MACHINEOVERRIDES:append = "${@bb.utils.contains('MACHINE_FEATURES', 'sdmmc', ':autoresize', '', d)}"
 
@@ -46,7 +46,7 @@ WKS_FILE_DEPENDS ?= " \
     u-boot-mchp \
 "
 
-# PI64GX has OpenSBI built into the HSS. Mask the OpenSBI
+# PIC64GX has OpenSBI built into the HSS. Mask the OpenSBI
 # recipe as it is not used and causes machine signature issues
 # when running yocto-check-layer if RISCV_SBI_PAYLOAD and other
 # related variables are not defined.

@@ -30,7 +30,7 @@ FILES:${PN} += " \
 "
 FILES:${PN}-python += "${libdir}/python${PYTHON_BASEVERSION}/site-packages/*"
 
-#need to delete _planes.a to avoid QA package errors
+# need to delete _planes.a to avoid QA package errors
 do_install:append() {
     install -Dm 0644 ${S}/scripts/planes.png  ${D}/opt/applications/resources/planes.png
     install -Dm 0644 ${S}/scripts/09-planes.xml  ${D}/opt/applications/resources/09-planes.xml

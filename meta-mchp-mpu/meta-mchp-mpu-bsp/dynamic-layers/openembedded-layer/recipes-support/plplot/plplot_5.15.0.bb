@@ -15,7 +15,7 @@ RDEPENDS:${PN} = " \
     ttf-dejavu-serif \
     ttf-dejavu-serif-condensed \
 "
-#TAG plplot-5.15.0
+# TAG plplot-5.15.0
 SRCREV = "4f88e45dbd85468a96364548f8d06a9b52dac14a"
 
 SRC_URI = "git://github.com/PLplot/PLplot;protocol=https;branch=master \

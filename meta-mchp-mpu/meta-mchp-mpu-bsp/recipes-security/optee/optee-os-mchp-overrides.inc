@@ -13,7 +13,7 @@ EXTRA_OEMAKE += " PLATFORM_FLAVOR=${OPTEE_PLATFORM_FLAVOR} \
 "
 
 do_install:append() {
-    #install core in boot
+    # install core in boot
     install -d ${D}/boot
     install -m 644 ${B}/core/*.bin ${B}/core/tee.elf ${D}/boot/
     install ${B}/core/${OPTEE_BINARY} ${D}/boot/${OPTEE_IMAGE}

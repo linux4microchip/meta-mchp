@@ -62,7 +62,7 @@ do_install () {
 addtask deploy after do_install
 
 do_deploy () {
-    #bbnote "Copying ${fit_image_basename}.itb and source file to ${DEPLOYDIR}..."
+    # bbnote "Copying ${fit_image_basename}.itb and source file to ${DEPLOYDIR}..."
     if [ -e ${DT_MACHINE}.itb ]; then
         install ${DT_MACHINE}.itb ${DEPLOYDIR}/
         install ${DT_MACHINE}.its ${DEPLOYDIR}/

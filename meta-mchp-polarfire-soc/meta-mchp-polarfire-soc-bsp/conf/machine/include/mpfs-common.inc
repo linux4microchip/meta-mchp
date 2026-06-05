@@ -6,7 +6,7 @@ require conf/machine/include/riscv/tune-riscv.inc
 
 MACHINE_FEATURES = "screen keyboard ext2 ext3 serial"
 
-#Add a smmc feature to identify mpu machines with sd or emmc
+# Add a sdmmc feature to identify mpfs machines with SD or eMMC
 MACHINE_FEATURES:append = "${@' sdmmc' if '-nand' not in d.getVar('MACHINE') and '-nor' not in d.getVar('MACHINE') else ''}"
 MACHINEOVERRIDES:append = "${@bb.utils.contains('MACHINE_FEATURES', 'sdmmc', ':autoresize', '', d)}"
 
