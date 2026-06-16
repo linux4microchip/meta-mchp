@@ -8,16 +8,21 @@ Microchip devices for use with OpenEmbedded and/or Yocto Project.
 
 ## Layer Dependencies
 
-This layer depends on the following layers:
+This layer depends on:
 
 ```text
-- openembedded-core
-  - URI: git://git.openembedded.org/openembedded-core
-  - Layers: meta
+- URI: git://git.openembedded.org/openembedded-core
+- Layers: meta
 ```
 
 For information on the specific revisions used, refer to the
 [meta-mchp manifest](https://github.com/linux4microchip/meta-mchp-manifest) repository.
+
+## Supported Yocto Releases
+
+This layer is compatible with the following Yocto Project releases:
+
+- scarthgap
 
 ## Licensing
 

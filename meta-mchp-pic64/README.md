@@ -1,6 +1,10 @@
-# Microchip PIC64GX layer
+# meta-mchp-pic64
 
-## Supported machines
+## Description
+
+This layer provides Board Support Package (BSP) and machine configurations for Microchip PIC64 evaluation kits for use with OpenEmbedded and/or Yocto Project.
+
+## Supported Machines
 
 | `MACHINE`                                 | Board Name                         | Description                                                        |
 | ------------------------------------------|------------------------------------|--------------------------------------------------------------------|
@@ -15,7 +19,7 @@ The table below describes some custom Microchip image targets that can be used t
 standard OpenEmbedded image targets. For additional standard OpenEmbedded images, please refer to the
 [OpenEmbedded documentation](https://docs.yoctoproject.org/dev/ref-manual/images.html#images).
 
-| `MACHINE`                     | Description                                                                                    |
+| `Image`                       | Description                                                                                    |
 | ----------------------------- | ---------------------------------------------------------------------------------------------- |
 | `core-image-minimal`          | A small image just capable of allowing a device to boot                                        |
 | `mchp-base-image`             | A Microchip base image with standard Linux utilities, as well as some Microchip apps and examples             |
@@ -32,7 +36,7 @@ Please see the meta-mchp-common [README](https://github.com/linux4microchip/meta
 
 ### Copying a Disk Image to a SD card
 
-1. **Recommended Tool:** Use `bmaptool` to write the disk image to your storage device. It’s faster than traditional tools like `dd` or `cp`.
+1. **Recommended Tool:** Use `bmaptool` to write the disk image to your storage device. It's faster than traditional tools like `dd` or `cp`.
 
 2. **Find the Image:**
    The disk image (a `.wic` file) is in `yocto-dev/build/tmp-glibc/deploy/images/<MACHINE>/`.
@@ -52,7 +56,7 @@ Please see the meta-mchp-common [README](https://github.com/linux4microchip/meta
       - **Important:**
       Double-check the device name (`/dev/sdX`) using `dmesg`, `lsblk`, or GNOME Disks to avoid overwriting your system disk.
 
-## Layer dependencies
+## Layer Dependencies
 
 This layer depends on:
 
@@ -66,3 +70,25 @@ layers: meta-oe, meta-python, meta-multimedia, meta-networking
 URI: git://github.com/linux4microchip/meta-mchp.git
 layers: meta-mchp-common
 ```
+
+## Supported Yocto Releases
+
+This layer is compatible with the following Yocto Project releases:
+
+- scarthgap
+
+## Licensing
+
+The contents of this layer are licensed under the MIT License. See COPYING.MIT for details.
+
+## Contributing
+
+If you want to contribute changes, you can send Github pull requests or patches at
+**<https://github.com/linux4microchip/meta-mchp/pulls>**.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for additional information about
+contribution guidelines.
+
+## Maintainers
+
+- Valentina Fernandez Alanis <valentina.fernandezalanis@microchip.com>

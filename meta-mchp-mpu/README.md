@@ -8,7 +8,7 @@ Collection of OpenEmbedded/Yocto Project layers for MPU SoC.
 
 - **meta-mchp-mpu-apps**: Provides recipes to build images with Microchip-specific applications (such as EGT) for widely supported ARM-based Microchip boards.
 
-## Supported machines
+## Supported Machines
 
 | MPU          | SD Card                   | NAND/SPI Flash     | eMMC                  |
 |--------------|---------------------------|--------------------|-----------------------|
@@ -35,6 +35,6 @@ For more info: https://www.linux4microchip.com/
 
 Please see the meta-mchp-common [README](https://github.com/linux4microchip/meta-mchp/blob/scarthgap/meta-mchp-common/README.md) section for detailed steps on how to setup and start a build for any of the supported devices.
 
-## Layer dependencies
+## Layer Dependencies
 
 Please see the respective READMEs in the layer subdirectories.

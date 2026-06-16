@@ -8,7 +8,7 @@ Collection of OpenEmbedded/Yocto Project layers for PolarFire SoC.
 
 - **meta-mchp-polarfire-soc-community**: layer containing platform/machine configurations for Microchip's partners' evaluation kits
 
-## Supported machines
+## Supported Machines
 
 | `MACHINE`                           | Board Name                         | Description                                                           |
 | ------------------------------------| -----------------------------------|-----------------------------------------------------------------------|
@@ -43,7 +43,7 @@ The table below describes some custom Microchip image targets that can be used t
 standard OpenEmbedded image targets. For additional standard OpenEmbedded images, please refer to the
 [OpenEmbedded documentation](https://docs.yoctoproject.org/dev/ref-manual/images.html#images).
 
-| `MACHINE`                     | Description                                                                                    |
+| `Image`                       | Description                                                                                    |
 | ----------------------------- | ---------------------------------------------------------------------------------------------- |
 | `core-image-minimal`          | A small image just capable of allowing a device to boot                                        |
 | `core-image-minimal-mtdutils` | A core-image-minimal image that has support for MTD Utilities                                  |
@@ -122,6 +122,6 @@ Please see the meta-mchp-common [README](https://github.com/linux4microchip/meta
    - Wait for the transfer to finish (progress bar will show).
    - To boot Linux, type `boot` in the HSS console.
 
-## Layer dependencies
+## Layer Dependencies
 
 Please see the respective READMEs in the layer subdirectories.
