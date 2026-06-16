@@ -86,7 +86,7 @@ The contents of this layer are licensed under the MIT License. See COPYING.MIT f
 If you want to contribute changes, you can send Github pull requests or patches at
 **<https://github.com/linux4microchip/meta-mchp/pulls>**.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for additional information about
+See [CONTRIBUTING.md](../CONTRIBUTING.md) for additional information about
 contribution guidelines.
 
 ## Maintainers
