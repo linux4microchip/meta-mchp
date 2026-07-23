@@ -13,9 +13,9 @@ do_install:append () {
     install -m 644 ${B}/gdbus/.libs/libgdbus-internal.a ${D}/${libdir}/bluez5_utils/lib
     install -m 644 ${B}/lib/.libs/libbluetooth-internal.a ${D}/${libdir}/bluez5_utils/lib
 
-    install -m 644  ${S}/lib/*.h ${D}${includedir}/bluez5_utils/lib/
+    install -m 644  ${S}/lib/bluetooth/*.h ${D}${includedir}/bluez5_utils/lib/
     install -m 644  ${S}/gdbus/*.h ${D}${includedir}/bluez5_utils/gdbus/
-    install -m 644  ${S}/lib/*.h ${D}${includedir}/bluez5_utils/bluetooth
+    install -m 644  ${S}/lib/bluetooth/*.h ${D}${includedir}/bluez5_utils/bluetooth
     install -m 644  ${S}/src/shared/*.h ${D}${includedir}/bluez5_utils/src/shared
     install -m 644  ${S}/monitor/*.h ${D}${includedir}/bluez5_utils/monitor/
 }
