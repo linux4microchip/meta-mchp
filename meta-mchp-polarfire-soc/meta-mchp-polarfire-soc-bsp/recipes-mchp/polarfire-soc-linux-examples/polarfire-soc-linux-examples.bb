@@ -6,7 +6,7 @@ DESCRIPTION = "Linux Example applications, includes the following: \
                - UIO DMA interrupt example."
 
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://${WORKDIR}/git/LICENSE;md5=06ec214e9fafe6d4515883d77674a453"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=06ec214e9fafe6d4515883d77674a453"
 
 DEPENDS = "openssl"
 
