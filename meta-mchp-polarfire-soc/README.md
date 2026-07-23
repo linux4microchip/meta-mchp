@@ -55,6 +55,28 @@ The `core-image-minimal-mtdutils` target generates a Linux image in `.mtdimg` fo
 > [!IMPORTANT]
 Login with root account, there is no password set.
 
+## Building an Initramfs Image
+
+An initramfs (initial RAM filesystem) can be bundled into the fitImage. The initramfs provides early userspace to initialize hardware and mount the root filesystem.
+
+### Configuration
+
+Add the following to your `local.conf` (or kas local config file):
+
+```
+INITRAMFS_IMAGE = "core-image-minimal-initramfs"
+INITRAMFS_IMAGE_BUNDLE = "1"
+```
+
+- `INITRAMFS_IMAGE` - Specifies which initramfs recipe to build and embed
+- `INITRAMFS_IMAGE_BUNDLE = "1"` - Embeds the initramfs directly into the fitImage (rather than as a separate file)
+
+Build the rootfs image.
+
+```sh
+bitbake <rootfs-image>
+```
+
 ## Build Instructions
 
 Please see the meta-mchp-common [README](https://github.com/linux4microchip/meta-mchp/blob/scarthgap/meta-mchp-common/README.md) section for detailed steps on how to setup and start a build for any of the supported devices.
