@@ -254,20 +254,10 @@ EXTRA_USERS_PARAMS = "\
 # this doesn't mean anything to you.
 CONF_VERSION = "2"
 
-# Disables static libraries from being included in the build by default.
-# Static libraries are typically unnecessary for most Yocto builds, and this helps
-# reduce the overall size of the build.
-require conf/distro/include/no-static-libs.inc
-
 # Enable uninative
 # This is a useful feature on systems that support it because
 # it enables sstate sharing across various distribution types.
-require conf/distro/include/yocto-uninative.inc
 INHERIT += "uninative"
-
-# Add configuration file for setting security-related flags
-# This setups extra CFLAGS and LDFLAGS which have 'security' benefits.
-require conf/distro/include/security_flags.inc
 
 # The SPDX (Software Package Data Exchange) class generates a Software Bill of
 # Materials (SBOM) in the form of an SPDX document. This document includes
