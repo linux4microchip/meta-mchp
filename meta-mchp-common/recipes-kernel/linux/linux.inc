@@ -6,9 +6,9 @@ LICENSE = "GPL-2.0-only"
 
 inherit kernel-yocto kernel
 
-KCONFIG_MODE="--alldefconfig"
+KCONFIG_MODE = "--alldefconfig"
 
 PV = "${LINUX_VERSION}+git${SRCPV}"
-KERNEL_VERSION_SANITY_SKIP="1"
+KERNEL_VERSION_SANITY_SKIP = "1"
 
 SRC_URI = "git://github.com/linux4microchip/linux.git;protocol=https;branch=${KBRANCH}"

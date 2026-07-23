@@ -9,7 +9,7 @@ inherit deploy
 
 PV = "1.0+git${SRCPV}"
 # v2025.07
-SRCREV="9a75da543c685204330d97e24c134e93b13577de"
+SRCREV = "9a75da543c685204330d97e24c134e93b13577de"
 SRC_URI = "git://github.com/polarfire-soc/polarfire-soc-amp-examples.git;protocol=https;nobranch=1"
 
 EXT_CFLAGS += "--sysroot=${STAGING_DIR_TARGET}"
