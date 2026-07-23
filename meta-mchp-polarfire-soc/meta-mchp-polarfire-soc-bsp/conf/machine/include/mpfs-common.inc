@@ -10,8 +10,20 @@ MACHINE_FEATURES = "screen keyboard ext2 ext3 serial"
 MACHINE_FEATURES:append = "${@' sdmmc' if '-nand' not in d.getVar('MACHINE') and '-nor' not in d.getVar('MACHINE') else ''}"
 MACHINEOVERRIDES:append = "${@bb.utils.contains('MACHINE_FEATURES', 'sdmmc', ':autoresize', '', d)}"
 
-KERNEL_CLASSES = "kernel-fitimage"
-KERNEL_IMAGETYPE = "fitImage"
+KERNEL_CLASSES = "kernel-fit-extra-artifacts"
+KERNEL_IMAGETYPE = "Image"
+# Create and deploy the vmlinux artifact which gets included into the FIT image
+KERNEL_CLASSES += "kernel-fit-extra-artifacts"
+
+# Do not install the kernel image package
+RRECOMMENDS:${KERNEL_PACKAGE_NAME}-base = ""
+# Install the FIT image package
+MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "linux-yocto-fitimage"
+
+# Configure the image.bbclass to depend on the FIT image instead of only
+# the kernel to ensure the FIT image is built and deployed with the image
+KERNEL_DEPLOY_DEPEND = "linux-yocto-fitimage:do_deploy"
+
 EXTERNAL_KERNEL_DEVICETREE = "${DEPLOY_DIR_IMAGE}/overlays"
 
 KBUILD_DEFCONFIG = "mpfs_defconfig"
