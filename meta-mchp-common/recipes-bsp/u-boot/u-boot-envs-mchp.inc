@@ -1,7 +1,7 @@
 # U-Boot Environments for Microchip boards
 
 ENV_FILENAME = "uboot.env"
-ENV_FILEPATH = "${WORKDIR}/envs"
+ENV_FILEPATH = "${UNPACKDIR}/envs"
 
 do_compile:append() {
     if [ -e "${ENV_FILEPATH}/${MACHINE}.txt" ]; then

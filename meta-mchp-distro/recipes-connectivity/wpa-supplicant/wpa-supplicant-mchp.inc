@@ -6,12 +6,12 @@ SRC_URI:append = " \
 "
 
 do_configure:append () {
-    cat ${WORKDIR}/wpa_supplicant.conf >> ${S}/wpa_supplicant/.config
+    cat ${UNPACKDIR}/wpa_supplicant.conf >> ${S}/wpa_supplicant/.config
 }
 
 do_install:append () {
     install -d ${D}${sysconfdir}/systemd/system
-    install -m 0644 ${WORKDIR}/wpa_supplicant.service ${D}${sysconfdir}/systemd/system
+    install -m 0644 ${UNPACKDIR}/wpa_supplicant.service ${D}${sysconfdir}/systemd/system
 }
 
 FILES:{PN}:append = " ${sysconfdir}/systemd/system/"

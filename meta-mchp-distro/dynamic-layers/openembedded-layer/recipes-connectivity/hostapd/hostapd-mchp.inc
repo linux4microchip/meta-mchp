@@ -8,15 +8,15 @@ SRC_URI:append = " \
 "
 
 do_configure:append () {
-    cat ${WORKDIR}/hostapd.conf >> ${S}/hostapd/.config
+    cat ${UNPACKDIR}/hostapd.conf >> ${S}/hostapd/.config
 }
 
 do_install:append () {
     install -d ${D}${sysconfdir}/systemd/system
     install -d ${D}${sysconfdir}/network
-    install -m 0644 ${WORKDIR}/hostapd@.service ${D}${sysconfdir}/systemd/system
-    install -m 0644 ${WORKDIR}/hostapd_open.conf ${D}${sysconfdir}/network
-    install -m 0644 ${WORKDIR}/hostapd_wpa.conf ${D}${sysconfdir}/network
+    install -m 0644 ${UNPACKDIR}/hostapd@.service ${D}${sysconfdir}/systemd/system
+    install -m 0644 ${UNPACKDIR}/hostapd_open.conf ${D}${sysconfdir}/network
+    install -m 0644 ${UNPACKDIR}/hostapd_wpa.conf ${D}${sysconfdir}/network
 }
 
 FILES:{PN}:append = " \

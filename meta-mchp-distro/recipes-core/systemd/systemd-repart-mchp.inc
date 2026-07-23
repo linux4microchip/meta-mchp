@@ -6,7 +6,7 @@ SRC_URI:append:autoresize = " file://50-root.conf"
 
 do_install:append:autoresize (){
     install -d ${D}${sysconfdir}/repart.d/
-    install -m 0644 ${WORKDIR}/50-root.conf ${D}${sysconfdir}/repart.d/
+    install -m 0644 ${UNPACKDIR}/50-root.conf ${D}${sysconfdir}/repart.d/
 }
 
 FILES:${PN} += "${sysconfdir}/repart.d/*"

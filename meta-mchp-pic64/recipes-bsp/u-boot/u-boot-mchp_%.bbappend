@@ -13,9 +13,9 @@ SRC_URI:append:pic64gx = " file://envs/"
 SRC_URI:append:pic64gx = " ${UBOOT_FILES}"
 
 do_deploy:append (){
-    cp -f ${B}/${UBOOT_BINARY} ${WORKDIR}
-    cd ${WORKDIR}
-    hss-payload-generator -c ${WORKDIR}/${HSS_PAYLOAD}.yaml -v ${DEPLOYDIR}/payload.bin
+    cp -f ${B}/${UBOOT_BINARY} ${UNPACKDIR}
+    cd ${UNPACKDIR}
+    hss-payload-generator -c ${UNPACKDIR}/${HSS_PAYLOAD}.yaml -v ${DEPLOYDIR}/payload.bin
 }
 
 do_deploy:prepend:pic64gx-curiosity-kit-amp () {
@@ -23,7 +23,7 @@ do_deploy:prepend:pic64gx-curiosity-kit-amp () {
         -e "s/@@AMP_DEMO@@/null/g" \
         -e "s/@@AMP_PAYLOAD@@/null/g" \
         -e "s/@@AMP_SKIP-AUTOBOOT@@/true/g" \
-        ${WORKDIR}/${HSS_PAYLOAD}.yaml.in > ${WORKDIR}/${HSS_PAYLOAD}.yaml
+        ${UNPACKDIR}/${HSS_PAYLOAD}.yaml.in > ${UNPACKDIR}/${HSS_PAYLOAD}.yaml
 }
 
 COMPATIBLE_MACHINE:append:pic64gx-curiosity-kit = "|pic64gx-curiosity-kit"

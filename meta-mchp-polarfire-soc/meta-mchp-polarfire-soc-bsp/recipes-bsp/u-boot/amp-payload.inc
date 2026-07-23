@@ -10,26 +10,26 @@ DEPENDS:append = "${@bb.utils.contains('DISTRO_FEATURES', 'hss-early-boot-bm',  
 
 do_deploy:prepend () {
     if ${@bb.utils.contains('DISTRO_FEATURES', 'hss-early-boot-freertos', 'true', 'false', d)}; then
-        cp -f ${DEPLOY_DIR_IMAGE}/polarfire-soc-freertos-amp-demo.elf ${WORKDIR}
+        cp -f ${DEPLOY_DIR_IMAGE}/polarfire-soc-freertos-amp-demo.elf ${UNPACKDIR}
         sed \
             -e "s/@@AMP_DEMO@@/freertos/g" \
             -e "s/@@AMP_PAYLOAD@@/polarfire-soc-freertos-amp-demo.elf/g" \
             -e "s/@@AMP_SKIP-AUTOBOOT@@/false/g" \
-            ${WORKDIR}/${HSS_PAYLOAD}.yaml.in > ${WORKDIR}/${HSS_PAYLOAD}.yaml
+            ${UNPACKDIR}/${HSS_PAYLOAD}.yaml.in > ${UNPACKDIR}/${HSS_PAYLOAD}.yaml
 
     elif ${@bb.utils.contains('DISTRO_FEATURES', 'hss-early-boot-bm', 'true', 'false', d)}; then
-        cp -f ${DEPLOY_DIR_IMAGE}/polarfire-soc-bm-amp-demo.elf ${WORKDIR}
+        cp -f ${DEPLOY_DIR_IMAGE}/polarfire-soc-bm-amp-demo.elf ${UNPACKDIR}
         sed \
             -e "s/@@AMP_DEMO@@/bm/g" \
             -e "s/@@AMP_PAYLOAD@@/polarfire-soc-bm-amp-demo.elf/g" \
             -e "s/@@AMP_SKIP-AUTOBOOT@@/false/g" \
-            ${WORKDIR}/${HSS_PAYLOAD}.yaml.in > ${WORKDIR}/${HSS_PAYLOAD}.yaml
+            ${UNPACKDIR}/${HSS_PAYLOAD}.yaml.in > ${UNPACKDIR}/${HSS_PAYLOAD}.yaml
 
     else
         sed \
             -e "s/@@AMP_DEMO@@/null/g" \
             -e "s/@@AMP_PAYLOAD@@/null/g" \
             -e "s/@@AMP_SKIP-AUTOBOOT@@/true/g" \
-            ${WORKDIR}/${HSS_PAYLOAD}.yaml.in > ${WORKDIR}/${HSS_PAYLOAD}.yaml
+            ${UNPACKDIR}/${HSS_PAYLOAD}.yaml.in > ${UNPACKDIR}/${HSS_PAYLOAD}.yaml
     fi
 }
