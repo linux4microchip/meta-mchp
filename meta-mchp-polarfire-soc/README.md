@@ -14,8 +14,6 @@ Collection of OpenEmbedded/Yocto Project layers for PolarFire SoC.
 | ------------------------------------| -----------------------------------|-----------------------------------------------------------------------|
 | `MACHINE=mpfs-icicle-kit`           | MPFS-ICICLE-KIT-ES, MPFS-ICICLE-KIT| PolarFire SoC Icicle Kit                                              |
 | `MACHINE=mpfs-icicle-kit-amp`       | MPFS-ICICLE-KIT-ES, MPFS-ICICLE-KIT| PolarFire SoC Icicle Kit in Asymmetric Multiprocessing (AMP) mode     |
-| `MACHINE=mpfs-icicle-kit-es-auth`   | MPFS-ICICLE-KIT-ES                 | PolarFire SoC Icicle Kit engineering sample with authenticated boot   |
-| `MACHINE=mpfs-icicle-kit-prod-auth` | MPFS-ICICLE-KIT                    | PolarFire SoC Icicle Kit with authenticated boot                      |
 | `MACHINE=mpfs-icicle-kit-nand`      | MPFS-ICICLE-KIT-ES, MPFS-ICICLE-KIT| PolarFire SoC Icicle Kit with Winbond W25N01GV NAND flash memory boot |
 | `MACHINE=mpfs-icicle-kit-nor`       | MPFS-ICICLE-KIT-ES, MPFS-ICICLE-KIT| PolarFire SoC Icicle Kit with Micron MT25QL256 NOR flash memory boot  |
 | `MACHINE=mpfs-disco-kit`            | MPFS-DISCO-KIT                     | PolarFire SoC Discovery Kit                                           |
