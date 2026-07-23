@@ -16,8 +16,6 @@ PV = "1.4+git${SRCPV}"
 SRC_URI = "git://github.com/linux4sam/ptc_examples.git;protocol=https;branch=master"
 SRCREV = "bb450b8a1db37d9ad4ce5d6ac849abec95f955b3"
 
-S = "${WORKDIR}/git"
-
 inherit pkgconfig cmake
 
 PACKAGECONFIG:apend:sama5d27-wlsom1-ek-sd = "sama5d27-wlsom1-ek"

@@ -12,8 +12,6 @@ SRC_URI = "gitsm://github.com/linux4sam/egt-benchmark.git;protocol=https;branch=
 
 SRCREV = "114c49c30de8e9182ac33be8a746896d0481c9fd"
 
-S = "${WORKDIR}/git"
-
 inherit pkgconfig cmake siteinfo
 
 FILES:${PN} += "${datadir}/egt/*"

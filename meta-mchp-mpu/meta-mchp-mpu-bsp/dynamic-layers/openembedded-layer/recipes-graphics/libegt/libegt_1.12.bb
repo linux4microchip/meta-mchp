@@ -23,8 +23,6 @@ SRC_URI = "gitsm://github.com/linux4sam/egt.git;protocol=https;branch=1.12"
 
 SRCREV = "c5b9cb435c8960a4aa07d7845c5c855d5e4a9c23"
 
-S = "${WORKDIR}/git"
-
 inherit pkgconfig cmake gettext
 
 PACKAGECONFIG ??= "tslib examples icons plplot curl librsvg gstreamer jpeg zlib libinput lua ${@bb.utils.filter('DISTRO_FEATURES', 'x11 alsa', d)}"

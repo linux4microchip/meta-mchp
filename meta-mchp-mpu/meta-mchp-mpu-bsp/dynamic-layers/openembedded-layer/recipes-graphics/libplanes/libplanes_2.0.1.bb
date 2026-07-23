@@ -15,8 +15,6 @@ SRC_URI = "git://github.com/linux4sam/libplanes.git;protocol=https;branch=master
 PV = "2.0.1+git${SRCPV}"
 SRCREV = "9709fc02d37a8f9ecee1c43c66e1319114b556f5"
 
-S = "${WORKDIR}/git"
-
 inherit pkgconfig cmake python3-dir python3targetconfig
 
 PACKAGECONFIG ??= "enable-engine"

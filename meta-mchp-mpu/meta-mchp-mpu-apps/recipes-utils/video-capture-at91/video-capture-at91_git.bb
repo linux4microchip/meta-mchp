@@ -10,8 +10,6 @@ COMPATIBLE_MACHINE = "sama5d2|sama7g5ek|sam9x75"
 PV = "1.0+git${SRCPV}"
 SRCREV = "b7d163f0e8a5a61fce521e6fb7433e209222bfe9"
 
-S = "${WORKDIR}/git"
-
 do_install () {
     for SOC in $(echo ${SOC_FAMILY} | tr ":" "\n")
     do

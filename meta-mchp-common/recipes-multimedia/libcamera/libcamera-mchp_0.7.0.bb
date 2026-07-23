@@ -17,7 +17,6 @@ SRCREV = "8d6f2a0cc4443a33abd8d407799fccd3b139efb3"
 
 PE = "1"
 PV = "0.7.0+mchp-${SRCPV}"
-S = "${WORKDIR}/git"
 
 DEPENDS = "\
     chrpath-native \

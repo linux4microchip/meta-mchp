@@ -9,7 +9,6 @@ SRC_URI = "git://github.com/linux4microchip/ble_bluez_hci_apps.git;protocol=http
 SRCREV  = "01f2dbbdbd5c7d4201a0cb1aa201980d50f670eb"
 
 PV = "1.0+git${SRCPV}"
-S = "${WORKDIR}/git"
 
 DEPENDS = "bluez5"
 

@@ -10,8 +10,6 @@ SRC_URI = "git://github.com/linux4sam/libm2d.git;protocol=https;branch=master"
 
 SRCREV = "e76c9fecaccb80f88b263b3df1132df4429a0d92"
 
-S = "${WORKDIR}/git"
-
 EXTRA_OECMAKE += "-DENABLE_TESTS=1"
 
 inherit pkgconfig cmake

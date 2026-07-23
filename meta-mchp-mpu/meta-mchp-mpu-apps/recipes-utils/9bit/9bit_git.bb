@@ -11,8 +11,6 @@ SRC_URI = "git://github.com/linux4sam/9bit.git;protocol=https;branch=master \
 PV = "1.0+git${SRCPV}"
 SRCREV = "f4cd916c8c58300ea1cbb398f0b40fe43a70d6d6"
 
-S = "${WORKDIR}/git"
-
 do_compile () {
     oe_runmake
 }

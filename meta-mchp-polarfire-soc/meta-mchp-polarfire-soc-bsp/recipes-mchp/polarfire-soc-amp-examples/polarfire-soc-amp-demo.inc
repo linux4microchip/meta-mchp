@@ -12,8 +12,6 @@ PV = "1.0+git${SRCPV}"
 SRCREV="9a75da543c685204330d97e24c134e93b13577de"
 SRC_URI = "git://github.com/polarfire-soc/polarfire-soc-amp-examples.git;protocol=https;nobranch=1"
 
-S = "${WORKDIR}/git"
-
 EXT_CFLAGS += "--sysroot=${STAGING_DIR_TARGET}"
 EXT_CFLAGS += "-DMPFS_HAL_FIRST_HART=4 -DMPFS_HAL_LAST_HART=4"
 EXT_CFLAGS += "-fdebug-prefix-map=${TMPDIR}=${TARGET_DBGSRC_DIR}"

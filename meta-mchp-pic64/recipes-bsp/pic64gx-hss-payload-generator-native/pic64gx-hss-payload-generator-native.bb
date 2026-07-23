@@ -13,8 +13,6 @@ PV = "1.0+git${SRCPV}"
 SRCREV = "5bfb22839385a1e3782632e5af4117ee4bdf8952"
 SRC_URI = "git://github.com/pic64gx/pic64gx-hart-software-services.git;protocol=https;nobranch=1"
 
-S = "${WORKDIR}/git"
-
 do_compile () {
     oe_runmake -C ${S}/tools/hss-payload-generator -e CFLAGS="${CFLAGS}"
 }

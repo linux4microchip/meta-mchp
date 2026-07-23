@@ -28,8 +28,6 @@ SRC_URI = "git://github.com/PLplot/PLplot;protocol=https;branch=master \
 "
 inherit cmake pkgconfig
 
-S = "${WORKDIR}/git"
-
 EXTRA_OECMAKE += "\
     -DCMAKE_INSTALL_LIBDIR=${libdir} \
     -DCMAKE_INSTALL_INCLUDEDIR=${includedir} \

@@ -16,8 +16,6 @@ SRC_URI = "gitsm://github.com/linux4sam/egt-samples.git;protocol=https;branch=ma
 PV = "1.7+git${SRCPV}"
 SRCREV = "4dd6d6c3ef153b34a9a83af468a0471bf35d28b3"
 
-S = "${WORKDIR}/git"
-
 inherit pkgconfig cmake gettext
 
 FILES:${PN} += "/usr/share/egt/*"

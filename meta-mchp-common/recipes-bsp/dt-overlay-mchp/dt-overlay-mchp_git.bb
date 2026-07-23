@@ -9,7 +9,6 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=775626b7bc958bdcc525161f725ece0f \
 
 inherit deploy
 
-S = "${WORKDIR}/git"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 DEPENDS:append = " u-boot-mkimage-native dtc-native"
 

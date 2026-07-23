@@ -18,8 +18,6 @@ SRC_URI = "git://github.com/MicrochipTech/wilcbtapps-buildroot-external-microchi
 PV = "1.0+git${SRCPV}"
 SRCREV  = "9a3003d8c28da803bb0f621f888a643a0a0a7f76"
 
-S = "${WORKDIR}/git"
-
 do_compile () {
         ${TARGET_PREFIX}gcc ${TARGET_CC_ARCH} ${TOOLCHAIN_OPTIONS} -Wall    \
 	-std=gnu11 -g -D_REENTRANT -static -I${STAGING_INCDIR}/bluez5_utils \

@@ -16,8 +16,6 @@ SRC_URI = "git://github.com/linux4sam/gst1-hantro-g1;protocol=https;branch=maste
 SRCREV_common = "9aed1d7a80a38b76f9441ecf181942df99f09c38"
 SRCREV_FORMAT = "base"
 
-S = "${WORKDIR}/git"
-
 FILES:${PN} += "${libdir}/gstreamer-1.0/*.so"
 FILES:${PN}-dbg += "${libdir}/gstreamer-1.0/.debug"
 FILES:${PN}-dev += "${libdir}/gstreamer-1.0/*.la"

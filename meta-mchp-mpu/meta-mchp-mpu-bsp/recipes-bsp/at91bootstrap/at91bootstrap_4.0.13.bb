@@ -10,8 +10,6 @@ SRC_URI = "git://github.com/linux4sam/at91bootstrap.git;protocol=https;branch=at
 PV = "4.0.13+git${SRCPV}"
 SRCREV = "c2e3f87bf694a4c27c60d24db512adcdd4d7b442"
 
-S = "${WORKDIR}/git"
-
 EXTRA_OEMAKE = 'CROSS_COMPILE=${TARGET_PREFIX} CC=${TARGET_PREFIX}gcc EXTRA_CC_ARGS="${TOOLCHAIN_OPTIONS}"'
 
 AT91BOOTSTRAP_BIN_PATH = "${S}/build/binaries"

@@ -23,8 +23,6 @@ SRCREV = "f7268d4eadad95ce9a0512fba8d1379ecb171a3e"
 
 PE = "1"
 
-S = "${WORKDIR}/git"
-
 DEPENDS:append = " python3-pyyaml-native python3-jinja2-native python3-ply-native python3-jinja2-native udev gnutls chrpath-native libevent libyaml jpeg libpng"
 DEPENDS:append = " ${@bb.utils.contains('DISTRO_FEATURES', 'qt', 'qtbase qtbase-native', '', d)}"
 RDEPENDS:${PN} = "${PN}-ipa ${@bb.utils.contains('DISTRO_FEATURES', 'wayland qt', 'qtwayland', '', d)}"

@@ -8,7 +8,6 @@ LIC_FILES_CHKSUM = "file://LICENSE.wilc_fw;beginline=6;md5=e1a0446d046c966a27276
 
 SRCREV = "3290a8a3c524702fbb7c673a4223e99b1a993b62"
 SRC_URI = "git://github.com/linux4wilc/firmware.git;protocol=https;branch=master"
-S = "${WORKDIR}/git"
 
 inherit allarch
 

@@ -19,8 +19,6 @@ SRC_URI = "git://github.com/linux4sam/egt-launcher.git;protocol=https;branch=mas
 PV = "1.5.1+git${SRCPV}"
 SRCREV = "8eb835928343dad9083c3ce607dffe2f53fd420a"
 
-S = "${WORKDIR}/git"
-
 inherit pkgconfig cmake gettext siteinfo
 
 FILES:${PN} += "/usr/share/egt/*"

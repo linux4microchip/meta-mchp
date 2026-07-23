@@ -13,8 +13,6 @@ PV = "1.0+git${SRCPV}"
 SRCREV = "4bea7e24f3e5ef1de360a80b0a27abb1eb6134e0"
 SRC_URI = "git://github.com/polarfire-soc/hart-software-services.git;protocol=https;nobranch=1"
 
-S = "${WORKDIR}/git"
-
 do_compile () {
     oe_runmake -C ${S}/tools/hss-payload-generator -e CFLAGS="${CFLAGS}"
 }

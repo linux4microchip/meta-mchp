@@ -11,5 +11,3 @@ inherit pkgconfig cmake
 SRC_URI = "git://github.com/linux4sam/nano2d.git;protocol=https;branch=master"
 
 SRCREV = "1aee6694e574adccd625e87ebb37314da7f170b9"
-
-S = "${WORKDIR}/git"

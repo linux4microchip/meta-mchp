@@ -13,8 +13,6 @@ SRC_URI = "git://github.com/MicrochipTech/cryptoauthlib.git;branch=main;protocol
 PV = "1.0+git${SRCPV}"
 SRCREV = "7f0015615a70671814a8dd956c8318d1b922791e"
 
-S = "${WORKDIR}/git"
-
 DEPENDS = "openssl udev"
 RDEPENDS:${PN} = "gnutls-bin libp11 (>= 0.4.10) "
 RRECOMMENDS:${PN} = "p11-kit"

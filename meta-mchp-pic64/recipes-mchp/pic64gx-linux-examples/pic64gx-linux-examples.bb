@@ -10,8 +10,6 @@ SRCREV="ff749ffb982b601f2cc99a53566511711dca65f5"
 SRC_URI = "git://github.com/pic64gx/pic64gx-linux-examples.git;protocol=https;nobranch=1 \
           "
 
-S = "${WORKDIR}/git"
-
 PACKAGES = " \
     ${PN}-amp \
     ${PN}-dt-overlays \

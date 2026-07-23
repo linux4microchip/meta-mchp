@@ -14,8 +14,6 @@ PV = "1.0+git${SRCPV}"
 SRCREV = "b2dc371a35b0af98c3dbb54de467f950ddda6f85"
 SRC_URI = "git://github.com/polarfire-soc/polarfire-soc-linux-examples.git;protocol=https;nobranch=1"
 
-S = "${WORKDIR}/git"
-
 PACKAGES = " \
     ${PN}-amp \
     ${PN}-can \

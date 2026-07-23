@@ -1,7 +1,5 @@
 inherit devicetree
 
-S = "${WORKDIR}/git"
-
 COMPATIBLE_MACHINE:append:mpfs-video-kit = "|mpfs-video-kit"
 COMPATIBLE_MACHINE:append:mpfs-icicle-kit-all = "|mpfs-icicle-kit-all"
 
