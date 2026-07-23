@@ -11,7 +11,7 @@ PACKAGES += "\
     ${PN}-multimedia \
 "
 
-INSANE_SKIP:${PN}-multimedia += "file-rdeps ldflags debug-files"
+INSANE_SKIP:${PN}-multimedia += "file-rdeps ldflags"
 
 EXAMPLE_FILES += "\
     multimedia \

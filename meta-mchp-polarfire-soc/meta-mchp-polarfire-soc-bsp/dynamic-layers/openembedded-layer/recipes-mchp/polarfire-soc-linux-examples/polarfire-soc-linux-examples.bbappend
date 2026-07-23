@@ -5,7 +5,7 @@ PACKAGES += "\
     ${PN}-gpio \
 "
 
-INSANE_SKIP:${PN}-gpio += "file-rdeps ldflags debug-files"
+INSANE_SKIP:${PN}-gpio += "file-rdeps ldflags"
 
 EXAMPLE_FILES += "\
     gpio \

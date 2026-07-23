@@ -11,6 +11,7 @@ SRC_URI = "git://github.com/pic64gx/pic64gx-linux-examples.git;protocol=https;no
           "
 
 PACKAGES = " \
+    ${PN}-dbg \
     ${PN}-amp \
     ${PN}-dt-overlays \
 "
@@ -18,8 +19,8 @@ PACKAGES = " \
 SECURITY_CFLAGS = ""
 
 # Apply INSANE_SKIP flags to all packages listed (alphabetical order)
-INSANE_SKIP:${PN}-amp += "file-rdeps ldflags debug-files"
-INSANE_SKIP:${PN}-dt-overlays += "file-rdeps ldflags debug-files"
+INSANE_SKIP:${PN}-amp += "file-rdeps ldflags"
+INSANE_SKIP:${PN}-dt-overlays += "file-rdeps ldflags"
 
 
 EXAMPLE_FILES = "\

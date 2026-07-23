@@ -15,6 +15,7 @@ SRCREV = "b2dc371a35b0af98c3dbb54de467f950ddda6f85"
 SRC_URI = "git://github.com/polarfire-soc/polarfire-soc-linux-examples.git;protocol=https;nobranch=1"
 
 PACKAGES = " \
+    ${PN}-dbg \
     ${PN}-amp \
     ${PN}-can \
     ${PN}-dma \
@@ -28,14 +29,14 @@ PACKAGES = " \
 SECURITY_CFLAGS = ""
 
 # Apply INSANE_SKIP flags to all packages listed (alphabetical order)
-INSANE_SKIP:${PN}-amp += "file-rdeps ldflags debug-files"
-INSANE_SKIP:${PN}-can += "file-rdeps ldflags debug-files"
-INSANE_SKIP:${PN}-dma += "file-rdeps ldflags debug-files"
-INSANE_SKIP:${PN}-dt-overlays += "file-rdeps ldflags debug-files"
-INSANE_SKIP:${PN}-gateware += "file-rdeps ldflags debug-files"
-INSANE_SKIP:${PN}-lsram += "file-rdeps ldflags debug-files"
-INSANE_SKIP:${PN}-pdma += "file-rdeps ldflags debug-files"
-INSANE_SKIP:${PN}-system-services += "file-rdeps ldflags debug-files"
+INSANE_SKIP:${PN}-amp += "file-rdeps ldflags"
+INSANE_SKIP:${PN}-can += "file-rdeps ldflags"
+INSANE_SKIP:${PN}-dma += "file-rdeps ldflags"
+INSANE_SKIP:${PN}-dt-overlays += "file-rdeps ldflags"
+INSANE_SKIP:${PN}-gateware += "file-rdeps ldflags"
+INSANE_SKIP:${PN}-lsram += "file-rdeps ldflags"
+INSANE_SKIP:${PN}-pdma += "file-rdeps ldflags"
+INSANE_SKIP:${PN}-system-services += "file-rdeps ldflags"
 
 EXAMPLE_FILES = "\
     amp/rpmsg-pingpong \

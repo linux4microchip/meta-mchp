@@ -6,7 +6,7 @@ PACKAGES += "\
     ${PN}-iiohttpserver \
 "
 
-INSANE_SKIP:${PN}-iiohttpserver += "file-rdeps ldflags debug-files"
+INSANE_SKIP:${PN}-iiohttpserver += "file-rdeps ldflags"
 
 EXAMPLE_FILES += "\
     ethernet \
