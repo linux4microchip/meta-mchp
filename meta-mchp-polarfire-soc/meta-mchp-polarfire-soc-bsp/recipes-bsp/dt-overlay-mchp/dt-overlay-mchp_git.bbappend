@@ -1,10 +1,8 @@
-inherit devicetree
-
 COMPATIBLE_MACHINE:append:mpfs-video-kit = "|mpfs-video-kit"
 COMPATIBLE_MACHINE:append:mpfs-icicle-kit-all = "|mpfs-icicle-kit-all"
 
-DT_FILES_PATH:mpfs-icicle-kit-all = "${WORKDIR}/git/mpfs_icicle"
-DT_FILES_PATH:mpfs-video-kit = "${WORKDIR}/git/mpfs_video"
+DT_FILES_PATH:mpfs-icicle-kit-all = "${S}/mpfs_icicle"
+DT_FILES_PATH:mpfs-video-kit = "${S}/mpfs_video"
 
 do_compile[depends] = ""
 DEPENDS:append:mpfs = " dtc-native"

@@ -1,9 +1,7 @@
-inherit devicetree
-
 COMPATIBLE_MACHINE:append:pic64gx-curiosity-kit = "|pic64gx-curiosity-kit"
 COMPATIBLE_MACHINE:append:pic64gx-curiosity-kit-amp = "|pic64gx-curiosity-kit-amp"
 
-DT_FILES_PATH:pic64gx = "${WORKDIR}/git/pic64gx_curiosity_kit"
+DT_FILES_PATH:pic64gx = "${S}/pic64gx_curiosity_kit"
 
 do_compile[depends] = ""
 DEPENDS:append:pic64gx = " dtc-native"

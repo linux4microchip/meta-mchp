@@ -7,7 +7,10 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=775626b7bc958bdcc525161f725ece0f \
                     file://LICENSES/GPL-2.0;md5=e6a75371ba4d16749254a51215d13f97 \
                     file://LICENSES/MIT;md5=e8f57dd048e186199433be2c41bd3d6d"
 
-inherit deploy
+inherit deploy devicetree
+
+# We must set S as devicetree.bbclass changes it from the default.
+S = "${UNPACKDIR}/${BP}"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 DEPENDS:append = " u-boot-mkimage-native dtc-native"
