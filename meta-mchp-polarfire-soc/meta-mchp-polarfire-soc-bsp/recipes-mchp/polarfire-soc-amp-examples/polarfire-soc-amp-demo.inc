@@ -1,7 +1,7 @@
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://${WORKDIR}/git/LICENSE.md;md5=736a28e202059f476d2e3e1c80e5b009"
+LIC_FILES_CHKSUM = "file://LICENSE.md;md5=736a28e202059f476d2e3e1c80e5b009"
 
 DEPENDS:append = " makedepend-native"
 
@@ -15,6 +15,7 @@ SRC_URI = "git://github.com/polarfire-soc/polarfire-soc-amp-examples.git;protoco
 EXT_CFLAGS += "--sysroot=${STAGING_DIR_TARGET}"
 EXT_CFLAGS += "-DMPFS_HAL_FIRST_HART=4 -DMPFS_HAL_LAST_HART=4"
 EXT_CFLAGS += "-fdebug-prefix-map=${TMPDIR}=${TARGET_DBGSRC_DIR}"
+EXT_CFLAGS += "-Wno-error=implicit-function-declaration -Wno-error=int-conversion -Wno-error=return-mismatch"
 
 PARALLEL_MAKE = ""
 EXTRA_OEMAKE = "REMOTE=1 REMOTEPROC=1 CROSS_COMPILE=${TARGET_PREFIX} EXT_CFLAGS='${EXT_CFLAGS}'"

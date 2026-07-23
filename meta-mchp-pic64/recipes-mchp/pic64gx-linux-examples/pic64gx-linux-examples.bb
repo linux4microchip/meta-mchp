@@ -3,7 +3,7 @@ DESCRIPTION = "Linux Example Applications"
 HOMEPAGE = "https://github.com/pic64gx/pic64gx-linux-examples"
 
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://${WORKDIR}/git/LICENSE;md5=06ec214e9fafe6d4515883d77674a453"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=06ec214e9fafe6d4515883d77674a453"
 
 PV = "1.0+git${SRCPV}"
 SRCREV="ff749ffb982b601f2cc99a53566511711dca65f5"
