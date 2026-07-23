@@ -5,6 +5,6 @@ repos:
   bitbake:
     path: layers/bitbake
     url: https://github.com/openembedded/bitbake.git
-    commit: 8dcf084522b9c66a6639b5f117f554fde9b6b45a  # scarthgap
+    commit: 33581c84f3a85008239acbd940501a35de48dc91  # yocto-6.0
     layers:
       bitbake: disabled

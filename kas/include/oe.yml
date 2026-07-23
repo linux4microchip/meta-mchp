@@ -5,10 +5,9 @@ repos:
   openembedded-core:
     path: layers/openembedded-core
     url: https://github.com/openembedded/openembedded-core.git
-    commit: 2814f0962f56c8d1afa4de76d2895ba9b5cb767d  # yocto-5.0.19
+    commit: 42fa856a00ac16b2a7a83d7ecfa60a5be192b16c  # refs/tags/yocto-6.0
 
   meta-openembedded:
     path: layers/meta-openembedded
     url: https://github.com/openembedded/meta-openembedded.git
-    commit: ec0469748be4159fb83fb0fa0148d786484c88cf  # scarthgap
-
+    commit: 420222862f5a6d95023b8f5f3b7e1808b2264ef9  # wrynose

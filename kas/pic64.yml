@@ -18,7 +18,7 @@ repos:
   meta-zephyr:
     path: layers/meta-zephyr
     url: https://git.yoctoproject.org/meta-zephyr.git
-    commit: 1f08e19450aa3051d626d21d892a0464a21b15ae  # scarthgap
+    commit: ec31a030bd69b5ef3a947a3fc390e7745bd06038  # wrynose
     layers:
       meta-zephyr-core:
       meta-zephyr-bsp:
