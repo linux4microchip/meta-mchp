@@ -1,6 +1,6 @@
 inherit core-image
 
-IMAGE_FEATURES += "ssh-server-openssh package-management debug-tweaks"
+IMAGE_FEATURES += "ssh-server-openssh package-management allow-root-login empty-root-password"
 
 IMAGE_INSTALL:append = " \
     kernel-modules \

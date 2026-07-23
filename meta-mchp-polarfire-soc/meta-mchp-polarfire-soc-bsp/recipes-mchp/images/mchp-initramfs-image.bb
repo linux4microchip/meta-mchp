@@ -18,7 +18,7 @@ IMAGE_INSTALL = "\
 "
 
 # Do not pollute the initrd image with rootfs features
-IMAGE_FEATURES = "debug-tweaks"
+IMAGE_FEATURES = "allow-root-login empty-root-password"
 
 export IMAGE_BASENAME = "mchp-initramfs-image"
 IMAGE_NAME_SUFFIX ?= ""
