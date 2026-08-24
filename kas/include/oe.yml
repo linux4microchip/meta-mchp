@@ -5,7 +5,7 @@ repos:
   openembedded-core:
     path: layers/openembedded-core
     url: https://github.com/openembedded/openembedded-core.git
-    commit: 6988157ad983978ffd6b12bcefedd4deaffdbbd1  # scarthgap
+    commit: 2814f0962f56c8d1afa4de76d2895ba9b5cb767d  # yocto-5.0.19
 
   meta-openembedded:
     path: layers/meta-openembedded
