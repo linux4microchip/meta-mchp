@@ -5,7 +5,7 @@ LICENSE = "CLOSED"
 
 PR = "r1"
 
-SRC_URI ="git://github.com/linux4sam/egt-media.git;protocol=https;branch=master"
+SRC_URI = "git://github.com/linux4sam/egt-media.git;protocol=https;branch=master"
 SRCREV = "7bdb1f492554f7bd1600c0095bab2a75f02a9c71"
 
 RDEPENDS:${PN} = "\

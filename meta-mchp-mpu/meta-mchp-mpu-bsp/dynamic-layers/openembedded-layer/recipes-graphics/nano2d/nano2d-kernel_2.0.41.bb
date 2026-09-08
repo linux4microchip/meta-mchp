@@ -12,8 +12,6 @@ SRC_URI = "file://Makefile \
 
 SRCREV = "1aee6694e574adccd625e87ebb37314da7f170b9"
 
-S = "${WORKDIR}"
-
 MODULES_MODULE_SYMVERS_LOCATION = "git/drv/nano2Dkernel"
 
 # The inherit of module.bbclass will automatically name module packages with

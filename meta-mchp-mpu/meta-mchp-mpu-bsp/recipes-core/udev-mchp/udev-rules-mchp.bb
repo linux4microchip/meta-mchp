@@ -11,8 +11,6 @@ SRC_URI:sam9x75 = "file://sam9x75/keyboard.rules"
 SRC_URI:sama7d65 = "file://sama7d65/keyboard.rules"
 SRC_URI:append:sama5d2 = " file://ptc.rules"
 
-S = "${WORKDIR}"
-
 do_install () {
     install -d ${D}${sysconfdir}/udev/rules.d
     install -m 0644 ${WORKDIR}/*.rules ${D}${sysconfdir}/udev/rules.d/
