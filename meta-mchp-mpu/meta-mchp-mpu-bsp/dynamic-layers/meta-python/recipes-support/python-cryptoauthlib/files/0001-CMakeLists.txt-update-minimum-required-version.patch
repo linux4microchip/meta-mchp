@@ -1,0 +1,27 @@
+From b3bb484b337510052bf441bb84da973ae019b3f4 Mon Sep 17 00:00:00 2001
+From: Nayab Sayed <nayabbasha.sayed@microchip.com>
+Date: Tue, 21 Jul 2026 16:02:59 +0530
+Subject: [PATCH] CMakeLists.txt: update minimum required version to 3.5
+
+CMake >= 3.31 has removed compatibility with CMake < 3.5. Update the
+minimum required version to avoid a configuration error.
+
+Signed-off-by: Nayab Sayed <nayabbasha.sayed@microchip.com>
+
+Upstream-Status: Pending
+---
+ lib/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/lib/CMakeLists.txt b/lib/CMakeLists.txt
+index 10a3b9b..a17baa0 100644
+--- a/lib/CMakeLists.txt
++++ b/lib/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.1.0)
++cmake_minimum_required(VERSION 3.5)
+ project(cryptoauth)
+
+ # Various Options for Build
+--
+2.34.1
