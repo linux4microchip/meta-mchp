@@ -15,6 +15,8 @@ SRC_URI[notosans.sha256sum] = "f3961a9cde016d41a4879aecda1474d3a36d6bf54fa0e4643
 SRC_URI[notosanssc.sha256sum] = "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b"
 SRC_URI[notoemoji.sha256sum] = "72a635cb3d2f3524c51620cdde406b217204e8a6a06c6a096ff8ed4b5fd6e27b"
 
+S = "${UNPACKDIR}"
+
 inherit allarch fontcache
 
 FILES:${PN} += "${datadir}/fonts/noto/*"

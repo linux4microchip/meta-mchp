@@ -1,4 +1,4 @@
-SRC := $(shell pwd)/git/drv/nano2Dkernel
+SRC := $(shell pwd)/drv/nano2Dkernel
 
 all:
 	$(MAKE) -C $(KERNEL_SRC) M=$(SRC)

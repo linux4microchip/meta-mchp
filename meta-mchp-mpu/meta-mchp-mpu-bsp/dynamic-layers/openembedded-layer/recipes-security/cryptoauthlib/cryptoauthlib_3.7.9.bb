@@ -58,7 +58,7 @@ do_install:append() {
     i2c_addr ${MACHINE}
 
     # Install module and conf for all machines
-    install -Dm 644 ${WORKDIR}/cryptoauthlib.module ${D}${datadir}/p11-kit/modules/cryptoauthlib.module
+    install -Dm 644 ${UNPACKDIR}/cryptoauthlib.module ${D}${datadir}/p11-kit/modules/cryptoauthlib.module
     install -m 0644 ${D}${localstatedir}/lib/cryptoauthlib/slot.conf.tmpl ${D}${localstatedir}/lib/cryptoauthlib/0.conf
 
 

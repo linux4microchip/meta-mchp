@@ -10,7 +10,7 @@ SRC_URI = "https://github.com/atmelcorp/${BPN}/releases/download/v${PV}/${BPN}_v
 SRC_URI[md5sum] = "e2058ce25e6af072deff407ac57b443d"
 SRC_URI[sha256sum] = "59b77ae4b716aed4d9ffdbbf707f3f414f80da8357a42a1409d8740d7387e567"
 
-S = "${WORKDIR}/${BPN}_v${PV}"
+S = "${UNPACKDIR}/${BPN}_v${PV}"
 
 do_install () {
     install -d ${D}${bindir}/

@@ -10,7 +10,7 @@ SRC_URI = "file://Start_AP.sh \
            file://Start_STA.sh \
            "
 do_install () {
-    install -D -m 0755 --target-directory=${D}${ROOT_HOME} ${WORKDIR}/Start_*
+    install -D -m 0755 --target-directory=${D}${ROOT_HOME} ${UNPACKDIR}/Start_*
 }
 
 RDEPENDS:${PN}:append = " kea"

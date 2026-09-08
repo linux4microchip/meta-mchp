@@ -9,7 +9,7 @@ SRC_URI = "https://releases.pagure.org/lohit/lohit-ttf-20140220.tar.gz"
 SRC_URI[md5sum] = "aee81313dae1a8fb6ed3a4f572180c42"
 SRC_URI[sha256sum] = "4d0cdb884cb30b8e11babf2266a189e173bd9d664878ee434136705808c9afe6"
 
-S = "${WORKDIR}/lohit-ttf-20140220"
+S = "${UNPACKDIR}/lohit-ttf-20140220"
 
 inherit allarch fontcache
 

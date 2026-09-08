@@ -11,17 +11,19 @@ SRC_URI:sam9x75 = "file://sam9x75/keyboard.rules"
 SRC_URI:sama7d65 = "file://sama7d65/keyboard.rules"
 SRC_URI:append:sama5d2 = " file://ptc.rules"
 
+S = "${UNPACKDIR}"
+
 do_install () {
     install -d ${D}${sysconfdir}/udev/rules.d
-    install -m 0644 ${WORKDIR}/*.rules ${D}${sysconfdir}/udev/rules.d/
+    install -m 0644 ${UNPACKDIR}/*.rules ${D}${sysconfdir}/udev/rules.d/
 }
 
 do_install:sam9x75 () {
     install -d ${D}${sysconfdir}/udev/rules.d
-    install -m 0644 ${WORKDIR}/sam9x75/*.rules ${D}${sysconfdir}/udev/rules.d/
+    install -m 0644 ${UNPACKDIR}/sam9x75/*.rules ${D}${sysconfdir}/udev/rules.d/
 }
 
 do_install:sama7d65 () {
     install -d ${D}${sysconfdir}/udev/rules.d
-    install -m 0644 ${WORKDIR}/sama7d65/*.rules ${D}${sysconfdir}/udev/rules.d/
+    install -m 0644 ${UNPACKDIR}/sama7d65/*.rules ${D}${sysconfdir}/udev/rules.d/
 }

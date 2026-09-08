@@ -45,9 +45,9 @@ EXTRA_OECMAKE += "\
 do_compile:prepend() {
     mkdir -p ${B}/lib/qsastime
     mkdir -p ${B}/include
-    cp -avf ${WORKDIR}/deltaT.h  ${B}/lib/qsastime/
-    cp -avf ${WORKDIR}/tai-utc.h ${B}/lib/qsastime/
-    cp -avf ${WORKDIR}/plhershey-unicode.h ${B}/include/
+    cp -avf ${UNPACKDIR}/deltaT.h  ${B}/lib/qsastime/
+    cp -avf ${UNPACKDIR}/tai-utc.h ${B}/lib/qsastime/
+    cp -avf ${UNPACKDIR}/plhershey-unicode.h ${B}/include/
 }
 
 do_install:append() {
