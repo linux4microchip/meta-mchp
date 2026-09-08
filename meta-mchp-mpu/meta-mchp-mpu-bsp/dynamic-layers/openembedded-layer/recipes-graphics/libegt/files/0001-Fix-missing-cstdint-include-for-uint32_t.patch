@@ -1,0 +1,42 @@
+From d8a9a4b2c12a7f5a5e3e2b260d3c69c6a096ff8e Mon Sep 17 00:00:00 2000
+From: Nayab Sayed <nayabbasha.sayed@microchip.com>
+Date: Sun, 19 Jul 2026 22:35:00 +0530
+Subject: [PATCH] Fix missing <cstdint> include in types.h and cxxopts.hpp for uint32_t
+
+In newer compiler versions, uint32_t is not implicitly declared without
+including <cstdint> header. This fixes the compilation error.
+
+Upstream-Status: Pending
+
+Signed-off-by: Nayab Sayed <nayabbasha.sayed@microchip.com>
+---
+ external/cxxopts/include/cxxopts.hpp | 1 +
+ include/egt/types.h                  | 1 +
+ 2 files changed, 2 insertions(+)
+
+diff --git a/include/egt/types.h b/include/egt/types.h
+index 63b8e94..d116c90 100644
+--- a/include/egt/types.h
++++ b/include/egt/types.h
+@@ -12,6 +12,7 @@
+  * @brief Common types.
+  */
+
++#include <cstdint>
+ #include <egt/detail/enum.h>
+ #include <egt/detail/meta.h>
+ #include <iosfwd>
+diff --git a/external/cxxopts/include/cxxopts.hpp b/external/cxxopts/include/cxxopts.hpp
+index b65ca5b..a8bc5be 100644
+--- a/external/cxxopts/include/cxxopts.hpp
++++ b/external/cxxopts/include/cxxopts.hpp
+@@ -25,6 +25,7 @@
+ #ifndef CXXOPTS_HPP_INCLUDED
+ #define CXXOPTS_HPP_INCLUDED
+
++#include <cstdint>
+ #include <cstring>
+ #include <cctype>
+ #include <exception>
+--
+2.25.1

@@ -19,7 +19,9 @@ DEPENDS:append:sam9x75 = " libm2d"
 
 EXTRA_OECMAKE:append:sama7d65 = " -DWITH_LIBM2D=OFF"
 
-SRC_URI = "gitsm://github.com/linux4sam/egt.git;protocol=https;branch=1.12"
+SRC_URI = "gitsm://github.com/linux4sam/egt.git;protocol=https;branch=1.12 \
+           file://0001-Fix-missing-cstdint-include-for-uint32_t.patch \
+"
 
 SRCREV = "c5b9cb435c8960a4aa07d7845c5c855d5e4a9c23"
 
