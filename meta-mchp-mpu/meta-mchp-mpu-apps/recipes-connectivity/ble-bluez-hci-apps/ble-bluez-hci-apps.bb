@@ -5,7 +5,9 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://README;md5=5413bb09d9a7d0e0baa6b9bb69034212"
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-SRC_URI = "git://github.com/linux4microchip/ble_bluez_hci_apps.git;protocol=https;branch=master"
+SRC_URI = "git://github.com/linux4microchip/ble_bluez_hci_apps.git;protocol=https;branch=master \
+           file://0001-Fix-bt_shell_set_prompt-arguments-for-newer-bluez5-A.patch \
+           "
 SRCREV  = "01f2dbbdbd5c7d4201a0cb1aa201980d50f670eb"
 
 PV = "1.0+git${SRCPV}"

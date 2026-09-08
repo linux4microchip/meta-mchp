@@ -1,0 +1,42 @@
+From 76b78915e902542baf4432a5d4842ceecc0c7fd7 Mon Aug 26 12:12:34 2026
+From: Nayab Sayed <nayabbasha.sayed@microchip.com>
+Date: Tue, 25 Aug 2026 15:14:28 +0530
+Subject: [PATCH] Fix bt_shell_set_prompt arguments for newer bluez5 API
+
+Newer bluez5 API for bt_shell_set_prompt expects 2 arguments: prompt
+string and color string. Pass NULL as the second argument.
+
+Upstream-Status: Pending
+
+Signed-off-by: Nayab Sayed <nayabbasha.sayed@microchip.com>
+---
+ apps/ble_uart_app/src/app_dbp.c | 2 +-
+ apps/dfu_app/src/main.c         | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/apps/ble_uart_app/src/app_dbp.c b/apps/ble_uart_app/src/app_dbp.c
+index 1d212a9..43c32ce 100644
+--- a/apps/ble_uart_app/src/app_dbp.c
++++ b/apps/ble_uart_app/src/app_dbp.c
+@@ -1523,7 +1523,7 @@ void APP_DBP_PropertyChanged(GDBusProxy *p_proxy, const char *p_name, DBusMessag
+ 
+ void APP_DBP_DBusConnectHandler(DBusConnection *p_connection, void *p_userData)
+ {
+-    bt_shell_set_prompt(PROMPT_ON);
++    bt_shell_set_prompt(PROMPT_ON, NULL);
+ }
+ 
+ void APP_DBP_DBusDisconnectHandler(DBusConnection *p_connection, void *p_userData)
+diff --git a/apps/dfu_app/src/main.c b/apps/dfu_app/src/main.c
+index a7d17a5..cf5a4c3 100644
+--- a/apps/dfu_app/src/main.c
++++ b/apps/dfu_app/src/main.c
+@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
+     
+     APP_Initialize();
+ 
+-    bt_shell_set_prompt(PROMPT_ON);
++    bt_shell_set_prompt(PROMPT_ON, NULL);
+     bt_shell_attach(fileno(stdin));
+     /*running in a loop*/
+     bt_shell_run();
