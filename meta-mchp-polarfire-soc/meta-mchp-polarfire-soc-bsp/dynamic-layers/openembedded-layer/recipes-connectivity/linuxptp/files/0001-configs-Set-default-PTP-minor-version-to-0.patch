@@ -1,0 +1,17 @@
+Subject: [PATCH] configs: Set default PTP minor version to 0
+
+Set the default PTP minor version to 0 for PolarFire SoC as the GEM
+does not timestamp packets with minor version different than zero.
+
+Upstream-Status: Inappropriate [configuration]
+---
+ configs/default.cfg | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/configs/default.cfg b/configs/default.cfg
+--- a/configs/default.cfg
++++ b/configs/default.cfg
+@@ -50,2 +50,2 @@
+-ptp_minor_version	1
++ptp_minor_version	0
+ spp			-1
