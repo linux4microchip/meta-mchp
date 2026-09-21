@@ -6,10 +6,16 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/OFL-1.1;md5=fac3a519e5e9eb96316
 
 PR = "2025-01-19"
 
+NOTOSANS_TAG = "noto-monthly-release-2026.09.01"
+NOTOCJK_TAG = "Sans2.004"
+NOTOEMOJI_TAG = "v2.051"
+
+# Fetch from tags rather than the default branch: the upstream repositories
+# reorganise their directory layout on main, which silently breaks the fetch.
 SRC_URI = "\
-    https://github.com/notofonts/notofonts.github.io/raw/main/fonts/NotoSans/unhinted/ttf/NotoSans-Regular.ttf;name=notosans \
-    https://github.com/notofonts/noto-cjk/raw/main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf;name=notosanssc \
-    https://github.com/googlefonts/noto-emoji/raw/main/fonts/NotoColorEmoji.ttf;name=notoemoji \
+    https://github.com/notofonts/notofonts.github.io/raw/${NOTOSANS_TAG}/fonts/NotoSans/unhinted/ttf/NotoSans-Regular.ttf;name=notosans \
+    https://github.com/notofonts/noto-cjk/raw/${NOTOCJK_TAG}/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf;name=notosanssc \
+    https://github.com/googlefonts/noto-emoji/raw/${NOTOEMOJI_TAG}/fonts/NotoColorEmoji.ttf;name=notoemoji \
 "
 SRC_URI[notosans.sha256sum] = "f3961a9cde016d41a4879aecda1474d3a36d6bf54fa0e4643de029cc2248b0e8"
 SRC_URI[notosanssc.sha256sum] = "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b"
