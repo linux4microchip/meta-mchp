@@ -1,5 +1,7 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
+INSANE_SKIP:kernel-vmlinux = "textrel"
+
 SRC_URI:append:pic64gx-curiosity-kit = " file://pic64gx_v4l2.cfg"
 
 do_assemble_fitimage[depends] = "${@'dt-overlay-mchp:do_deploy' \

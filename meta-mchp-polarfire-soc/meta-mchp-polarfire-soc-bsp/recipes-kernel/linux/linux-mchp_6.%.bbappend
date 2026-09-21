@@ -1,5 +1,7 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
+INSANE_SKIP:kernel-vmlinux:mpfs = "textrel"
+
 # Define a list of machines that depend on dt-overlay-mchp:do_deploy task
 DT_OVERLAY_MACHINES = "mpfs-icicle-kit \
                        mpfs-icicle-kit-amp \
