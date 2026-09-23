@@ -27,6 +27,7 @@ load_efi_dtb=load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} ${prefix
 loadaddr=0x80200000
 mmc_boot=if mmc dev ${devnum}; then devtype=mmc; run scan_dev_for_boot_part; fi
 mtdparts=mtdparts=spi-nand0:2m(payload),128k(env),119m(rootfs)
+ramdisk_addr_r=0x8aa00000
 mpfs_set_bootargs=run mpfs_set_rootpart && setenv bootargs earlycon root=/dev/mmcblk0p${rootpart} rootwait uio_pdrv_genirq.of_id=generic-uio
 mpfs_set_rootpart=if env exists rootpart;then echo Booting from mmcblk0p${rootpart};else setenv rootpart 3;echo rootpart not set, default to ${rootpart};fi
 mpfs_set_rootpart=if env exists rootpart;then echo Booting from mmcblk0p${rootpart};else setenv rootpart 3;echo rootpart not set, default to ${rootpart};fi
