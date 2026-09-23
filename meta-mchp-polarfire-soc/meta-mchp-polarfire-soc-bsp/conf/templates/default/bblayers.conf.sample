@@ -15,4 +15,5 @@ BBLAYERS ?= " \
   ##OEROOT##/../meta-mchp/meta-mchp-distro \
   ##OEROOT##/../meta-mchp/meta-mchp-polarfire-soc/meta-mchp-polarfire-soc-bsp \
   ##OEROOT##/../meta-mchp/meta-mchp-polarfire-soc/meta-mchp-polarfire-soc-community \
+  ##OEROOT##/../meta-security \
   "

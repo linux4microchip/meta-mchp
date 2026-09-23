@@ -1,0 +1,15 @@
+header:
+  version: 20
+
+local_conf_header:
+  dm-verity: |
+    DISTRO_FEATURES:append = " mchp-dm-verity"
+    DM_VERITY_IMAGE = "mchp-base-image"
+
+repos:
+  meta-security:
+    path: layers/meta-security
+    url: https://git.yoctoproject.org/meta-security.git
+    commit: c0d1d6200e7a84c39fb940cb1f22aad4b0b3d808  # wrynose
+    layers:
+      .:

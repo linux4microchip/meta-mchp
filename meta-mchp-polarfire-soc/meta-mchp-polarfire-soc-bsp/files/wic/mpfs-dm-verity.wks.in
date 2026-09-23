@@ -1,0 +1,7 @@
+# short-description: PolarFire SoC disk image with HSS, dm-verity rootfs, and overlayfs
+
+part /boot --source bootimg-partition --ondisk mmcblk0 --fstype=vfat --label boot --active --fixed-size 65536K --align 4096
+part /hssboot --source rawcopy --sourceparams="file=payload.bin" --ondisk mmcblk0 --fixed-size 8192K --align 1 --part-type 21686148-6449-6E6F-744E-656564454649
+part / --source rawcopy --ondisk mmcblk0 --sourceparams="file=${IMGDEPLOYDIR}/${DM_VERITY_IMAGE}-${MACHINE}.rootfs.${DM_VERITY_IMAGE_TYPE}.verity" --fixed-size 2048M
+part /mnt --ondisk mmcblk0 --fstype=ext4 --label overlayfs --fixed-size 64M
+bootloader --ptable gpt
