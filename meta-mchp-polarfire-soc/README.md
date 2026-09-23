@@ -21,12 +21,32 @@ Collection of OpenEmbedded/Yocto Project layers for PolarFire SoC.
 | `MACHINE=beaglev-fire`              | BEAGLEV-FIRE                       | BeagleBoard.org BeagleV-Fire single-board computer (SBC)              |
 | `MACHINE=m100pfsevp`                | M100PFSEVP                         | Aries M100PFSEVP PolarFire SoC-FPGA Evaluation Platform               |
 
-> Note: All Icicle Kit images (except for the authenticated boot variants) include a mechanism to automatically detect whether the board is an engineering sample or a production kit, and will boot with the appropriate device tree accordingly. For authenticated boot machines, however, there are separate Yocto machines: use mpfs-icicle-kit-es-auth for engineering samples and mpfs-icicle-kit-prod-auth for production devices.
 
-The `mpfs-icicle-kit-es-auth` and `mpfs-icicle-kit-prod-auth` machines can be used to build an image that demonstrates a simple approach for booting an authenticated Linux kernel. Please see the [Linux Boot Authentication](https://mi-v-ecosystem.github.io/redirects/linux-boot-authentication) documentation for further details on how to build an authentication scheme implementing a chain of trust.
+## Security Features
 
-The `mpfs-icicle-kit-amp` machine can be used to build the Icicle Kit engineering sample with AMP support. Please see
-the [Asymmetric Multiprocessing (AMP)](https://mi-v-ecosystem.github.io/redirects/asymmetric-multiprocessing_amp) documentation for further details.
+Two `DISTRO_FEATURES` are available for secure boot: `mchp-auth` (authenticated boot) and `mchp-dm-verity` (verified root filesystem). Use `kas/security.yml` to enable both with development keys.
+
+| Feature | What it does |
+|---|---|
+| `mchp-auth` | Signs HSS payload (ECDSA secp384r1) and fitImage (RSA-4096); U-Boot verifies the chain of trust |
+| `mchp-dm-verity` | Read-only rootfs with dm-verity hash tree; initramfs verifies every block before mount |
+
+Enable in `local.conf`:
+
+```bitbake
+DISTRO_FEATURES:append = " mchp-auth"           # authenticated boot
+MCHP_DEV_SIGNING_KEYS = "1"                     # toggle development signing keys
+DISTRO_FEATURES:append = " mchp-dm-verity"      # verified rootfs (also set DM_VERITY_IMAGE)
+DM_VERITY_IMAGE = "<image>"
+```
+
+`MCHP_DEV_SIGNING_KEYS = "1"` auto-generates development keys under `${TOPDIR}/../keys/` on first build. Keys are never overwritten. For production, place your keys there and set `MCHP_DEV_SIGNING_KEYS = "0"` (override `UBOOT_SIGN_KEYNAME`, `HSS_PAYLOAD_PRIVATE_KEYNAME`, `HSS_PAYLOAD_PUBLIC_KEYNAME` if your filenames differ). `meta-security` is required for `mchp-dm-verity` and is included automatically by `kas/security.yml`.
+
+## Asymmetric Multiprocessing (AMP)
+
+The `mpfs-icicle-kit-amp` machine can be used to build the Icicle Kit with AMP support. Please see the [Asymmetric Multiprocessing (AMP)](https://mi-v-ecosystem.github.io/redirects/asymmetric-multiprocessing_amp) documentation for further details.
+
+## User Guides
 
 The complete User Guides for each development platform, containing board and boot instructions, are available for the following supported platforms:
 
