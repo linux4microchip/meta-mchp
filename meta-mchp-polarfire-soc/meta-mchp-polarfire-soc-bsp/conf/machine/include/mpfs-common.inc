@@ -65,3 +65,5 @@ WKS_FILE_DEPENDS ?= " \
 # when running yocto-check-layer if RISCV_SBI_PAYLOAD and other
 # related variables are not defined.
 BBMASK += "opensbi"
+
+require ${@bb.utils.contains('DISTRO_FEATURES', 'mchp-auth', 'mpfs-auth.inc', '', d)}

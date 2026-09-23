@@ -6,6 +6,13 @@ local_conf_header:
     DISTRO_FEATURES:append = " mchp-dm-verity"
     DM_VERITY_IMAGE = "mchp-base-image"
 
+  mchp-auth: |
+    DISTRO_FEATURES:append = " mchp-auth"
+    # Set MCHP_DEV_SIGNING_KEYS to "0" when using production signing keys.
+    # Provide FIT signing keys in UBOOT_SIGN_KEYDIR.
+    # For mpfs and pic64 machines, provide HSS signing keys in HSS_SIGN_KEYDIR.
+    MCHP_DEV_SIGNING_KEYS = "1"
+
 repos:
   meta-security:
     path: layers/meta-security
