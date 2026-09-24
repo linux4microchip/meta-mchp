@@ -22,7 +22,8 @@
 # issuing a new certificate under the same root, and the payload programmed into
 # the device stays valid. The .csr is kept so that in production the same
 # request can go to a real signing authority instead.
-MCHP_ROMCODE_SIGN_KEYNAME ?= "${UBOOT_SIGN_KEYNAME}_signing"
+#
+# MCHP_ROMCODE_SIGN_KEYNAME is set in mchp-auth.inc.
 
 do_compile:append() {
     if [ ! -f "${UBOOT_SIGN_KEYDIR}/${MCHP_ROMCODE_SIGN_KEYNAME}.key" ]; then

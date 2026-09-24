@@ -236,3 +236,170 @@ EOF
     install -m 0600 "${SECURE_BOOT_KEYFILE}" "${MCHP_SECURE_DEPLOYDIR}/"
     install -m 0600 "${B}/application.yaml" "${MCHP_SECURE_DEPLOYDIR}/"
 }
+
+# ROM code authentication of at91bootstrap. Applies only when mchp-auth distro
+# enabled.The SoC ROM code authenticates and decrypts at91bootstrap itself.
+#
+#   boot.cip                     at91bootstrap, RSA signed and AES encrypted.
+#                                Stays at the top of the deploy dir because
+#                                BOOT.BIN points at it.
+#   secure-boot/customer-key.cip the matching key payload, programmed into the
+#                                device once.
+#
+# Everything else the stage produces - the chain, the signing key and its
+# request, the AES words and the tool configuration - lands in that same
+# secure-boot/ directory (MCHP_SECURE_DEPLOYDIR above).
+#
+# The certificate chain is deliberately two levels, because that is the model
+# the boards are shipped under: the board owner generates a signing key and
+# raises a certificate signing request, the signing authority certifies it with
+# the root key, and the board owner gets the signed certificate back. Only the
+# root is pinned in the device, so a signing key can be replaced by issuing a
+# new certificate under the same root.
+#
+# The root CA is the key pair dev-signing-keys-native already generates for FIT
+# signing, reused here under its own names (${UBOOT_SIGN_KEYNAME}.key/.crt).
+
+DEPENDS:append:mchp-auth = " openssl-native"
+
+# The chain is only generated for dev keys; a production build supplies its own
+# in UBOOT_SIGN_KEYDIR, as the distro-layer u-boot and kernel appends do.
+DEPENDS:append:mchp-auth = " ${@bb.utils.contains('MCHP_DEV_SIGNING_KEYS', '1', 'dev-signing-keys-native', '', d)}"
+
+# Run as a postfunc rather than an append: this has to be the last thing that
+# touches BOOT.BIN, and do_deploy:append:sama7d65 in at91bootstrap_4.0.13.bb
+# also reinstalls the image and recreates that symlink.
+do_deploy[postfuncs] += "${@bb.utils.contains('DISTRO_FEATURES', 'mchp-auth', 'at91bootstrap_romcode_sign', '', d)}"
+
+# MCHP_ROMCODE_SIGN_KEYNAME names the signing tier. It is set in mchp-auth.inc
+# because dev-signing-keys-native has to agree with this recipe on the name.
+
+# Certificate returned by the signing authority for MCHP_ROMCODE_SIGN_KEYNAME.csr.
+MCHP_SECURE_SIGNING_CERT ?= ""
+
+# ROM public key the customer key payload is encrypted to. Part of secure
+# SAM-BA cipher suite named after the chip, and MCHP_SECURE_CHIP_TYPE
+#
+#   sam9x70  -> ${SAM_SECURE_TOOLS_DIR}/sam9x70_public_key.pem sama7d65 ->
+#   ${SAM_SECURE_TOOLS_DIR}/sama7d65_public_key.pem
+
+MCHP_SECURE_ROM_PUBKEY ?= "${SAM_SECURE_TOOLS_DIR}/${MCHP_SECURE_CHIP_TYPE}_public_key.pem"
+
+MCHP_ROMCODE_KEYFILE = "${B}/mchp-romcode.keys"
+
+at91bootstrap_romcode_sign () {
+    if [ -z "${MCHP_SECURE_CHIP_TYPE}" ]; then
+        bbfatal "at91bootstrap: MCHP_SECURE_CHIP_TYPE is empty for ${MACHINE}"
+    fi
+
+    if [ -z "${MCHP_SECURE_ROM_PUBKEY}" ]; then
+        bbfatal "at91bootstrap: MCHP_SECURE_ROM_PUBKEY has been set empty; leave it unset to take the ROM public key for ${MCHP_SECURE_CHIP_TYPE} from ${SAM_SECURE_TOOLS_DIR}, or point it at the key to use"
+    fi
+
+    if [ ! -f "${MCHP_SECURE_ROM_PUBKEY}" ]; then
+        bbfatal "at91bootstrap: ROM public key not found: ${MCHP_SECURE_ROM_PUBKEY}."
+    fi
+
+    for tool in sam_gen_keypayload.py sam_genimage.py; do
+        if ! command -v "$tool" >/dev/null 2>&1; then
+            bbfatal "at91bootstrap: $tool not found on PATH; it is required to authenticate at91bootstrap for mchp-auth secure boot"
+        fi
+    done
+
+    if [ -z "${MCHP_ROMCODE_SIGN_KEYNAME}" ]; then
+        bbfatal "at91bootstrap: MCHP_ROMCODE_SIGN_KEYNAME is empty"
+    fi
+
+    ca_key="${UBOOT_SIGN_KEYDIR}/${UBOOT_SIGN_KEYNAME}.key"
+    ca_crt="${UBOOT_SIGN_KEYDIR}/${UBOOT_SIGN_KEYNAME}.crt"
+    sign_key="${UBOOT_SIGN_KEYDIR}/${MCHP_ROMCODE_SIGN_KEYNAME}.key"
+    sign_crt="${UBOOT_SIGN_KEYDIR}/${MCHP_ROMCODE_SIGN_KEYNAME}.crt"
+    # The request is not used to issue anything here, only linked into
+    # secure-boot/ so it can be submitted; checked so that link cannot dangle.
+    sign_csr="${UBOOT_SIGN_KEYDIR}/${MCHP_ROMCODE_SIGN_KEYNAME}.csr"
+    for f in "$ca_key" "$ca_crt" "$sign_key" "$sign_crt" "$sign_csr"; do
+        if [ ! -f "$f" ]; then
+            bbfatal "at91bootstrap: chain file missing: $f (expected from dev-signing-keys-native, or from your own keys in UBOOT_SIGN_KEYDIR)"
+        fi
+    done
+
+    # AES material for the ROM code stage: a 256 bit cipher key, a 128 bit IV
+    # and a 256 bit CMAC key. Separate from the AES words compiled into
+    # at91bootstrap for the u-boot stage. Both the key payload programmed into
+    # the device and the encrypted image are produced from these values in this
+    # one task, so minting them here keeps the two in agreement.
+    {
+        echo "CIPHER_KEY=$(od -An -N32 -tx1 /dev/urandom | tr -d ' \n')"
+        echo "IV=$(od -An -N16 -tx1 /dev/urandom | tr -d ' \n')"
+        echo "TAG_KEY=$(od -An -N32 -tx1 /dev/urandom | tr -d ' \n')"
+    } > "${MCHP_ROMCODE_KEYFILE}.tmp"
+    mv "${MCHP_ROMCODE_KEYFILE}.tmp" "${MCHP_ROMCODE_KEYFILE}"
+    . "${MCHP_ROMCODE_KEYFILE}"
+
+    cd "${B}"
+
+
+    # The certs in DER form is needed by ROM Code secrure boot chain
+    openssl x509 -in "$ca_crt" -outform DER -out "${UBOOT_SIGN_KEYNAME}.der"
+    openssl x509 -in "$sign_crt" -outform DER -out "${MCHP_ROMCODE_SIGN_KEYNAME}.der"
+
+    install -m 0600 "$sign_key" "${MCHP_ROMCODE_SIGN_KEYNAME}.key"
+    install -m 0644 "$sign_crt" "${MCHP_ROMCODE_SIGN_KEYNAME}.crt"
+
+    cat > cust_RSA.yaml <<EOF
+chip_type: ${MCHP_SECURE_CHIP_TYPE}
+image_type: secure
+security:
+  signature:
+    type: RSA
+    key_data: file:${MCHP_ROMCODE_SIGN_KEYNAME}.key
+    certificates: [ file:${UBOOT_SIGN_KEYNAME}.der, file:${MCHP_ROMCODE_SIGN_KEYNAME}.der ]
+  cipher:
+    type: AES
+    key_data: data:$CIPHER_KEY
+    iv_data: data:$IV
+  tag:
+    type: CMAC_AES
+    key_data: data:$TAG_KEY
+EOF
+
+    bbnote "Generating customer key payload for ${MCHP_SECURE_CHIP_TYPE}"
+    rm -f customer-key.cip customer-key_*.cip
+
+    # Handling different version of secure sam-ba cipher package
+    if sam_gen_keypayload.py --help 2>&1 | grep -q -- '--key_file'; then
+        keycfg_opt="-k"
+    else
+        keycfg_opt="-c"
+    fi
+
+    # Generate the customer key to be flashed into OTP or test though emulaiton
+    # mode
+    sam_gen_keypayload.py -d "${MCHP_SECURE_ROM_PUBKEY}" $keycfg_opt cust_RSA.yaml -o customer-key.cip
+    if [ ! -f customer-key.cip ]; then
+        mv customer-key_*.cip customer-key.cip
+    fi
+
+    bbnote "Signing and encrypting at91bootstrap into boot.cip"
+    cp -f "${DEPLOYDIR}/${AT91BOOTSTRAP_IMAGE}" boot.bin
+    sam_genimage.py -c cust_RSA.yaml boot.bin boot.cip
+
+    install -m 0644 boot.cip "${DEPLOYDIR}/boot.cip"
+
+    # Install all keys to MCHP_SECURE_DEPLOYDIR
+    install -d "${MCHP_SECURE_DEPLOYDIR}"
+    install -m 0644 "${UBOOT_SIGN_KEYNAME}.der" "${MCHP_ROMCODE_SIGN_KEYNAME}.der" \
+        "${MCHP_ROMCODE_SIGN_KEYNAME}.crt" "${MCHP_SECURE_DEPLOYDIR}/"
+    install -m 0600 "${MCHP_ROMCODE_KEYFILE}" cust_RSA.yaml "${MCHP_SECURE_DEPLOYDIR}/"
+    install -m 0644 customer-key.cip "${MCHP_SECURE_DEPLOYDIR}/customer-key.cip"
+
+    for f in "${UBOOT_SIGN_KEYNAME}.key" "${UBOOT_SIGN_KEYNAME}.crt" \
+             "${MCHP_ROMCODE_SIGN_KEYNAME}.key" "${MCHP_ROMCODE_SIGN_KEYNAME}.csr"; do
+        if [ "${UBOOT_SIGN_KEYDIR}" = "${DEPLOY_DIR_IMAGE}" ]; then
+            ln -sfn "../$f" "${MCHP_SECURE_DEPLOYDIR}/$f"
+        else
+            ln -sfn "${UBOOT_SIGN_KEYDIR}/$f" "${MCHP_SECURE_DEPLOYDIR}/$f"
+        fi
+    done
+
+}
