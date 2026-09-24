@@ -8,6 +8,12 @@ MACHINEOVERRIDES:append = "${@bb.utils.contains('MACHINE_FEATURES', 'sdmmc', ':a
 # Add bootloaders to the images of every machine
 EXTRA_IMAGEDEPENDS += " at91bootstrap virtual/bootloader"
 
+# When mchp-auth (for secureboot) distro feauture is enabled as part of
+# secureboot, include the signed+encrypted u-boot.cip instead of u-boot.bin.
+# at91bootstrap authenticates u-boot.cip
+IMAGE_BOOT_FILES:append:mchp-auth = " u-boot.cip"
+IMAGE_BOOT_FILES:remove:mchp-auth = "u-boot.bin"
+
 # MPU assembles its FIT with dt-overlay-mchp (mkimage -f <machine>.its), not with
 # oe-core's linux-yocto-fitimage, which mchp-dm-verity.inc defaults to for the
 # FPGA families. This is not merely a preference: kernel-fit-image.bbclass copies
