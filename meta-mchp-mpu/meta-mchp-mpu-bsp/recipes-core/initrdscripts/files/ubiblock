@@ -1,0 +1,34 @@
+#!/bin/sh
+# Translate root=ubi<N>:<volume> into root=/dev/ubiblock<N>_<id> so that
+# 80-dmverity is handed a block device it can give to veritysetup. The gendisk
+# itself is created by the kernel from ubi.block=<N>,<volume> on the cmdline;
+# this module only resolves the volume name to its id via sysfs.
+
+ubiblock_enabled() {
+        case "${bootparam_root}" in
+        ubi[0-9]*:*|ubi[0-9]*!*)
+                return 0
+                ;;
+        esac
+
+        return 1
+}
+
+ubiblock_run() {
+        _dev="${bootparam_root%%[:!]*}"
+        _vol="${bootparam_root#*[:!]}"
+        _num="${_dev#ubi}"
+
+        for _name_attr in /sys/class/ubi/${_dev}_*/name; do
+                [ -r "${_name_attr}" ] || continue
+                read -r _name < "${_name_attr}"
+                [ "${_name}" = "${_vol}" ] || continue
+
+                _id=$(basename $(dirname ${_name_attr}))
+                bootparam_root="/dev/ubiblock${_num}_${_id#${_dev}_}"
+                msg "ubiblock: root=${bootparam_root}"
+                return 0
+        done
+
+        fatal "ubiblock: volume '${_vol}' not found on ${_dev} -- is ubi.block=${_num},${_vol} in bootargs?"
+}
