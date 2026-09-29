@@ -4,7 +4,7 @@ header:
 local_conf_header:
   dm-verity: |
     DISTRO_FEATURES:append = " mchp-dm-verity"
-    DM_VERITY_IMAGE = "mchp-base-image"
+    DM_VERITY_IMAGE ?= "mchp-base-image"
 
   mchp-auth: |
     DISTRO_FEATURES:append = " mchp-auth"

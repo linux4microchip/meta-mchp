@@ -1,0 +1,8 @@
+header:
+    version: 20
+
+# Overrides security.yml's DM_VERITY_IMAGE for MPU
+local_conf_header:
+  dm-verity: |
+    DISTRO_FEATURES:append = " mchp-dm-verity"
+    DM_VERITY_IMAGE = "mchp-graphics-image"
