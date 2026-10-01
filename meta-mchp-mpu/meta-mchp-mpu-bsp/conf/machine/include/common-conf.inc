@@ -14,3 +14,9 @@ EXTRA_IMAGEDEPENDS += " at91bootstrap virtual/bootloader"
 # "linux.bin" out of the kernel deploy dir, and linux-mchp only deploys zImage,
 # so linux-yocto-fitimage:do_compile fails on MPU.
 DM_VERITY_FIT_RECIPE:mchp-dm-verity = "dt-overlay-mchp"
+
+# dm-verity rootfs type for MPU. squashfs-xz keeps the rootfs (and so the A/B
+# slots) around 4x smaller than ext4, which also means far fewer bytes for
+# verity to hash in software on cores without crypto extensions. Rest of the
+# families keep the ext4 default from mchp-dm-verity.inc.
+DM_VERITY_IMAGE_TYPE:mchp-dm-verity = "squashfs-xz"
