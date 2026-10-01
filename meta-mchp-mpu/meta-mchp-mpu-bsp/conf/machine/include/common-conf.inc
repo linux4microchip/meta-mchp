@@ -7,3 +7,10 @@ MACHINEOVERRIDES:append = "${@bb.utils.contains('MACHINE_FEATURES', 'sdmmc', ':a
 
 # Add bootloaders to the images of every machine
 EXTRA_IMAGEDEPENDS += " at91bootstrap virtual/bootloader"
+
+# MPU assembles its FIT with dt-overlay-mchp (mkimage -f <machine>.its), not with
+# oe-core's linux-yocto-fitimage, which mchp-dm-verity.inc defaults to for the
+# FPGA families. This is not merely a preference: kernel-fit-image.bbclass copies
+# "linux.bin" out of the kernel deploy dir, and linux-mchp only deploys zImage,
+# so linux-yocto-fitimage:do_compile fails on MPU.
+DM_VERITY_FIT_RECIPE:mchp-dm-verity = "dt-overlay-mchp"

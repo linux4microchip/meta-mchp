@@ -5,9 +5,14 @@ IMAGE_CLASSES += "dm-verity-img"
 INITRAMFS_IMAGE_BUNDLE = "1"
 EXTRA_IMAGE_FEATURES += "read-only-rootfs"
 
+# Build linux-yocto-fitimage from openembedded-core by default
+# fpga family uses linux-yocto-fitimage and
+# mpu family uses dt-overlay-mchp
+DM_VERITY_FIT_RECIPE ?= "linux-yocto-fitimage"
+
 # WIC image depends on fitimage containing the verity root hash
-do_image_wic[depends] += "linux-yocto-fitimage:do_deploy"
-MACHINE_ESSENTIAL_EXTRA_RDEPENDS:remove = "linux-yocto-fitimage"
+do_image_wic[depends] += "${DM_VERITY_FIT_RECIPE}:do_deploy"
+MACHINE_ESSENTIAL_EXTRA_RDEPENDS:remove = "${DM_VERITY_FIT_RECIPE}"
 
 DISTRO_FEATURES:append = " security"
 
