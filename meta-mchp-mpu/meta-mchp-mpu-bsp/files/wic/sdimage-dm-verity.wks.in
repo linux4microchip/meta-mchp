@@ -1,0 +1,38 @@
+# short-description: MPU A/B dm-verity SD layout with a writable overlay partition
+#
+# MBR (msdos) table, 4 primary partitions = the MBR maximum:
+#
+#   p1 boot     vfat   BOOT.BIN, u-boot.bin, uboot.env, <machine>.itb
+#   p2 rootfs_a RAW    dm-verity image (squashfs-xz + appended hash tree)  <- ACTIVE slot
+#   p3 rootfs_b RAW    reserved/empty; OTA writes the next release here, then flips slot
+#   p4 overlay  ext4   RW: /etc overlay upper dir (OVERLAYFS_ETC_DEVICE)
+#
+
+# Notes:
+# - rootfs_a/b they holds the raw squashfs-xz image with the verity hash tree
+#   appended. The initramfs runs veritysetup over it and mounts
+#   /dev/mapper/rootfs; the trusted root hash comes from
+#   /usr/share/misc/dm-verity.env inside the initramfs, not from here.
+#
+# - Both slots are the SAME fixed size so an image built for one slot fits the
+#   other.  Slot size is painful to change on field devices (repartitioning), so
+#   it is set generously.
+#
+# - p3 is kept in the table and reserved even its empty so that the overlay
+#   stays at p4, which is what OVERLAYFS_ETC_DEVICE defaults to in
+#   mchp-dm-verity.inc.
+#
+# - The verity image is referenced by an absolute ${IMGDEPLOYDIR} path because
+#   it is produced by this same recipe and is not staged into DEPLOY_DIR_IMAGE
+#   until do_image_complete, which runs after
+#   do_image_wic. dm-verity-img.bbclass adds the do_image_wic -> do_image_<type>
+#   ordering dependency.
+#
+# - No 'bootloader' line: wic defaults to an msdos table, which --active
+#   requires.  Switching to GPT (for per-partition PARTUUIDs) is a follow-up
+#   that may be need for A/B.
+
+part /boot --source bootimg-partition --ondisk mmcblk0 --fstype=vfat --label boot --active --align 4 --size 64M
+part --source rawcopy --sourceparams="file=${IMGDEPLOYDIR}/${IMAGE_LINK_NAME}.${DM_VERITY_IMAGE_TYPE}.verity" --ondisk mmcblk0 --align 1024 --fixed-size 256M
+part --source empty --ondisk mmcblk0 --align 1024 --fixed-size 256M
+part /mnt --ondisk mmcblk0 --fstype=ext4 --label overlayfs --align 1024 --size 128M
