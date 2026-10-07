@@ -33,6 +33,7 @@ RDEPENDS:packagegroup-mchp-networking = "\
     iptables \
     openssh-sftp \
     openssh-sftp-server \
+    linux-firmware-microchip \
     rsync \
     wget \
     ${@bb.utils.contains('MACHINE_FEATURES', 'wifi', WIFI_FIRMWARE_PACKAGES, '', d)} \
