@@ -14,6 +14,7 @@ SRC_URI:append:mpfs = " file://envs/"
 SRC_URI:append:mpfs-icicle-kit-all = " ${UBOOT_FILES}"
 SRC_URI:append:mpfs-disco-kit = " ${UBOOT_FILES}"
 SRC_URI:append:mpfs-video-kit = " ${UBOOT_FILES}"
+SRC_URI:append:rtpfs-dev-kit = " ${UBOOT_FILES}"
 SRC_URI:append:mpfs:mchp-auth = " file://mchp-auth.cfg"
 
 do_deploy:append:mpfs () {
