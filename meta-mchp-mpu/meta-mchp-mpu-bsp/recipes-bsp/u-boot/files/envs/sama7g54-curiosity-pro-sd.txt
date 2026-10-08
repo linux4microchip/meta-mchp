@@ -1,0 +1,11 @@
+eth_phy=rgmii-phy
+at91_eth_detect=run at91_prepare_eth_overlay
+at91_prepare_eth_overlay=test -n $eth_phy && setenv at91_overlays_config ${at91_overlays_config}'#'${eth_phy}
+bootargs=console=ttyS0,115200 root=/dev/mmcblk1p2 rw rootfstype=ext4 rootwait atmel.pm_modes=standby,ulp0 cma=192m
+bootcmd=run at91_eth_detect; run bootcmd_boot
+bootcmd_boot=fatload mmc 1:1 0x63000000 sama7g54_curiosity_pro.itb; bootm 0x63000000#kernel_dtb${at91_overlays_config}
+bootdelay=1
+ethprime=gmac0
+stderr=serial
+stdin=serial
+stdout=serial

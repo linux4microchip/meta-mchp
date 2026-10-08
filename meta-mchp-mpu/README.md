@@ -24,6 +24,7 @@ Collection of OpenEmbedded/Yocto Project layers for MPU SoC.
 | **SAMA7D65** | sama7d65-curiosity-sd     | sama7d65-curiosity | N/A                   |
 | **SAMA7G5**  | sama7g5ek-sd              | sama7g5ek-ospi     | sama7g5ek-emmc        |
 |              | sama7g5ek-optee-sd        | N/A                | N/A                   |
+| **SAMA7G54** | sama7g54-curiosity-pro-sd | sama7g54-curiosity-pro | N/A               |
 | **SAM9X60**  | sam9x60-curiosity-sd      | sam9x60-curiosity  | N/A                   |
 |              | sam9x60ek-sd              | sam9x60ek          | N/A                   |
 | **SAM9X75**  | sam9x75-curiosity-sd      | sam9x75-curiosity  | N/A                   |

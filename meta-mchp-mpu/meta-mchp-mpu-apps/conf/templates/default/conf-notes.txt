@@ -21,6 +21,7 @@ Microchip supported machines are:
 |              | sama7d65-curiosity-pro-sd | sama7d65-curiosity-pro   | N/A                   |
 | **SAMA7G5**  | sama7g5ek-sd              | sama7g5ek-ospi           | sama7g5ek-emmc        |
 |              | sama7g5ek-optee-sd        | N/A                      | N/A                   |
+| **SAMA7G54** | sama7g54-curiosity-pro-sd | sama7g54-curiosity-pro   | N/A                   |
 | **SAM9X60**  | sam9x60-curiosity-sd      | sam9x60-curiosity        | N/A                   |
 |              | sam9x60-curiosity-pro-sd  | sam9x60-curiosity-pro    | N/A                   |
 |              | sam9x60ek-sd              | sam9x60ek                | N/A                   |
