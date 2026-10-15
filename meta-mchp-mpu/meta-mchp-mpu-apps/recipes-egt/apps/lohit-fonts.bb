@@ -2,25 +2,47 @@ SUMMARY = "Lohit Indic fonts"
 DESCRIPTION = "${SUMMARY}"
 HOMEPAGE = "https://pagure.io/lohit"
 LICENSE = "OFL-1.1"
-LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/OFL-1.1;md5=fac3a519e5e9eb96316656e0ca4f2b90"
+LIC_FILES_CHKSUM = "file://OFL.txt;md5=7dfa0a236dc535ad2d2548e6170c4402"
 
-SRC_URI = "https://releases.pagure.org/lohit/lohit-ttf-20140220.tar.gz"
+# The upstream releases.pagure.org tarballs are no longer available, so build
+# from the upstream git repository (also used by meta-oe ttf-lohit). This
+# revision matches the lohit-ttf-20140220 release (Lohit-Devanagari 2.94.0).
+SRC_URI = "git://github.com/pravins/lohit.git;branch=master;protocol=https"
+SRCREV = "18c9c58c78029e6568c2e570f29e089201af5903"
 
-SRC_URI[md5sum] = "aee81313dae1a8fb6ed3a4f572180c42"
-SRC_URI[sha256sum] = "4d0cdb884cb30b8e11babf2266a189e173bd9d664878ee434136705808c9afe6"
+PV = "2.94.0"
 
-S = "${UNPACKDIR}/lohit-ttf-20140220"
+DEPENDS = "fontforge-native"
 
 inherit allarch fontcache
 
 FILES:${PN} += "${datadir}/fonts/truetype/*"
 
-do_install() {
-        install -d ${D}${datadir}/fonts/truetype/lohit-devanagari
-        install -Dm 0644 ${S}/Lohit-Devanagari.ttf ${D}${datadir}/fonts/truetype/lohit-devanagari
+# Equivalent of the upstream apply_featurefile.py + generate.pe steps. The
+# upstream apply_featurefile.py is Python 2 only, so do it inline in Python 3.
+# Newer fontforge rejects comma separated lookupflags in the feature file.
+do_compile() {
+        sed -e '/lookupflag/ s/,/ /g' ${S}/devanagari/Lohit-Devanagari.fea > ${B}/Lohit-Devanagari-fixed.fea
+        fontforge -lang=py -c '
+import fontforge, sys
+font = fontforge.open(sys.argv[1])
+for lookup in font.gsub_lookups + font.gpos_lookups:
+    font.removeLookup(lookup)
+font.mergeFeature(sys.argv[2])
+font.generate(sys.argv[3])
+font.close()
+' ${S}/devanagari/Lohit-Devanagari.sfd ${B}/Lohit-Devanagari-fixed.fea ${B}/Lohit-Devanagari.ttf
+        # fontforge only warns on feature file errors, so make sure the
+        # OpenType layout tables actually made it into the font.
+        if ! grep -q -a GSUB ${B}/Lohit-Devanagari.ttf; then
+                bbfatal "Lohit-Devanagari.ttf was generated without OpenType GSUB tables"
+        fi
 }
 
-do_compile[noexec] = "1"
+do_install() {
+        install -d ${D}${datadir}/fonts/truetype/lohit-devanagari
+        install -Dm 0644 ${B}/Lohit-Devanagari.ttf ${D}${datadir}/fonts/truetype/lohit-devanagari
+}
 
 ALLOW_EMPTY:${PN} = "1"
 INHIBIT_DEFAULT_DEPS = "1"
