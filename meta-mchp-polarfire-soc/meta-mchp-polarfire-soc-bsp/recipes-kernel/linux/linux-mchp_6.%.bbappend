@@ -19,6 +19,10 @@ SRC_URI:append:mpfs-video-kit = " \
     file://mpfs_crypto.cfg \
 "
 
+SRC_URI:append:rtpfs-dev-kit = " \
+    file://rtpfs_crypto.cfg \
+"
+
 do_assemble_fitimage[depends] = "${@'dt-overlay-mchp:do_deploy' if d.getVar('MACHINE') in d.getVar('DT_OVERLAY_MACHINES').split() else ''}"
 
 do_deploy:append:mpfs() {
