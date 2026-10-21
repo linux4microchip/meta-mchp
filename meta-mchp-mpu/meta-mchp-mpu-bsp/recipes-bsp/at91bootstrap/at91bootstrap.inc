@@ -385,7 +385,9 @@ EOF
     fi
 
     bbnote "Signing and encrypting at91bootstrap into boot.cip"
-    cp -f "${DEPLOYDIR}/${AT91BOOTSTRAP_IMAGE}" boot.bin
+    # Use at91bootstrap.bin for all boards. sam_genimage.py converts
+    # at91bootstrap.bin to boot-plaintextimg.bin for sama7d65 boards.
+    cp -f "${AT91BOOTSTRAP_BIN_PATH}/${AT91BOOTSTRAP_BINARY}" boot.bin
     sam_genimage.py -c cust_RSA.yaml boot.bin boot.cip
 
     install -m 0644 boot.cip "${DEPLOYDIR}/boot.cip"
