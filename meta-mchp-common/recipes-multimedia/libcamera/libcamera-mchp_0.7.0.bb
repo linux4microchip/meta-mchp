@@ -13,7 +13,7 @@ LIC_FILES_CHKSUM = "\
 # retained for BSP releases prior to linux4microchip-2026.04.
 SRC_URI = "git://github.com/linux4microchip/libcamera-mchp.git;protocol=https;branch=mchp-next-v0.7.0"
 
-SRCREV = "8d6f2a0cc4443a33abd8d407799fccd3b139efb3"
+SRCREV = "b5695341dbb2231549bf1d318f4c84457d93c82b"
 
 PE = "1"
 PV = "0.7.0+mchp-${SRCPV}"
