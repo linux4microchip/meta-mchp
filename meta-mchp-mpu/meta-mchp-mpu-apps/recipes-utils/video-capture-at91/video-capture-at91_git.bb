@@ -5,7 +5,7 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSES/MIT.txt;md5=12c44f58fe16bd407f016e45950c2f3d"
 
 SRC_URI = "git://github.com/linux4sam/video-capture-at91.git;protocol=https;branch=master"
-COMPATIBLE_MACHINE = "sama5d2|sama7g5ek|sam9x75"
+COMPATIBLE_MACHINE = "sama5d2|sama7g5ek|sama7g54_curiosity_pro|sam9x75"
 
 PV = "1.0+git${SRCPV}"
 SRCREV = "b7d163f0e8a5a61fce521e6fb7433e209222bfe9"

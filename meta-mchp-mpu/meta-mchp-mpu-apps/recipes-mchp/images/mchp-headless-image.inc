@@ -27,6 +27,13 @@ IMAGE_INSTALL:append:sama7g5ek = " \
     video-capture-at91 \
 "
 
+IMAGE_INSTALL:append:sama7g54_curiosity_pro = " \
+    packagegroup-mchp-multimedia \
+    packagegroup-mchp-multimedia-camera \
+    packagegroup-mchp-multimedia-gstreamer \
+    video-capture-at91 \
+"
+
 IMAGE_INSTALL:append:sama5d2 = " \
     packagegroup-mchp-multimedia-camera \
     video-capture-at91 \
