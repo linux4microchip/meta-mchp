@@ -7,6 +7,9 @@
 #   printf "\033]3008;start=%s;...;type=shell;cwd=%s\033\\" ...
 #   printf "\033]3008;end=%s;exit=success\033\\" ...
 
+# Serial terminals such as minicom have no OSC parser and print them as text.
+PACKAGECONFIG:remove = "osc-context"
+
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 SRC_URI += "file://10-no-ansi-reset.conf"
