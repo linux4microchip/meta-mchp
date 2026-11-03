@@ -291,6 +291,16 @@ MCHP_SECURE_ROM_PUBKEY ?= "${SAM_SECURE_TOOLS_DIR}/${MCHP_SECURE_CHIP_TYPE}_publ
 
 MCHP_ROMCODE_KEYFILE = "${B}/mchp-romcode.keys"
 
+# Script that drives sam-ba to program customer-key.cip into the device in
+# secure boot emulation mode. Deployed next to the payload in secure-boot/.
+# Left empty for boards without one.
+MCHP_CUSTOMER_KEY_SCRIPT ?= ""
+MCHP_CUSTOMER_KEY_SCRIPT:sam9x75_curiosity_pro = "write-customer-key-sam9x75-curiosity-pro.sh"
+MCHP_CUSTOMER_KEY_SCRIPT:sama7d65-curiosity-pro = "write-customer-key-sama7d65-curiosity-pro.sh"
+MCHP_CUSTOMER_KEY_SCRIPT:sama7d65-curiosity-pro-sd = "write-customer-key-sama7d65-curiosity-pro.sh"
+
+SRC_URI:append:mchp-auth = "${@' file://' + d.getVar('MCHP_CUSTOMER_KEY_SCRIPT') if d.getVar('MCHP_CUSTOMER_KEY_SCRIPT') else ''}"
+
 at91bootstrap_romcode_sign () {
     if [ -z "${MCHP_SECURE_CHIP_TYPE}" ]; then
         bbfatal "at91bootstrap: MCHP_SECURE_CHIP_TYPE is empty for ${MACHINE}"
@@ -398,6 +408,9 @@ EOF
         "${MCHP_ROMCODE_SIGN_KEYNAME}.crt" "${MCHP_SECURE_DEPLOYDIR}/"
     install -m 0600 "${MCHP_ROMCODE_KEYFILE}" cust_RSA.yaml "${MCHP_SECURE_DEPLOYDIR}/"
     install -m 0644 customer-key.cip "${MCHP_SECURE_DEPLOYDIR}/customer-key.cip"
+    if [ -n "${MCHP_CUSTOMER_KEY_SCRIPT}" ]; then
+        install -m 0755 "${UNPACKDIR}/${MCHP_CUSTOMER_KEY_SCRIPT}" "${MCHP_SECURE_DEPLOYDIR}/"
+    fi
 
     for f in "${UBOOT_SIGN_KEYNAME}.key" "${UBOOT_SIGN_KEYNAME}.crt" \
              "${MCHP_ROMCODE_SIGN_KEYNAME}.key" "${MCHP_ROMCODE_SIGN_KEYNAME}.csr"; do
