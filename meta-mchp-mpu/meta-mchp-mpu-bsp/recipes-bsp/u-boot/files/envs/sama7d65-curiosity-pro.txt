@@ -8,7 +8,7 @@ at91_prepare_bootargs=test -n $at91_video_bootargs && setenv bootargs ${bootargs
 at91_prepare_display_overlay=test -n $display_var && setenv at91_overlays_config ${at91_overlays_config}'#'${display_var}
 bootargs=console=ttyS0,115200 mtdparts=atmel_nand:256k(bootstrap)ro,768k(uboot)ro,256k(env_redundant),256k(env),6656k(itb)ro,-(rootfs) rootfstype=ubifs ubi.mtd=11 root=ubi0:rootfs rw atmel.pm_modes=standby,ulp0 cma=192m
 bootcmd=run at91_display_detect; run bootcmd_boot;
-bootcmd_boot=nand read 0x63000000 0x00180000 0x680000; bootm 0x63000000#kernel_dtb${at91_overlays_config}
+bootcmd_boot=nand read 0x64000000 0x00180000 0x680000; bootm 0x64000000#kernel_dtb${at91_overlays_config}
 bootdelay=1
 ethact=gmac0
 stderr=serial
