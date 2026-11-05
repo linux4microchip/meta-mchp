@@ -27,7 +27,8 @@ FILES:${PN} += "\
 "
 
 do_install() {
-    find ${S}/examples/video -type f -exec install -Dm 0644 {} /usr/share/egt/examples/video/ \;
+    install -d ${D}${datadir}/egt/examples/video
+    find ${S}/examples/video -type f -exec install -m 0644 {} ${D}${datadir}/egt/examples/video/ \;
 }
 
 ALLOW_EMPTY:${PN} = "1"
