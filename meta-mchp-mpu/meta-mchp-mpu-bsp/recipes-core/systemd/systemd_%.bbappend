@@ -8,13 +8,16 @@
 #   printf "\033]3008;end=%s;exit=success\033\\" ...
 
 # Serial terminals such as minicom have no OSC parser and print them as text.
-PACKAGECONFIG:remove = "osc-context"
+#
+# Scoped to mpuall so that adding this BSP layer does not change systemd
+# signatures for non-Microchip machines (yocto-check-layer test_signatures).
+PACKAGECONFIG:remove:mpuall = "osc-context"
 
-FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
+FILESEXTRAPATHS:prepend:mpuall := "${THISDIR}/files:"
 
-SRC_URI += "file://10-no-ansi-reset.conf"
+SRC_URI:append:mpuall = " file://10-no-ansi-reset.conf"
 
-do_install:append() {
+do_install:append:mpuall() {
 	install -d ${D}${systemd_system_unitdir}/serial-getty@.service.d
 	install -m 0644 ${UNPACKDIR}/10-no-ansi-reset.conf \
 		${D}${systemd_system_unitdir}/serial-getty@.service.d/
