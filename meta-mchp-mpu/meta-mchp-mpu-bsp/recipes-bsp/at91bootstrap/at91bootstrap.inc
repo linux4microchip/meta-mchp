@@ -38,6 +38,7 @@ AT91BOOTSTRAP_CONFIG:sama7g5ek-optee-sd ??= "${AT91BOOTSTRAP_MACHINE}-opteesd_ub
 AT91BOOTSTRAP_CONFIG:sama7g5ek-emmc ??= "${AT91BOOTSTRAP_MACHINE}-bsremmc_uboot"
 AT91BOOTSTRAP_CONFIG:sama7g5ek-ospi ??= "${AT91BOOTSTRAP_MACHINE}df_qspi_uboot"
 AT91BOOTSTRAP_CONFIG:sama7g54-curiosity-pro-sd ??= "${AT91BOOTSTRAP_MACHINE}-bsrsd_uboot"
+AT91BOOTSTRAP_CONFIG:sama7g54-curiosity-pro ??= "${AT91BOOTSTRAP_MACHINE}-bsrnf_uboot"
 AT91BOOTSTRAP_CONFIG:sam9x60-curiosity-sd ??= "${AT91BOOTSTRAP_MACHINE}sd_uboot"
 AT91BOOTSTRAP_CONFIG:sam9x60-curiosity-pro-sd ??= "${AT91BOOTSTRAP_MACHINE}sd_uboot"
 AT91BOOTSTRAP_CONFIG:sam9x75-curiosity-sd ??= "${AT91BOOTSTRAP_MACHINE}sd_uboot"
