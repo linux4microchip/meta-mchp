@@ -7,13 +7,13 @@ require pic64gx-zephyr-amp.inc
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
-SRCREV_pic64-zephyr-examples = "6c08ed531b93349fe746ac3697652cd979ce32ba"
+SRCREV_pic64-zephyr-examples = "f7b8ee383fb2445f40c451c8826fa53420662b44"
 SRC_URI_APP = "git://github.com/pic64gx/pic64gx-zephyr-examples.git;protocol=https;subpath=apps/amp_example_openamp"
 SRC_URI:append = " ${SRC_URI_APP};name=pic64-zephyr-examples;nobranch=1;destsuffix=${P}/pic64gx-soc/apps/amp_example_openamp "
 ZEPHYR_SRC_DIR = "${UNPACKDIR}/${P}/pic64gx-soc/apps/amp_example_openamp"
 
 EXTRA_OECMAKE += "\
-    -DCONFIG_PIC64GX_RELOCATE_RESOURCE_TABLE=y \
+    -DCONFIG_PIC64GX_RESOURCE_TABLE_USE_CHOSEN=y \
     -DCMAKE_CXX_FLAGS=-fdebug-prefix-map=${TMPDIR}=${TARGET_DBGSRC_DIR} \
 "
 

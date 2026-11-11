@@ -6,7 +6,7 @@ inherit zephyr-sample
 # be wise to just recreate a custom zephyr-kernel-src-x.bb at some point with
 # our forks
 ZEPHYR_BRANCH = "v4.4.0-mchp"
-SRCREV_default = "85c717ad200f412409cf6f9ff2cffed9a23b72b4"
+SRCREV_default = "4f46662ffb014fe30b74ac7c25a2d2ede7894b33"
 SRC_URI_ZEPHYR = "git://github.com/pic64gx/pic64gx-zephyr.git;protocol=https"
 SRC_URI:append = " ${SRC_URI_ZEPHYR};nobranch=1;name=default;destsuffix=${P}/zephyr "
 
