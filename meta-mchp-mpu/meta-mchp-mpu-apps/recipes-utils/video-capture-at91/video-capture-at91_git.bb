@@ -8,7 +8,7 @@ SRC_URI = "git://github.com/linux4sam/video-capture-at91.git;protocol=https;bran
 COMPATIBLE_MACHINE = "sama5d2|sama7g5ek|sama7g54_curiosity_pro|sam9x75"
 
 PV = "1.0+git${SRCPV}"
-SRCREV = "b7d163f0e8a5a61fce521e6fb7433e209222bfe9"
+SRCREV = "88894e33be46ae4d0dad57d3170e50385dc0b8ea"
 
 do_install () {
     for SOC in $(echo ${SOC_FAMILY} | tr ":" "\n")
