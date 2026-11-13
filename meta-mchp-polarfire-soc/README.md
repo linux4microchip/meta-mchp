@@ -97,7 +97,7 @@ bitbake <rootfs-image>
 
 ## Build Instructions
 
-Please see the meta-mchp-common [README](https://github.com/linux4microchip/meta-mchp/blob/scarthgap/meta-mchp-common/README.md) section for detailed steps on how to setup and start a build for any of the supported devices.
+Please see the meta-mchp-common [README](../meta-mchp-common/README.md) section for detailed steps on how to setup and start a build for any of the supported devices.
 
 ## Deploy Instructions
 

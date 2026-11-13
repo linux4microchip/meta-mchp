@@ -17,7 +17,7 @@ layers: meta-mchp-polarfire-soc-bsp
 
 This layer is compatible with the following Yocto Project releases:
 
-- scarthgap
+- wrynose
 
 ## Licensing
 

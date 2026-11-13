@@ -22,7 +22,7 @@ For information on the specific revisions used, refer to the
 
 This layer is compatible with the following Yocto Project releases:
 
-- scarthgap
+- wrynose
 
 ## Licensing
 

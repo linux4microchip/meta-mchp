@@ -13,9 +13,9 @@ The meta-mchp-common layer provides support for various Microchip platforms.
 For detailed information about supported machines, please refer to the
 documentation in the relevant sub-layers:
 
-- [MPU layer README](https://github.com/linux4microchip/meta-mchp/blob/scarthgap/meta-mchp-mpu/README.md)
+- [MPU layer README](../meta-mchp-mpu/README.md)
 
-- [PolarFire SoC layer README](https://github.com/linux4microchip/meta-mchp/blob/scarthgap/meta-mchp-polarfire-soc/README.md)
+- [PolarFire SoC layer README](../meta-mchp-polarfire-soc/README.md)
 
 ## Prerequisites
 
@@ -128,9 +128,9 @@ To integrate this layer into your Yocto Project build environment:
 
     For more information on the supported images, please refer to the corresponding README:
 
-   - [MPU layer README](https://github.com/linux4microchip/meta-mchp/blob/scarthgap/meta-mchp-mpu/README.md)
+   - [MPU layer README](../meta-mchp-mpu/README.md)
 
-   - [PolarFire SoC layer README](https://github.com/linux4microchip/meta-mchp/blob/scarthgap/meta-mchp-polarfire-soc/README.md)
+   - [PolarFire SoC layer README](../meta-mchp-polarfire-soc/README.md)
 
 ## Layer Dependencies
 
@@ -149,7 +149,7 @@ For information on the specific revisions used, refer to the
 
 This layer is compatible with the following Yocto Project releases:
 
-- scarthgap
+- wrynose
 
 ## Licensing
 
