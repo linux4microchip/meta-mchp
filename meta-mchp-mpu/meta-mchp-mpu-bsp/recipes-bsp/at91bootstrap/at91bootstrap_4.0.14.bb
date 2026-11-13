@@ -8,7 +8,7 @@ inherit mchp-compat-machines
 SRC_URI = "git://github.com/linux4sam/at91bootstrap.git;protocol=https;branch=at91bootstrap-4.x"
 
 PV = "4.0.14+git${SRCPV}"
-SRCREV = "b2e20927d759c433074c92d931d8660ff5a2fa91"
+SRCREV = "118fec7196c9a80cbce3707e6f622f5e8fd8a1f2"
 
 EXTRA_OEMAKE = 'CROSS_COMPILE=${TARGET_PREFIX} CC=${TARGET_PREFIX}gcc EXTRA_CC_ARGS="${TOOLCHAIN_OPTIONS}"'
 
