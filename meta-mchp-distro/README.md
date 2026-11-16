@@ -40,4 +40,4 @@ contribution guidelines.
 
 - Valentina Fernandez Alanis <valentina.fernandezalanis@microchip.com>
 - Nicolas Ferre <nicolas.ferre@microchip.com>
-- Dharma Balasubiramani <dharma.b@microchip.com>
+- Balamanikandan Gunasundar <balamanikandan.gunasundar@microchip.com>

@@ -37,4 +37,4 @@ contribution guidelines.
 ## Maintainers
 
 - Nicolas Ferre <nicolas.ferre@microchip.com>
-- Dharma Balasubiramani <dharma.b@microchip.com>
+- Balamanikandan Gunasundar <balamanikandan.gunasundar@microchip.com>

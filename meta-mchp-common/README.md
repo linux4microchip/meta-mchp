@@ -166,4 +166,4 @@ contribution guidelines.
 ## Maintainers
 
 - Valentina Fernandez Alanis <valentina.fernandezalanis@microchip.com>
-- Dharma Balasubiramani <dharma.b@microchip.com>
+- Balamanikandan Gunasundar <balamanikandan.gunasundar@microchip.com>
